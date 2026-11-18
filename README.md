@@ -18,4 +18,4 @@
 
 历史关键词匹配提交说明和作者，文件路径使用「限定路径」筛选。单条修订的改动路径过多时，详情可能超过宿主的命令输出上限。
 
-本项目改编自 [EastChilde/dsh-svn](https://github.com/EastChilde/dsh-svn)，遵循 [MIT 许可证](LICENSE)。
+遵循 [MIT 许可证](LICENSE)。
