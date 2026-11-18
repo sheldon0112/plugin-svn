@@ -28,12 +28,15 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
   const b = 'other.txt'
   const app = createRoot(document.getElementById('app'))
   let Panel
+  let locale = 'zh-CN'
   let hold
   let simulatedCommit
   let failNextLog = false
   activate({
     react: React,
     theme: { injectCss() {} },
+    i18n: { addBundle() {} },
+    host: { get locale() { return locale } },
     ui: { registerCenterTab({ component }) { Panel = component }, registerSidebarNav() {} },
     workspaces: { list: async () => [{ id: 'wc', path: wc, name: 'Fixture' }] },
     bridge: { async invoke(_action, { bin, args, env }) {
@@ -98,6 +101,14 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     writeFileSync(wc + '/' + b, 'local b\n')
     app.render(React.createElement(Panel))
     await waitFor(() => row(a) && row(b), '等待初始变更')
+    locale = 'en'
+    document.documentElement.lang = locale
+    await waitFor(() => button('Changes') && button('Commit selected'))
+    assert.ok(document.querySelector('input[placeholder="Filter paths…"]'))
+    locale = 'zh-CN'
+    document.documentElement.lang = locale
+    await waitFor(() => button('更改') && button('提交所选'))
+
 
     filter('src/')
     await waitFor(() => row(a) && !row(b), '等待路径筛选')

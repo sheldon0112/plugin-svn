@@ -1,7 +1,7 @@
 {
   "id": "ccgui-svn",
   "name": "SVN 管理面板",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "tier": "js",
   "description": "在 CC GUI 中管理当前工作区的 SVN 变更、历史、差异和冲突。",
   "permissions": [
@@ -9,7 +9,8 @@
     "ui:center-tab",
     "host:workspace",
     "theme",
-    "exec:svn"
+    "exec:svn",
+    "i18n"
   ],
   "repo": "sheldon0112/plugin-svn",
   "author": "AnnoDomini",

@@ -4,6 +4,262 @@ export default function activate(ctx) {
   const { useState, useEffect, useRef, useCallback, useMemo } = React
   const h = React.createElement
 
+  const english = {
+    "无法解析 SVN 的 XML 输出": "Could not parse SVN XML output",
+    "请输入工作副本内的相对路径": "Enter a path relative to the working copy",
+    "SVN 执行失败": "SVN command failed",
+    "属性修改": "Property modified",
+    "请打开本机 SVN 工作区": "Open a local SVN workspace",
+    "当前工作区没有 SVN 工作副本": "This workspace is not an SVN working copy",
+    "没有可对比的传入文件版本": "No incoming file revisions are available to compare",
+    "请选择已提交到仓库的文件": "Select a file already committed to the repository",
+    "无效的 SVN 修订号": "Invalid SVN revision",
+    "无法读取改动路径，详细记录可能超过 CC GUI 的输出上限。": "Could not load changed paths. The detailed log may exceed the CC GUI output limit.",
+    "找不到该修订的详细记录": "Revision details were not found",
+    "无法解析 SVN 溯源输出": "Could not parse SVN blame output",
+    "当前工作副本正在执行 SVN 操作": "An SVN operation is already running in this working copy",
+    "请先勾选操作路径": "Select at least one path",
+    "文件名不能写入忽略规则": "This filename cannot be added to an ignore rule",
+    "只能忽略尚未纳入版本控制的路径": "Only unversioned paths can be ignored",
+    "无法读取现有 svn:ignore 属性": "Could not read the existing svn:ignore property",
+    "文件已由 ": "File is locked by ",
+    " 锁定": ".",
+    "当前工作副本没有此文件的有效锁": "This working copy does not hold a valid lock for the file",
+    "SVN 切换不支持工作副本根目录名称包含 @，请先重命名该目录": "SVN cannot switch when the working copy root name contains @. Rename that directory first.",
+    "请输入仓库相对路径，例如 ^/branches/release": "Enter a repository-relative path, such as ^/branches/release",
+    "请先处理工作副本中的本地变更、未纳入文件、文件锁或已单独切换的子路径": "Resolve local changes, unversioned files, file locks, or switched child paths before switching",
+    "不支持的 SVN 操作": "Unsupported SVN operation",
+    "冲突": "Conflicts",
+    "修改": "Modified",
+    "新增": "Added",
+    "删除": "Delete",
+    "丢失": "Missing",
+    "未纳入": "Unversioned",
+    "替换": "Replaced",
+    "阻塞": "Obstructed",
+    "不完整": "Incomplete",
+    "外部": "External",
+    "忽略": "Ignored",
+    "正常": "Normal",
+    "未知": "Unknown",
+    "关闭": "Close",
+    "取消": "Cancel",
+    "处理中…": "Working…",
+    "确定": "Confirm",
+    "差异": "Diff",
+    "有未解决的冲突": "Unresolved conflicts",
+    "尚未纳入版本控制": "Not under version control",
+    "无可提交的变更": "No committable changes",
+    "请勾选要提交的变更": "Select changes to commit",
+    "提交信息不能为空": "Enter a commit message",
+    "正在提交…": "Committing…",
+    "已提交 r": "Committed r",
+    " 个文件）": " files)",
+    "更新工作副本": "Update working copy",
+    "将从仓库拉取「": "Fetch the latest changes for “",
+    "」的最新内容。本地未提交的修改会保留，冲突的文件会被标记出来。": "” from the repository. Local edits will be preserved and conflicting files will be marked.",
+    "开始更新": "Start update",
+    "正在更新…": "Updating…",
+    "更新完成：r": "Updated to r",
+    "，发现 ": ", found ",
+    " 个冲突": " conflict(s)",
+    "先勾选要还原的文件": "Select files to revert",
+    "还原修改": "Revert changes",
+    "将丢弃这 ": "Discard uncommitted edits in these ",
+    " 个文件里未提交的本地修改，此操作不可撤销。": " files. This cannot be undone.",
+    "还原": "Revert",
+    "正在还原…": "Reverting…",
+    "已还原 ": "Reverted ",
+    " 个文件": " file(s)",
+    "先勾选要删除的文件": "Select files to delete",
+    "从版本库删除": "Delete from repository",
+    "将删除下列 ": "Delete these ",
+    " 个文件或目录。删除目录会包含其下的文件，提交后才会从仓库删除。": " files or directories. Deleting a directory includes its contents. The repository changes when you commit.",
+    "正在删除…": "Deleting…",
+    "已标记删除 ": "Marked for deletion: ",
+    " 项": " item(s)",
+    "先勾选未纳入版本控制的文件": "Select unversioned files first",
+    "纳入版本控制": "Add to version control",
+    "纳入下列路径后即可提交。选择目录时，也会纳入其中符合条件的子项。": "Add these paths so they can be committed. Selecting a directory also adds eligible children.",
+    "纳入": "Add",
+    "正在纳入…": "Adding…",
+    "已纳入 ": "Added ",
+    "正在解决冲突…": "Resolving conflict…",
+    "加入忽略规则": "Add ignore rule",
+    "将在「": "Add this name to svn:ignore in “",
+    "」目录的 svn:ignore 中加入此名称。提交目录属性后会与团队共享。": "”. Commit the directory property to share the rule with your team.",
+    "加入忽略": "Add rule",
+    "正在写入忽略规则…": "Writing ignore rule…",
+    "正在切换…": "Switching…",
+    "切换完成，发现冲突": "Switched and found conflicts",
+    "切换完成": "Switched successfully",
+    "正在查询文件锁…": "Checking file lock…",
+    "文件锁状态": "File lock status",
+    "解锁文件": "Unlock file",
+    "锁定文件": "Lock file",
+    "仓库锁持有人：": "Repository lock owner: ",
+    "锁定后，其他工作副本不能提交这个文件。": "Other working copies cannot commit the file while it is locked.",
+    "解锁": "Unlock",
+    "锁定": "Lock",
+    "正在解锁…": "Unlocking…",
+    "正在锁定…": "Locking…",
+    "文件已解锁": "File unlocked",
+    "文件已锁定": "File locked",
+    "清理工作副本": "Clean up working copy",
+    "执行 svn cleanup，清理锁和未完成的事务。工作副本被锁住或中断过操作时使用。": "Run svn cleanup to clear locks and finish interrupted operations. Use this if the working copy is locked or a command was interrupted.",
+    "清理": "Clean up",
+    "正在清理…": "Cleaning up…",
+    "清理完成": "Cleanup complete",
+    "版本控制": "Version control",
+    "当前版本": "Current revision",
+    "选择一个工作副本": "Select a working copy",
+    "刷新": "Refresh",
+    "↓ 更新": "↓ Update",
+    "文件锁": "File lock",
+    "切换分支／标签": "Switch branch or tag",
+    "✓ 提交": "✓ Commit",
+    "更改": "Changes",
+    "历史": "History",
+    "溯源": "Blame",
+    "已对比服务器": "Compared with server",
+    "本地状态": "Local status",
+    " 的改动": " changes",
+    "工作副本": "Working copy",
+    "加载中…": "Loading…",
+    "重试": "Retry",
+    "请在 CC GUI 打开本机 SVN 工作区。": "Open a local SVN workspace in CC GUI.",
+    "不可用": "Unavailable",
+    "仓库": "Repository",
+    "仓库根": "Repository root",
+    "最后修改": "Last change",
+    "时间": "Time",
+    "清理锁": "Clean up locks",
+    "查看差异": "View diff",
+    "查看文件历史": "View file history",
+    "逐行溯源": "Line-by-line blame",
+    "提交所选": "Commit selected",
+    "打开冲突工作台": "Open conflict workbench",
+    "查询文件锁": "Check file lock",
+    "从版本控制删除": "Schedule deletion",
+    "全部 ": "All ",
+    "属性被修改的文件数": "Number of files with modified properties",
+    "· 属性 ": " · Properties ",
+    "过滤路径…": "Filter paths…",
+    "svn status -u：对比服务器上的新版本": "svn status -u: compare with the latest server revisions",
+    "✓ 已对比服务器": "✓ Compared with server",
+    "对比服务器": "Compare with server",
+    "读取工作副本状态…": "Reading working copy status…",
+    "没有符合筛选条件的文件": "No files match the filters",
+    "工作副本没有本地更改": "The working copy has no local changes",
+    "试试切换上方的状态筛选或清空过滤。": "Try another status filter or clear the path filter.",
+    "可以点右上角「更新」拉取最新版本。": "Click Update in the top right to fetch the latest revision.",
+    "\n最后提交：r": "\nLast commit: r",
+    "属性有修改": "Properties modified",
+    "锁：": "Lock: ",
+    "远端：": "Remote: ",
+    "属性冲突": "Property conflict",
+    "树冲突": "Tree conflict",
+    "复制": "Copy",
+    "逐行溯源（blame）": "Line-by-line blame",
+    "溯": "Blame",
+    "刷新中…": "Refreshing…",
+    "SVN 文件操作": "SVN file actions",
+    "已选 ": "Selected ",
+    " 项，其中 ": " item(s), including ",
+    " 项当前不可见": " currently hidden",
+    "全选": "Select all",
+    "反选": "Invert selection",
+    "解决冲突": "Resolve conflicts",
+    "作者": "Author",
+    "关键词（提交信息 / 作者）": "Keyword (message or author)",
+    "限定路径": "Limit to path",
+    "起始日期": "Start date",
+    "结束日期": "End date",
+    "查询": "Search",
+    "重置": "Reset",
+    "读取提交历史…": "Reading commit history…",
+    "没有匹配的提交记录": "No matching commits",
+    "试试放宽作者 / 关键词 / 日期，或清空「限定路径」。": "Broaden the author, keyword, or date filters, or clear the path filter.",
+    "(无提交信息)": "(no commit message)",
+    "(无作者)": "(no author)",
+    "加载更早的提交": "Load older commits",
+    "选择左侧的一条提交记录": "Select a commit on the left",
+    "查看提交信息、改动文件与版本差异": "View the commit message, changed files, and diff",
+    "复制版本号": "Copy revision number",
+    "复制版本": "Copy revision",
+    "查看此版本差异": "View revision diff",
+    "正在读取改动路径…": "Reading changed paths…",
+    "改动文件 ": "Changed files ",
+    "查看该文件在此版本中的差异": "View this file’s diff in the selected revision",
+    "复制自 ": "Copied from ",
+    "查看该版本中此文件的逐行溯源": "View this file’s blame in the selected revision",
+    "这个版本没有记录改动路径。": "No changed paths are recorded for this revision.",
+    "提示：点文件看该版本中的差异；「溯」按该版本溯源。": "Select a file to view its diff, or choose Blame to inspect this revision line by line.",
+    "← 返回": "← Back",
+    "计算差异…": "Computing diff…",
+    "已截断": "Truncated",
+    "查看该文件的逐行溯源": "View this file line by line",
+    "复制差异": "Copy diff",
+    "换行": "Wrap",
+    "文件被标记为二进制，文本差异无法显示。": "The file is marked as binary. A text diff is unavailable.",
+    "该路径不在当前工作副本内，显示的是整个版本的差异。": "This path is outside the working copy. The diff shows the entire revision.",
+    "该文件未纳入版本控制，下面按「新增」展示工作副本内容。": "This file is unversioned. Its working copy contents are shown as additions.",
+    "没有差异": "No differences",
+    "工作副本与版本库在这一范围里内容一致。": "The working copy and repository match for this range.",
+    "差异共 ": "Diff contains ",
+    " 行，仅显示前 ": " lines; showing the first ",
+    " 行；完整内容可复制。": ". Copy to get the full diff.",
+    "逐行溯源…": "Reading blame…",
+    "该文件按仓库版本溯源，不含本地未提交的改动": "Blame shows the repository version without uncommitted local edits.",
+    "仓库版本": "Repository version",
+    " 行": " lines",
+    "查看 r": "View r",
+    " 的差异": " diff",
+    "本地未提交的改动": "Uncommitted local changes",
+    "共 ": "Total: ",
+    " 行。": " lines.",
+    "操作路径（": "Target paths (",
+    "，其中 ": ", including ",
+    "提交 ": "Commit ",
+    "提交": "Commit",
+    " 项已排除": " excluded",
+    "提交信息（必填）…  Ctrl+Enter 提交": "Commit message (required)… Ctrl+Enter to commit",
+    "提交信息以 UTF-8 写入仓库；提交失败时工作副本保持原样。": "Commit messages are written in UTF-8. If the commit fails, the working copy is left as is.",
+    "切换": "Switch",
+    "当前：": "Current: ",
+    "目标仓库路径": "Target repository path",
+    "文件相对工作副本根目录的路径": "File path relative to the working copy root",
+    "^/branches/release 或 ^/tags/v1.0": "^/branches/release or ^/tags/v1.0",
+    "切换前请提交或还原本地变更。": "Commit or revert local changes before switching.",
+    "冲突路径 ": "Conflicted path ",
+    "正在读取冲突…": "Reading conflicts…",
+    "没有未解决的冲突": "No unresolved conflicts",
+    "内容冲突": "Text conflict",
+    "解决方式": "Resolution",
+    "选择解决方式": "Choose a resolution",
+    "已手工处理，保留当前状态": "Resolved manually; keep the current state",
+    "覆盖为冲突前的本地版本": "Replace with local version before the conflict",
+    "覆盖为传入版本": "Replace with incoming version",
+    "确认解决": "Confirm resolution",
+    "请先在工作副本中处理文件或目录的结构冲突，再确认解决。": "Resolve the file or directory structure conflict in the working copy before confirming.",
+    "查看差异中的冲突标记。保留当前状态前，请先手工移除冲突标记。": "Check the diff for conflict markers. Remove them before keeping the current state.",
+    "查看工作副本差异": "View working copy diff",
+    "查看传入改动": "View incoming changes",
+    " · 传入改动": " · Incoming changes",
+    " · 工作副本与 BASE": " · Working copy vs. BASE",
+    "正在读取工作区…": "Reading workspaces…",
+    "请先在 CC GUI 添加本机 SVN 工作区。": "Add a local SVN workspace in CC GUI first.",
+    "读取工作区失败：": "Could not read workspaces: ",
+    "工作区": "Workspace",
+    "SVN 管理面板": "SVN Manager",
+  }
+  ctx.i18n.addBundle('en', 'ccgui-svn', english)
+  ctx.i18n.addBundle('zh-CN', 'ccgui-svn', Object.fromEntries(Object.keys(english).map((label) => [label, label])))
+
+  function t(label) {
+    return /^en(?:-|$)/i.test(ctx.host?.locale || '') ? english[label] ?? label : label
+  }
+
   ctx.theme.injectCss(`
 .svn-root { font: inherit; color: CanvasText; --svn-accent: #4d6bfe; --svn-line: rgba(127,127,127,.22); --svn-soft: rgba(127,127,127,.08); --svn-hover: rgba(127,127,127,.13); --svn-muted: rgba(127,127,127,.95); }
 .dark .svn-root { --svn-accent: #a3b6ff; --svn-muted: #b2bdcd; --svn-line: rgba(181,195,216,.25); --svn-soft: rgba(181,195,216,.09); --svn-hover: rgba(181,195,216,.16); }
@@ -218,7 +474,7 @@ export default function activate(ctx) {
 
   function parseXml(source) {
     const doc = new DOMParser().parseFromString(source, 'application/xml')
-    if (doc.querySelector('parsererror')) throw new Error('无法解析 SVN 的 XML 输出')
+    if (doc.querySelector('parsererror')) throw new SyntaxError(t('无法解析 SVN 的 XML 输出'))
     return doc
   }
 
@@ -231,7 +487,7 @@ export default function activate(ctx) {
   }
 
   function localPath(root, rel = '') {
-    if (rel.startsWith('/') || rel.split('/').includes('..')) throw new Error('请输入工作副本内的相对路径')
+    if (rel.startsWith('/') || rel.split('/').includes('..')) throw new Error(t('请输入工作副本内的相对路径'))
     return rel && rel !== '.' ? root.replace(/\/$/, '') + '/' + rel : root
   }
 
@@ -242,7 +498,7 @@ export default function activate(ctx) {
       env: { LC_ALL: 'en_US.UTF-8' },
       timeoutMs: 120000,
     })
-    if (result.code !== 0) throw new Error(result.stderr.trim() || 'SVN 执行失败')
+    if (result.code !== 0) throw new Error(result.stderr.trim() || t('SVN 执行失败'))
     return result.stdout
   }
 
@@ -282,8 +538,8 @@ export default function activate(ctx) {
 
   function remoteStatusLabel(status) {
     if (!status) return ''
-    const item = status.item && !['none', 'normal'].includes(status.item) ? metaOf(status.item).label : ''
-    const props = status.props === 'modified' ? '属性修改' : ''
+    const item = status.item && !['none', 'normal'].includes(status.item) ? t(metaOf(status.item).label) : ''
+    const props = status.props === 'modified' ? t('属性修改') : ''
     return [item, props].filter(Boolean).join('、')
   }
 
@@ -291,11 +547,11 @@ export default function activate(ctx) {
     let info
     return async function api(route, options = {}) {
       if (route === '/state') {
-        if (!workspacePath || !workspacePath.startsWith('/')) throw new Error('请打开本机 SVN 工作区')
+        if (!workspacePath || !workspacePath.startsWith('/')) throw new Error(t('请打开本机 SVN 工作区'))
         const doc = parseXml(await svn('info', ['--xml'], [target(workspacePath)]))
         const entry = doc.querySelector('entry')
         const path = field(entry, 'wc-info > wcroot-abspath')
-        if (!path) throw new Error('当前工作区没有 SVN 工作副本')
+        if (!path) throw new Error(t('当前工作区没有 SVN 工作副本'))
         info = {
           path,
           name: path.split('/').pop() || path,
@@ -336,7 +592,7 @@ export default function activate(ctx) {
           const sources = ['source-left', 'source-right'].map((side) =>
             node?.querySelector('version[side="' + side + '"]'))
           if (!sources.every((source) => source?.getAttribute('kind') === 'file')) {
-            throw new Error('没有可对比的传入文件版本')
+            throw new Error(t('没有可对比的传入文件版本'))
           }
           const [left, right] = sources.map((source) => target(
             source.getAttribute('repos-url').replace(/\/$/, '') + '/' +
@@ -357,7 +613,7 @@ export default function activate(ctx) {
       if (route === '/lock-info') {
         const entry = parseXml(await svn('info', ['--xml'], [target(location)])).querySelector('entry')
         if (entry?.getAttribute('kind') !== 'file' || field(entry, 'wc-info > schedule') !== 'normal') {
-          throw new Error('请选择已提交到仓库的文件')
+          throw new Error(t('请选择已提交到仓库的文件'))
         }
         const url = field(entry, 'url')
         const remote = parseXml(await svn('info', ['--xml', '-r', 'HEAD'], [target(url, 'HEAD')]))
@@ -429,19 +685,19 @@ export default function activate(ctx) {
       }
 
       if (route === '/log-detail') {
-        if (!validRevision) throw new Error('无效的 SVN 修订号')
+        if (!validRevision) throw new Error(t('无效的 SVN 修订号'))
         let doc
         try {
           const xml = await svn('log', ['--xml', '-v', '-r', String(revision)], [target(info.url, 'HEAD')])
           doc = parseXml(xml)
         } catch (error) {
-          if (error.message === '无法解析 SVN 的 XML 输出') {
-            throw new Error('无法读取改动路径，详细记录可能超过 CC GUI 的输出上限。')
+          if (error instanceof SyntaxError) {
+            throw new Error(t('无法读取改动路径，详细记录可能超过 CC GUI 的输出上限。'))
           }
           throw error
         }
         const entry = doc.querySelector('logentry')
-        if (!entry) throw new Error('找不到该修订的详细记录')
+        if (!entry) throw new Error(t('找不到该修订的详细记录'))
         return {
           paths: Array.from(entry.querySelectorAll('paths > path'), (item) => ({
             action: item.getAttribute('action'),
@@ -480,17 +736,17 @@ export default function activate(ctx) {
         const rows = output.replace(/\r?\n$/, '').split(/\r?\n/).filter(Boolean)
         const lines = rows.slice(0, 5000).map((row, index) => {
           const match = /^\s*(\d+|-)\s+(\S+) (.*)$/.exec(row)
-          if (!match) throw new Error('无法解析 SVN 溯源输出')
+          if (!match) throw new Error(t('无法解析 SVN 溯源输出'))
           return { line: index + 1, revision: Number(match[1]) || 0, author: match[2], text: match[3] }
         })
         return { lines, total: rows.length, remote: true, truncated: rows.length > lines.length }
       }
 
-      if (writes.has(root)) throw new Error('当前工作副本正在执行 SVN 操作')
+      if (writes.has(root)) throw new Error(t('当前工作副本正在执行 SVN 操作'))
       const paths = options.paths?.map((item) => localPath(root, item)) || []
       const targets = paths.map((item) => target(item))
       const scoped = ['/commit', '/revert', '/delete', '/add', '/resolve'].includes(route)
-      if (scoped && !targets.length) throw new Error('请先勾选操作路径')
+      if (scoped && !targets.length) throw new Error(t('请先勾选操作路径'))
       const modes = ['working', 'base', 'mine-full', 'theirs-full', 'mine-conflict', 'theirs-conflict']
       const commands = {
         '/update': ['update', ['--accept', 'postpone', '--ignore-externals'], [root]],
@@ -508,14 +764,14 @@ export default function activate(ctx) {
           const name = rel.split('/').at(-1)
           const parent = rel.includes('/') ? rel.slice(0, rel.lastIndexOf('/')) : '.'
           const parentTarget = target(localPath(root, parent))
-          if (!name || name === '.' || /[\r\n]/.test(name)) throw new Error('文件名不能写入忽略规则')
+          if (!name || name === '.' || /[\r\n]/.test(name)) throw new Error(t('文件名不能写入忽略规则'))
           const status = parseXml(await svn('status', ['--xml', '--depth', 'empty'], [target(location)]))
           if (status.querySelector('wc-status')?.getAttribute('item') !== 'unversioned') {
-            throw new Error('只能忽略尚未纳入版本控制的路径')
+            throw new Error(t('只能忽略尚未纳入版本控制的路径'))
           }
           const props = parseXml(await svn('proplist', ['--xml', '-v'], [parentTarget]))
           const property = props.querySelector('property[name="svn:ignore"]')
-          if (property?.hasAttribute('encoding')) throw new Error('无法读取现有 svn:ignore 属性')
+          if (property?.hasAttribute('encoding')) throw new Error(t('无法读取现有 svn:ignore 属性'))
           const previous = property?.textContent || ''
           const pattern = name.replace(/[*?\[\\]/g, (character) => '\\' + character)
           if (!previous.split(/\r?\n/).includes(pattern)) {
@@ -526,29 +782,29 @@ export default function activate(ctx) {
         }
         if (route === '/lock' || route === '/unlock') {
           const lock = await api('/lock-info', { wc: root, path: rel })
-          if (route === '/lock' && lock.owner) throw new Error('文件已由 ' + lock.owner + ' 锁定')
-          if (route === '/unlock' && !lock.canUnlock) throw new Error('当前工作副本没有此文件的有效锁')
+          if (route === '/lock' && lock.owner) throw new Error(t('文件已由 ') + lock.owner + t(' 锁定'))
+          if (route === '/unlock' && !lock.canUnlock) throw new Error(t('当前工作副本没有此文件的有效锁'))
           await svn(route.slice(1), [], [target(location)])
           return {}
         }
         if (route === '/switch') {
           if (root.split('/').at(-1).includes('@')) {
-            throw new Error('SVN 切换不支持工作副本根目录名称包含 @，请先重命名该目录')
+            throw new Error(t('SVN 切换不支持工作副本根目录名称包含 @，请先重命名该目录'))
           }
           const destination = options.destination.trim()
           const segments = destination.slice(2).split('/')
           if (!destination.startsWith('^/') || segments.some((segment) => !segment || segment === '.' || segment === '..')) {
-            throw new Error('请输入仓库相对路径，例如 ^/branches/release')
+            throw new Error(t('请输入仓库相对路径，例如 ^/branches/release'))
           }
           const status = await api('/status', { wc: root })
           if (status.entries.some((entry) => hasLocalChange(entry) || entry.switched || entry.lockOwner)) {
-            throw new Error('请先处理工作副本中的本地变更、未纳入文件、文件锁或已单独切换的子路径')
+            throw new Error(t('请先处理工作副本中的本地变更、未纳入文件、文件锁或已单独切换的子路径'))
           }
           const url = info.root.replace(/\/$/, '') + '/' + segments.map(encodeURIComponent).join('/')
           const output = await svn('switch', ['--ignore-externals', '--accept', 'postpone'], [target(url, 'HEAD'), root])
           return { conflicts: countConflicts(output) }
         }
-        if (!command) throw new Error('不支持的 SVN 操作')
+        if (!command) throw new Error(t('不支持的 SVN 操作'))
         const output = await svn(...command)
         return {
           output,
@@ -579,7 +835,7 @@ export default function activate(ctx) {
   }
 
   function metaOf(item) {
-    return STATUS_META[item] || { letter: '?', label: item || '未知', color: '#8b93a7', bg: 'rgba(139,147,167,.16)' }
+    return STATUS_META[item] || { letter: '?', label: item || t('未知'), color: '#8b93a7', bg: 'rgba(139,147,167,.16)' }
   }
 
   function pad2(n) {
@@ -687,7 +943,7 @@ export default function activate(ctx) {
     return h('span', {
       className: 'svn-badge',
       style: { background: meta.bg, color: meta.color },
-      title: meta.label,
+      title: t(meta.label),
     }, meta.letter)
   }
 
@@ -718,7 +974,7 @@ export default function activate(ctx) {
     }, h('div', { className: 'svn-modal', style: { width: props.width || 460 } },
       h('div', { className: 'svn-modal-head' },
         h('div', { className: 'svn-modal-title' }, props.title),
-        h('button', { type: 'button', className: 'svn-icon', title: '关闭', onClick: props.onClose }, '×'),
+        h('button', { type: 'button', className: 'svn-icon', title: t('关闭'), onClick: props.onClose }, '×'),
       ),
       h('div', { className: 'svn-modal-body' }, props.children),
       props.footer ? h('div', { className: 'svn-modal-foot' }, props.footer) : null,
@@ -747,13 +1003,13 @@ export default function activate(ctx) {
       width: 460,
       onClose: working ? () => {} : props.onClose,
       footer: h(React.Fragment, null,
-        h('button', { type: 'button', className: 'svn-btn', onClick: props.onClose, disabled: working }, '取消'),
+        h('button', { type: 'button', className: 'svn-btn', onClick: props.onClose, disabled: working }, t('取消')),
         h('button', {
           type: 'button',
           className: 'svn-btn ' + (props.danger ? 'danger' : 'primary'),
           onClick: confirm,
           disabled: working,
-        }, working ? '处理中…' : (props.okLabel || '确定')),
+        }, working ? t('处理中…') : (props.okLabel || t('确定'))),
       ),
     },
       h('div', { style: { fontSize: 12.5, lineHeight: 1.75 } }, props.body),
@@ -944,7 +1200,7 @@ export default function activate(ctx) {
     }
 
     function openDiff(options) {
-      openPreview('diff', '/diff', { title: options.title || '差异' }, options.body, setDiff)
+      openPreview('diff', '/diff', { title: options.title || t('差异') }, options.body, setDiff)
     }
 
     function openBlame(pathValue, label, revision) {
@@ -988,11 +1244,11 @@ export default function activate(ctx) {
       const paths = selection.filter(canCommit).map((entry) => entry.path)
       const excluded = selection.filter((entry) => !canCommit(entry)).map((entry) => ({
         path: entry.path,
-        reason: hasConflict(entry) ? '有未解决的冲突'
-          : entry.item === 'unversioned' ? '尚未纳入版本控制' : '无可提交的变更',
+        reason: hasConflict(entry) ? t('有未解决的冲突')
+          : entry.item === 'unversioned' ? t('尚未纳入版本控制') : t('无可提交的变更'),
       }))
       if (!paths.length && !excluded.length) {
-        notify('请勾选要提交的变更', 'warn')
+        notify(t('请勾选要提交的变更'), 'warn')
         return
       }
       setCommitSelection({ paths, excluded, hidden: countHidden(paths) })
@@ -1003,12 +1259,12 @@ export default function activate(ctx) {
       if (!commitPaths.length || busy) return
       const message = commitMessage.trim()
       if (!message) {
-        notify('提交信息不能为空', 'err')
+        notify(t('提交信息不能为空'), 'err')
         return
       }
-      const result = await perform('正在提交…', () => api('/commit', { wc: currentPath, paths: commitPaths, message: message }))
+      const result = await perform(t('正在提交…'), () => api('/commit', { wc: currentPath, paths: commitPaths, message: message }))
       if (!result) return
-      notify('已提交 r' + result.revision + '（' + commitPaths.length + ' 个文件）', 'ok')
+      notify(t('已提交 r') + result.revision + '（' + commitPaths.length + t(' 个文件）'), 'ok')
       setCommitSelection(null)
       setCommitMessage('')
       setSelected(Object.create(null))
@@ -1017,19 +1273,19 @@ export default function activate(ctx) {
 
     function askUpdate() {
       setConfirm({
-        title: '更新工作副本',
-        body: '将从仓库拉取「' + current.name + '」的最新内容。本地未提交的修改会保留，冲突的文件会被标记出来。',
-        okLabel: '开始更新',
+        title: t('更新工作副本'),
+        body: t('将从仓库拉取「') + current.name + t('」的最新内容。本地未提交的修改会保留，冲突的文件会被标记出来。'),
+        okLabel: t('开始更新'),
         onOk: async () => {
-          const result = await perform('正在更新…', () => api('/update', { wc: currentPath }))
+          const result = await perform(t('正在更新…'), () => api('/update', { wc: currentPath }))
           if (!result) return false
           if (result.conflicts) {
             setConflictPath('')
             setTab('conflicts')
           }
           notify(result.conflicts
-            ? '更新完成：r' + result.revision + '，发现 ' + result.conflicts + ' 个冲突'
-            : '更新完成：r' + result.revision, result.conflicts ? 'warn' : 'ok')
+            ? t('更新完成：r') + result.revision + t('，发现 ') + result.conflicts + t(' 个冲突')
+            : t('更新完成：r') + result.revision, result.conflicts ? 'warn' : 'ok')
           setSelected(Object.create(null))
           await refreshAll()
           return true
@@ -1040,19 +1296,19 @@ export default function activate(ctx) {
     function askRevert(selection = selectedEntries) {
       const paths = selection.filter((entry) => entry.item !== 'unversioned').map((entry) => entry.path)
       if (!paths.length) {
-        notify('先勾选要还原的文件', 'warn')
+        notify(t('先勾选要还原的文件'), 'warn')
         return
       }
       setConfirm({
-        title: '还原修改',
-        body: '将丢弃这 ' + paths.length + ' 个文件里未提交的本地修改，此操作不可撤销。',
+        title: t('还原修改'),
+        body: t('将丢弃这 ') + paths.length + t(' 个文件里未提交的本地修改，此操作不可撤销。'),
         targets: { paths, hidden: countHidden(paths) },
-        okLabel: '还原',
+        okLabel: t('还原'),
         danger: true,
         onOk: async () => {
-          const result = await perform('正在还原…', () => api('/revert', { wc: currentPath, paths: paths }))
+          const result = await perform(t('正在还原…'), () => api('/revert', { wc: currentPath, paths: paths }))
           if (!result) return false
-          notify('已还原 ' + paths.length + ' 个文件')
+          notify(t('已还原 ') + paths.length + t(' 个文件'))
           setSelected(Object.create(null))
           await refreshAll()
           return true
@@ -1063,19 +1319,19 @@ export default function activate(ctx) {
     function askDelete(selection = selectedEntries) {
       const paths = selection.filter((entry) => entry.item !== 'unversioned').map((entry) => entry.path)
       if (!paths.length) {
-        notify('先勾选要删除的文件', 'warn')
+        notify(t('先勾选要删除的文件'), 'warn')
         return
       }
       setConfirm({
-        title: '从版本库删除',
-        body: '将删除下列 ' + paths.length + ' 个文件或目录。删除目录会包含其下的文件，提交后才会从仓库删除。',
+        title: t('从版本库删除'),
+        body: t('将删除下列 ') + paths.length + t(' 个文件或目录。删除目录会包含其下的文件，提交后才会从仓库删除。'),
         targets: { paths, hidden: countHidden(paths) },
-        okLabel: '删除',
+        okLabel: t('删除'),
         danger: true,
         onOk: async () => {
-          const result = await perform('正在删除…', () => api('/delete', { wc: currentPath, paths: paths }))
+          const result = await perform(t('正在删除…'), () => api('/delete', { wc: currentPath, paths: paths }))
           if (!result) return false
-          notify('已标记删除 ' + paths.length + ' 项')
+          notify(t('已标记删除 ') + paths.length + t(' 项'))
           await refreshAll()
           return true
         },
@@ -1085,18 +1341,18 @@ export default function activate(ctx) {
     function askAdd(selection = selectedEntries) {
       const paths = selection.filter((entry) => entry.item === 'unversioned').map((entry) => entry.path)
       if (!paths.length) {
-        notify('先勾选未纳入版本控制的文件', 'warn')
+        notify(t('先勾选未纳入版本控制的文件'), 'warn')
         return
       }
       setConfirm({
-        title: '纳入版本控制',
-        body: '纳入下列路径后即可提交。选择目录时，也会纳入其中符合条件的子项。',
+        title: t('纳入版本控制'),
+        body: t('纳入下列路径后即可提交。选择目录时，也会纳入其中符合条件的子项。'),
         targets: { paths, hidden: countHidden(paths) },
-        okLabel: '纳入',
+        okLabel: t('纳入'),
         onOk: async () => {
-          const result = await perform('正在纳入…', () => api('/add', { wc: currentPath, paths: paths }))
+          const result = await perform(t('正在纳入…'), () => api('/add', { wc: currentPath, paths: paths }))
           if (!result) return false
-          notify('已纳入 ' + paths.length + ' 个文件')
+          notify(t('已纳入 ') + paths.length + t(' 个文件'))
           await refreshAll()
           return true
         },
@@ -1109,7 +1365,7 @@ export default function activate(ctx) {
     }
 
     async function doResolve(entry, accept) {
-      const result = await perform('正在解决冲突…', () =>
+      const result = await perform(t('正在解决冲突…'), () =>
         api('/resolve', { wc: currentPath, paths: [entry.path], accept }))
       if (!result) return
       setConflictPath('')
@@ -1119,12 +1375,12 @@ export default function activate(ctx) {
     function askIgnore(entry) {
       const parent = entry.path.includes('/') ? entry.path.slice(0, entry.path.lastIndexOf('/')) : '.'
       setConfirm({
-        title: '加入忽略规则',
-        body: '将在「' + parent + '」目录的 svn:ignore 中加入此名称。提交目录属性后会与团队共享。',
+        title: t('加入忽略规则'),
+        body: t('将在「') + parent + t('」目录的 svn:ignore 中加入此名称。提交目录属性后会与团队共享。'),
         detail: entry.path,
-        okLabel: '加入忽略',
+        okLabel: t('加入忽略'),
         onOk: async () => {
-          const result = await perform('正在写入忽略规则…', () =>
+          const result = await perform(t('正在写入忽略规则…'), () =>
             api('/ignore', { wc: currentPath, path: entry.path }))
           if (!result) return false
           await refreshAll()
@@ -1135,7 +1391,7 @@ export default function activate(ctx) {
 
     async function submitPathAction(value) {
       if (pathAction.kind === 'switch') {
-        const result = await perform('正在切换…', async () => {
+        const result = await perform(t('正在切换…'), async () => {
           let switched
           try {
             switched = await api('/switch', { wc: currentPath, destination: value })
@@ -1157,26 +1413,26 @@ export default function activate(ctx) {
         setPathAction(null)
         setSelected(Object.create(null))
         setTab(result.conflicts ? 'conflicts' : 'changes')
-        notify(result.conflicts ? '切换完成，发现冲突' : '切换完成', result.conflicts ? 'warn' : 'ok')
+        notify(result.conflicts ? t('切换完成，发现冲突') : t('切换完成'), result.conflicts ? 'warn' : 'ok')
         return
       }
-      const lock = await perform('正在查询文件锁…', () =>
+      const lock = await perform(t('正在查询文件锁…'), () =>
         api('/lock-info', { wc: currentPath, path: value }))
       if (!lock) return
       const unlock = lock.canUnlock
       const blocked = !!lock.owner && !unlock
       setPathAction(null)
       setConfirm({
-        title: blocked ? '文件锁状态' : unlock ? '解锁文件' : '锁定文件',
-        body: lock.owner ? '仓库锁持有人：' + lock.owner : '锁定后，其他工作副本不能提交这个文件。',
+        title: blocked ? t('文件锁状态') : unlock ? t('解锁文件') : t('锁定文件'),
+        body: lock.owner ? t('仓库锁持有人：') + lock.owner : t('锁定后，其他工作副本不能提交这个文件。'),
         detail: value,
-        okLabel: blocked ? '关闭' : unlock ? '解锁' : '锁定',
+        okLabel: blocked ? t('关闭') : unlock ? t('解锁') : t('锁定'),
         onOk: async () => {
           if (blocked) return true
-          const result = await perform(unlock ? '正在解锁…' : '正在锁定…', () =>
+          const result = await perform(unlock ? t('正在解锁…') : t('正在锁定…'), () =>
             api(unlock ? '/unlock' : '/lock', { wc: currentPath, path: value }))
           if (!result) return false
-          notify(unlock ? '文件已解锁' : '文件已锁定')
+          notify(unlock ? t('文件已解锁') : t('文件已锁定'))
           await refreshAll()
           return true
         },
@@ -1185,13 +1441,13 @@ export default function activate(ctx) {
 
     function askCleanup() {
       setConfirm({
-        title: '清理工作副本',
-        body: '执行 svn cleanup，清理锁和未完成的事务。工作副本被锁住或中断过操作时使用。',
-        okLabel: '清理',
+        title: t('清理工作副本'),
+        body: t('执行 svn cleanup，清理锁和未完成的事务。工作副本被锁住或中断过操作时使用。'),
+        okLabel: t('清理'),
         onOk: async () => {
-          const result = await perform('正在清理…', () => api('/cleanup', { wc: currentPath }))
+          const result = await perform(t('正在清理…'), () => api('/cleanup', { wc: currentPath }))
           if (!result) return false
-          notify('清理完成')
+          notify(t('清理完成'))
           return true
         },
       })
@@ -1220,21 +1476,21 @@ export default function activate(ctx) {
         h('div', { className: 'svn-logo' }, 'SVN'),
         h('div', { className: 'svn-headmain' },
           h('div', { className: 'svn-title' },
-            '版本控制',
-            current ? h('span', { className: 'svn-revpill', title: '当前版本' }, 'r' + current.revision) : null,
+            t('版本控制'),
+            current ? h('span', { className: 'svn-revpill', title: t('当前版本') }, 'r' + current.revision) : null,
           ),
           h('div', { className: 'svn-sub', title: current ? current.path : '' },
-            current ? current.name + ' · ' + current.path : '选择一个工作副本'),
+            current ? current.name + ' · ' + current.path : t('选择一个工作副本')),
         ),
         h('div', { className: 'svn-head-actions' },
           busy ? h('span', { className: 'svn-busy' }, h(Spinner), busy) : null,
-          h('button', { type: 'button', className: 'svn-icon', title: '刷新', onClick: () => refreshAll(), disabled: !!busy }, '⟳'),
-          h('button', { type: 'button', className: 'svn-btn', onClick: askUpdate, disabled: !!busy || !current || current.ok === false }, '↓ 更新'),
+          h('button', { type: 'button', className: 'svn-icon', title: t('刷新'), onClick: () => refreshAll(), disabled: !!busy }, '⟳'),
+          h('button', { type: 'button', className: 'svn-btn', onClick: askUpdate, disabled: !!busy || !current || current.ok === false }, t('↓ 更新')),
           h('button', { type: 'button', className: 'svn-btn', disabled: !!busy || !current,
-            onClick: () => setPathAction({ kind: 'lock', value: '' }) }, '文件锁'),
+            onClick: () => setPathAction({ kind: 'lock', value: '' }) }, t('文件锁')),
           h('button', { type: 'button', className: 'svn-btn', disabled: !!busy || !current,
-            onClick: () => setPathAction({ kind: 'switch', value: '' }) }, '切换分支／标签'),
-          h('button', { type: 'button', className: 'svn-btn primary', onClick: () => openCommitDialog(), disabled: !!busy || !current || current.ok === false }, '✓ 提交'),
+            onClick: () => setPathAction({ kind: 'switch', value: '' }) }, t('切换分支／标签')),
+          h('button', { type: 'button', className: 'svn-btn primary', onClick: () => openCommitDialog(), disabled: !!busy || !current || current.ok === false }, t('✓ 提交')),
         ),
       ),
 
@@ -1251,13 +1507,13 @@ export default function activate(ctx) {
 
         h('div', { className: 'svn-main' },
           h('div', { className: 'svn-tabs' },
-            tabButton('changes', '更改', total || ''),
-            tabButton('conflicts', '冲突', conflicts.length),
-            tabButton('history', '历史', log && log.entries ? log.entries.length : ''),
-            tab === 'diff' ? h('span', { className: 'svn-tab on' }, '差异') : null,
-            tab === 'blame' ? h('span', { className: 'svn-tab on' }, '溯源') : null,
+            tabButton('changes', t('更改'), total || ''),
+            tabButton('conflicts', t('冲突'), conflicts.length),
+            tabButton('history', t('历史'), log && log.entries ? log.entries.length : ''),
+            tab === 'diff' ? h('span', { className: 'svn-tab on' }, t('差异')) : null,
+            tab === 'blame' ? h('span', { className: 'svn-tab on' }, t('溯源')) : null,
             h('div', { className: 'svn-tabsep' }),
-            status ? h('span', { className: 'svn-muted' }, remote ? '已对比服务器' : '本地状态') : null,
+            status ? h('span', { className: 'svn-muted' }, remote ? t('已对比服务器') : t('本地状态')) : null,
           ),
 
           tab === 'changes' ? h(ChangesView, {
@@ -1316,7 +1572,7 @@ export default function activate(ctx) {
             onLoadMore: () => log && loadLog({ append: true, beforeRev: log.nextBefore, filters: filters }),
             detail: detail,
             onSelectDetail: loadDetail,
-            onRevisionDiff: (entry) => openDiff({ title: 'r' + entry.revision + ' 的改动', body: { revision: entry.revision } }),
+            onRevisionDiff: (entry) => openDiff({ title: 'r' + entry.revision + t(' 的改动'), body: { revision: entry.revision } }),
             onPathDiff: (entry, item) => openDiff({
               title: 'r' + entry.revision + ' · ' + item.path,
               body: { revision: entry.revision, path: item.path },
@@ -1336,7 +1592,7 @@ export default function activate(ctx) {
           tab === 'blame' ? h(BlameView, {
             blame: blame,
             onBack: () => setTab(returnTab),
-            onRevisionDiff: (revision) => openDiff({ title: 'r' + revision + ' 的改动', body: { revision: revision } }),
+            onRevisionDiff: (revision) => openDiff({ title: 'r' + revision + t(' 的改动'), body: { revision: revision } }),
           }) : null,
         ),
       ),
@@ -1384,14 +1640,14 @@ export default function activate(ctx) {
 
     return h('div', { className: 'svn-side' },
       h('div', null,
-        h('div', { className: 'svn-side-title' }, '工作副本'),
-        props.loading ? h('div', { className: 'svn-loading', style: { flex: 'none', padding: 12 } }, h(Spinner), '加载中…') : null,
+        h('div', { className: 'svn-side-title' }, t('工作副本')),
+        props.loading ? h('div', { className: 'svn-loading', style: { flex: 'none', padding: 12 } }, h(Spinner), t('加载中…')) : null,
         props.error ? h('div', { className: 'svn-errorbox', style: { margin: '8px 0' } },
           h('span', null, props.error),
-          h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, '重试'),
+          h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, t('重试')),
         ) : null,
         !props.loading && !copies.length ? h('div', { className: 'svn-side-empty' },
-          '请在 CC GUI 打开本机 SVN 工作区。',
+          t('请在 CC GUI 打开本机 SVN 工作区。'),
         ) : null,
         copies.map((item) => h('div', {
           key: item.path,
@@ -1403,20 +1659,20 @@ export default function activate(ctx) {
             item.name || item.path,
             item.revision ? h('span', { className: 'svn-revpill' }, 'r' + item.revision) : null,
           ),
-          h('div', { className: 'svn-wc-path' }, item.ok === false ? (item.error || '不可用') : item.path),
+          h('div', { className: 'svn-wc-path' }, item.ok === false ? (item.error || t('不可用')) : item.path),
         )),
       ),
 
       current && current.ok !== false ? h('div', null,
-        h('div', { className: 'svn-side-title' }, '仓库'),
+        h('div', { className: 'svn-side-title' }, t('仓库')),
         h('div', { className: 'svn-kv' },
           h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, 'URL'), h('span', { className: 'svn-kv-v', title: current.url }, current.url || '-')),
-          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, '仓库根'), h('span', { className: 'svn-kv-v', title: current.root }, current.root || '-')),
-          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, '最后修改'), h('span', { className: 'svn-kv-v' }, 'r' + current.lastChangedRev + ' · ' + (current.lastChangedAuthor || '-'))),
-          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, '时间'), h('span', { className: 'svn-kv-v' }, fmtDate(current.lastChangedDate))),
+          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, t('仓库根')), h('span', { className: 'svn-kv-v', title: current.root }, current.root || '-')),
+          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, t('最后修改')), h('span', { className: 'svn-kv-v' }, 'r' + current.lastChangedRev + ' · ' + (current.lastChangedAuthor || '-'))),
+          h('div', { className: 'svn-kv-row' }, h('span', { className: 'svn-kv-k' }, t('时间')), h('span', { className: 'svn-kv-v' }, fmtDate(current.lastChangedDate))),
         ),
         h('div', { style: { display: 'flex', gap: 6, marginTop: 9, flexWrap: 'wrap' } },
-          h('button', { type: 'button', className: 'svn-btn small', onClick: props.onCleanup, disabled: !!props.busy }, '清理锁'),
+          h('button', { type: 'button', className: 'svn-btn small', onClick: props.onCleanup, disabled: !!props.busy }, t('清理锁')),
         ),
       ) : null,
 
@@ -1459,20 +1715,20 @@ export default function activate(ctx) {
       : [contextEntry])
     const hasVersioned = selection?.some((entry) => entry.item !== 'unversioned')
     const actions = contextEntry && [
-      ['查看差异', () => props.onRowDiff(contextEntry)],
-      ['查看文件历史', () => props.onFileHistory(contextEntry), contextEntry.item === 'unversioned'],
-      ['逐行溯源', () => props.onBlame(contextEntry), contextEntry.item === 'unversioned'],
-      ['纳入版本控制', () => props.onAdd(selection), !selection.some((entry) => entry.item === 'unversioned')],
-      ['提交所选', () => props.onCommit(selection), !selection.length],
-      ['还原修改', () => props.onRevert(selection), !hasVersioned],
-      ['打开冲突工作台', () => props.onResolve(selection), !selection.some(hasConflict)],
-      ['加入忽略规则', () => props.onIgnore(contextEntry), contextEntry.item !== 'unversioned'],
-      ['查询文件锁', () => props.onLock(contextEntry), contextEntry.item === 'unversioned'],
-      ['从版本控制删除', () => props.onDelete(selection), !hasVersioned],
+      [t('查看差异'), () => props.onRowDiff(contextEntry)],
+      [t('查看文件历史'), () => props.onFileHistory(contextEntry), contextEntry.item === 'unversioned'],
+      [t('逐行溯源'), () => props.onBlame(contextEntry), contextEntry.item === 'unversioned'],
+      [t('纳入版本控制'), () => props.onAdd(selection), !selection.some((entry) => entry.item === 'unversioned')],
+      [t('提交所选'), () => props.onCommit(selection), !selection.length],
+      [t('还原修改'), () => props.onRevert(selection), !hasVersioned],
+      [t('打开冲突工作台'), () => props.onResolve(selection), !selection.some(hasConflict)],
+      [t('加入忽略规则'), () => props.onIgnore(contextEntry), contextEntry.item !== 'unversioned'],
+      [t('查询文件锁'), () => props.onLock(contextEntry), contextEntry.item === 'unversioned'],
+      [t('从版本控制删除'), () => props.onDelete(selection), !hasVersioned],
     ]
     const chips = [
-      ['conflicted', '冲突'], ['modified', '修改'], ['added', '新增'],
-      ['deleted', '删除'], ['missing', '丢失'], ['unversioned', '未纳入'],
+      ['conflicted', t('冲突')], ['modified', t('修改')], ['added', t('新增')],
+      ['deleted', t('删除')], ['missing', t('丢失')], ['unversioned', t('未纳入')],
     ]
 
     return h('div', { className: 'svn-view' },
@@ -1480,20 +1736,20 @@ export default function activate(ctx) {
         h('button', {
           type: 'button', className: 'svn-chip' + (props.itemFilter === 'all' ? ' on' : ''),
           onClick: () => props.setItemFilter('all'),
-        }, '全部 ', h('b', null, summary.total || 0)),
+        }, t('全部 '), h('b', null, summary.total || 0)),
         chips.filter(([key]) => summary[key]).map(([key, label]) => h('button', {
           key: key,
           type: 'button',
           className: 'svn-chip' + (props.itemFilter === key ? ' on' : ''),
           onClick: () => props.setItemFilter(props.itemFilter === key ? 'all' : key),
         }, label, ' ', h('b', null, summary[key]))),
-        summary.props ? h('span', { className: 'svn-muted', title: '属性被修改的文件数' }, '· 属性 ' + summary.props) : null,
+        summary.props ? h('span', { className: 'svn-muted', title: t('属性被修改的文件数') }, t('· 属性 ') + summary.props) : null,
       ),
 
       h('div', { className: 'svn-toolbar' },
         h('input', {
           className: 'svn-input grow',
-          placeholder: '过滤路径…',
+          placeholder: t('过滤路径…'),
           value: props.pathFilter,
           onChange: (event) => props.setPathFilter(event.target.value),
         }),
@@ -1502,22 +1758,22 @@ export default function activate(ctx) {
           className: 'svn-btn small' + (props.remote ? ' primary' : ''),
           onClick: props.onRemote,
           disabled: props.loading,
-          title: 'svn status -u：对比服务器上的新版本',
-        }, props.remote ? '✓ 已对比服务器' : '对比服务器'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry, disabled: props.loading }, '刷新'),
+          title: t('svn status -u：对比服务器上的新版本'),
+        }, props.remote ? t('✓ 已对比服务器') : t('对比服务器')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry, disabled: props.loading }, t('刷新')),
       ),
 
       props.error ? h('div', { className: 'svn-errorbox' },
         h('span', null, props.error),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, '重试'),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, t('重试')),
       ) : null,
 
       h('div', { className: 'svn-list' },
-        props.loading && !status ? h('div', { className: 'svn-loading' }, h(Spinner), '读取工作副本状态…') : null,
+        props.loading && !status ? h('div', { className: 'svn-loading' }, h(Spinner), t('读取工作副本状态…')) : null,
         !props.loading && status && visible.length === 0 ? h(Empty, {
           icon: '✓',
-          title: entries.length ? '没有符合筛选条件的文件' : '工作副本没有本地更改',
-          hint: entries.length ? '试试切换上方的状态筛选或清空过滤。' : '可以点右上角「更新」拉取最新版本。',
+          title: entries.length ? t('没有符合筛选条件的文件') : t('工作副本没有本地更改'),
+          hint: entries.length ? t('试试切换上方的状态筛选或清空过滤。') : t('可以点右上角「更新」拉取最新版本。'),
         }) : null,
         visible.map((entry) => {
           const remoteLabel = props.remote ? remoteStatusLabel(entry.reposStatus) : ''
@@ -1535,7 +1791,7 @@ export default function activate(ctx) {
                 top: Math.max(8, Math.min(event.clientY, window.innerHeight - 290)),
               })
             },
-            title: entry.path + (entry.commit ? '\n最后提交：r' + entry.commit.revision + ' ' + (entry.commit.author || '') : ''),
+            title: entry.path + (entry.commit ? t('\n最后提交：r') + entry.commit.revision + ' ' + (entry.commit.author || '') : ''),
           },
             h('input', {
               type: 'checkbox',
@@ -1547,30 +1803,30 @@ export default function activate(ctx) {
             h('span', { className: 'svn-path' },
               parts[0] ? h('span', { className: 'svn-dir' }, parts[0]) : null,
               parts[1],
-              entry.props === 'modified' ? h('span', { className: 'svn-prop', title: '属性有修改' }, 'P') : null,
+              entry.props === 'modified' ? h('span', { className: 'svn-prop', title: t('属性有修改') }, 'P') : null,
             ),
-            entry.lockOwner ? h('span', { className: 'svn-prop' }, '锁：' + entry.lockOwner) : null,
-            remoteLabel ? h('span', { className: 'svn-prop' }, '远端：' + remoteLabel) : null,
-            entry.props === 'conflicted' ? h('span', { className: 'svn-tag' }, '属性冲突') : null,
-            entry.treeConflicted ? h('span', { className: 'svn-tag' }, '树冲突') : null,
-            entry.copied ? h('span', { className: 'svn-tag', style: { background: 'rgba(48,164,108,.16)', color: '#2f9e68' } }, '复制') : null,
+            entry.lockOwner ? h('span', { className: 'svn-prop' }, t('锁：') + entry.lockOwner) : null,
+            remoteLabel ? h('span', { className: 'svn-prop' }, t('远端：') + remoteLabel) : null,
+            entry.props === 'conflicted' ? h('span', { className: 'svn-tag' }, t('属性冲突')) : null,
+            entry.treeConflicted ? h('span', { className: 'svn-tag' }, t('树冲突')) : null,
+            entry.copied ? h('span', { className: 'svn-tag', style: { background: 'rgba(48,164,108,.16)', color: '#2f9e68' } }, t('复制')) : null,
             h('button', {
               type: 'button',
               className: 'svn-icon',
               style: { width: 22, height: 22, fontSize: 11 },
-              title: '逐行溯源（blame）',
+              title: t('逐行溯源（blame）'),
               onClick: (event) => { event.stopPropagation(); props.onBlame(entry) },
-            }, '溯'),
+            }, t('溯')),
           )
         }),
-        props.loading && status ? h('div', { className: 'svn-loading', style: { flex: 'none', padding: 10 } }, h(Spinner), '刷新中…') : null,
+        props.loading && status ? h('div', { className: 'svn-loading', style: { flex: 'none', padding: 10 } }, h(Spinner), t('刷新中…')) : null,
       ),
 
       actions && h('div', {
         ref: menuRef,
         className: 'svn-file-menu',
         style: { left: menu.left, top: menu.top },
-        'aria-label': 'SVN 文件操作',
+        'aria-label': t('SVN 文件操作'),
       }, actions.map(([label, run, unavailable]) => h('button', {
         key: label,
         type: 'button',
@@ -1580,15 +1836,15 @@ export default function activate(ctx) {
       }, label))),
 
       h('div', { className: 'svn-footer' },
-        h('span', { className: 'svn-muted' }, '已选 ' + selectedCount + (props.hidden ? ' 项，其中 ' + props.hidden + ' 项当前不可见' : ' 项')),
+        h('span', { className: 'svn-muted' }, t('已选 ') + selectedCount + (props.hidden ? t(' 项，其中 ') + props.hidden + t(' 项当前不可见') : t(' 项'))),
         h('div', { className: 'svn-footer-gap' }),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.selectAll }, '全选'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.invert }, '反选'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onAdd(), disabled: !!props.busy }, '纳入'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onResolve(), disabled: !!props.busy }, '解决冲突'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onRevert(), disabled: !!props.busy }, '还原'),
-        h('button', { type: 'button', className: 'svn-btn small danger', onClick: () => props.onDelete(), disabled: !!props.busy }, '删除'),
-        h('button', { type: 'button', className: 'svn-btn primary', onClick: () => props.onCommit(), disabled: !!props.busy || !(summary.total || 0) }, '提交所选'),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.selectAll }, t('全选')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.invert }, t('反选')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onAdd(), disabled: !!props.busy }, t('纳入')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onResolve(), disabled: !!props.busy }, t('解决冲突')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: () => props.onRevert(), disabled: !!props.busy }, t('还原')),
+        h('button', { type: 'button', className: 'svn-btn small danger', onClick: () => props.onDelete(), disabled: !!props.busy }, t('删除')),
+        h('button', { type: 'button', className: 'svn-btn primary', onClick: () => props.onCommit(), disabled: !!props.busy || !(summary.total || 0) }, t('提交所选')),
       ),
     )
   }
@@ -1607,20 +1863,20 @@ export default function activate(ctx) {
       h('div', { className: 'svn-toolbar' },
         h('input', {
           className: 'svn-input sm',
-          placeholder: '作者',
+          placeholder: t('作者'),
           value: filters.author || '',
           onChange: (event) => props.setFilters(Object.assign({}, filters, { author: event.target.value })),
         }),
         h('input', {
           className: 'svn-input grow',
-          placeholder: '关键词（提交信息 / 作者）',
+          placeholder: t('关键词（提交信息 / 作者）'),
           value: filters.keyword || '',
           onChange: (event) => props.setFilters(Object.assign({}, filters, { keyword: event.target.value })),
           onKeyDown: (event) => { if (event.key === 'Enter') props.onApply() },
         }),
         h('input', {
           className: 'svn-input md',
-          placeholder: '限定路径',
+          placeholder: t('限定路径'),
           value: filters.path || '',
           onChange: (event) => props.setFilters(Object.assign({}, filters, { path: event.target.value })),
           onKeyDown: (event) => { if (event.key === 'Enter') props.onApply() },
@@ -1628,34 +1884,34 @@ export default function activate(ctx) {
         h('input', {
           className: 'svn-input sm',
           type: 'date',
-          title: '起始日期',
+          title: t('起始日期'),
           value: filters.from || '',
           onChange: (event) => props.setFilters(Object.assign({}, filters, { from: event.target.value })),
         }),
         h('input', {
           className: 'svn-input sm',
           type: 'date',
-          title: '结束日期',
+          title: t('结束日期'),
           value: filters.to || '',
           onChange: (event) => props.setFilters(Object.assign({}, filters, { to: event.target.value })),
         }),
-        h('button', { type: 'button', className: 'svn-btn small primary', onClick: props.onApply, disabled: props.loading }, '查询'),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onReset, disabled: props.loading }, '重置'),
+        h('button', { type: 'button', className: 'svn-btn small primary', onClick: props.onApply, disabled: props.loading }, t('查询')),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onReset, disabled: props.loading }, t('重置')),
       ),
 
       props.error ? h('div', { className: 'svn-errorbox' },
         h('span', null, props.error),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, '重试'),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, t('重试')),
       ) : null,
 
       h('div', { className: 'svn-history' },
         h('div', { className: 'svn-log' },
           h('div', { className: 'svn-log-list' },
-            props.loading && !log ? h('div', { className: 'svn-loading' }, h(Spinner), '读取提交历史…') : null,
+            props.loading && !log ? h('div', { className: 'svn-loading' }, h(Spinner), t('读取提交历史…')) : null,
             !props.loading && log && entries.length === 0 ? h(Empty, {
               icon: '⌗',
-              title: '没有匹配的提交记录',
-              hint: '试试放宽作者 / 关键词 / 日期，或清空「限定路径」。',
+              title: t('没有匹配的提交记录'),
+              hint: t('试试放宽作者 / 关键词 / 日期，或清空「限定路径」。'),
             }) : null,
             entries.map((entry) => h('div', {
               key: entry.revision,
@@ -1664,15 +1920,15 @@ export default function activate(ctx) {
             },
               h('span', { className: 'svn-rev' }, 'r' + entry.revision),
               h('div', { className: 'svn-logmain' },
-                h('div', { className: 'svn-logmsg' }, firstLine(entry.message) || '(无提交信息)'),
+                h('div', { className: 'svn-logmsg' }, firstLine(entry.message) || t('(无提交信息)')),
                 h('div', { className: 'svn-logmeta' },
-                  (entry.author || '(无作者)') + ' · ' + fmtDate(entry.date),
+                  (entry.author || t('(无作者)')) + ' · ' + fmtDate(entry.date),
                 ),
               ),
             )),
             log && log.hasMore ? h('div', { className: 'svn-logmore' },
               h('button', { type: 'button', className: 'svn-btn small', onClick: props.onLoadMore, disabled: props.loading },
-                props.loading ? '加载中…' : '加载更早的提交'),
+                props.loading ? t('加载中…') : t('加载更早的提交')),
             ) : null,
           ),
         ),
@@ -1684,7 +1940,7 @@ export default function activate(ctx) {
             onPathDiff: props.onPathDiff,
             onPathBlame: props.onPathBlame,
           }) : h('div', { className: 'svn-detail-empty' },
-            h('div', null, '选择左侧的一条提交记录', h('br'), '查看提交信息、改动文件与版本差异'),
+            h('div', null, t('选择左侧的一条提交记录'), h('br'), t('查看提交信息、改动文件与版本差异')),
           ),
         ),
       ),
@@ -1696,23 +1952,23 @@ export default function activate(ctx) {
     return h('div', null,
       h('div', { className: 'svn-detail-head' },
         h('span', { className: 'svn-rev' }, 'r' + entry.revision),
-        h('span', { className: 'svn-detail-author' }, entry.author || '(无作者)'),
+        h('span', { className: 'svn-detail-author' }, entry.author || t('(无作者)')),
         h('span', { className: 'svn-detail-date' }, fmtDate(entry.date)),
         h('div', { style: { marginLeft: 'auto', display: 'flex', gap: 5 } },
           h('button', {
-            type: 'button', className: 'svn-btn small', title: '复制版本号',
+            type: 'button', className: 'svn-btn small', title: t('复制版本号'),
             onClick: () => copyText(String(entry.revision)),
-          }, '复制版本'),
-          h('button', { type: 'button', className: 'svn-btn small primary', onClick: () => props.onRevisionDiff(entry) }, '查看此版本差异'),
+          }, t('复制版本')),
+          h('button', { type: 'button', className: 'svn-btn small primary', onClick: () => props.onRevisionDiff(entry) }, t('查看此版本差异')),
         ),
       ),
-      h('pre', { className: 'svn-msg' }, entry.message || '(无提交信息)'),
-      entry.loading ? h('div', { className: 'svn-hint', role: 'status' }, '正在读取改动路径…') : null,
+      h('pre', { className: 'svn-msg' }, entry.message || t('(无提交信息)')),
+      entry.loading ? h('div', { className: 'svn-hint', role: 'status' }, t('正在读取改动路径…')) : null,
       entry.error ? h('div', { className: 'svn-errorbox' },
         h('span', null, entry.error),
-        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, '重试'),
+        h('button', { type: 'button', className: 'svn-btn small', onClick: props.onRetry }, t('重试')),
       ) : null,
-      !entry.loading && !entry.error ? h('div', { className: 'svn-section' }, '改动文件 ' + (entry.paths ? entry.paths.length : 0)) : null,
+      !entry.loading && !entry.error ? h('div', { className: 'svn-section' }, t('改动文件 ') + (entry.paths ? entry.paths.length : 0)) : null,
       entry.paths && entry.paths.length ? h('div', { className: 'svn-pathlist' },
         entry.paths.map((item, index) => {
           const action = actionMeta(item.action)
@@ -1720,20 +1976,20 @@ export default function activate(ctx) {
             key: index + ':' + item.path,
             className: 'svn-pathrow',
             onClick: () => props.onPathDiff(entry, item),
-            title: '查看该文件在此版本中的差异',
+            title: t('查看该文件在此版本中的差异'),
           },
             h('span', { className: 'svn-action', style: { background: action.bg, color: action.color } }, item.action),
             h('span', { className: 'svn-path' }, item.path),
-            item.copyFrom ? h('span', { className: 'svn-tag', title: '复制自 ' + item.copyFrom + '@' + item.copyFromRev }, 'copy') : null,
+            item.copyFrom ? h('span', { className: 'svn-tag', title: t('复制自 ') + item.copyFrom + '@' + item.copyFromRev }, 'copy') : null,
             h('button', {
               type: 'button', className: 'svn-icon', style: { width: 22, height: 22, fontSize: 10 },
-              title: '查看该版本中此文件的逐行溯源',
+              title: t('查看该版本中此文件的逐行溯源'),
               onClick: (event) => { event.stopPropagation(); props.onPathBlame(entry, item) },
-            }, '溯'),
+            }, t('溯')),
           )
         }),
-      ) : !entry.loading && !entry.error ? h('div', { className: 'svn-hint' }, '这个版本没有记录改动路径。') : null,
-      h('div', { className: 'svn-hint', style: { marginTop: 12 } }, '提示：点文件看该版本中的差异；「溯」按该版本溯源。'),
+      ) : !entry.loading && !entry.error ? h('div', { className: 'svn-hint' }, t('这个版本没有记录改动路径。')) : null,
+      h('div', { className: 'svn-hint', style: { marginTop: 12 } }, t('提示：点文件看该版本中的差异；「溯」按该版本溯源。')),
     )
   }
 
@@ -1750,9 +2006,9 @@ export default function activate(ctx) {
       return h('div', { className: 'svn-view' },
         h('div', { className: 'svn-diff-head' },
           h('span', { className: 'svn-diff-title' }, state.title),
-          props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, '← 返回') : null,
+          props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, t('← 返回')) : null,
         ),
-        h('div', { className: 'svn-loading' }, h(Spinner), '计算差异…'),
+        h('div', { className: 'svn-loading' }, h(Spinner), t('计算差异…')),
       )
     }
 
@@ -1760,7 +2016,7 @@ export default function activate(ctx) {
       return h('div', { className: 'svn-view' },
         h('div', { className: 'svn-diff-head' },
           h('span', { className: 'svn-diff-title' }, state.title),
-          props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, '← 返回') : null,
+          props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, t('← 返回')) : null,
         ),
         h('div', { className: 'svn-errorbox' }, h('span', null, state.error)),
       )
@@ -1772,29 +2028,29 @@ export default function activate(ctx) {
 
     return h('div', { className: 'svn-view svn-diff' },
       h('div', { className: 'svn-diff-head' },
-        props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, '← 返回') : null,
+        props.onBack ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, t('← 返回')) : null,
         h('span', { className: 'svn-diff-title', title: state.title }, state.title),
         data.relPath ? h('span', { className: 'svn-muted' }, data.relPath) : null,
         h('span', { className: 'svn-stat add' }, '+' + (data.additions || 0)),
         h('span', { className: 'svn-stat del' }, '-' + (data.deletions || 0)),
-        data.truncated ? h('span', { className: 'svn-tag' }, '已截断') : null,
+        data.truncated ? h('span', { className: 'svn-tag' }, t('已截断')) : null,
         h('div', { style: { marginLeft: 'auto', display: 'flex', gap: 5 } },
-          props.onBlame && data.relPath && !data.synthesized ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBlame, title: '查看该文件的逐行溯源' }, '溯源') : null,
-          h('button', { type: 'button', className: 'svn-btn small', onClick: () => copyText(data.diff || '') }, '复制差异'),
-          h('button', { type: 'button', className: 'svn-btn small' + (wrap ? ' primary' : ''), onClick: () => setWrap(!wrap) }, '换行'),
+          props.onBlame && data.relPath && !data.synthesized ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBlame, title: t('查看该文件的逐行溯源') }, t('溯源')) : null,
+          h('button', { type: 'button', className: 'svn-btn small', onClick: () => copyText(data.diff || '') }, t('复制差异')),
+          h('button', { type: 'button', className: 'svn-btn small' + (wrap ? ' primary' : ''), onClick: () => setWrap(!wrap) }, t('换行')),
         ),
       ),
-      data.binary ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, '文件被标记为二进制，文本差异无法显示。') : null,
-      data.outsideWc ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, '该路径不在当前工作副本内，显示的是整个版本的差异。') : null,
-      data.synthesized ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, '该文件未纳入版本控制，下面按「新增」展示工作副本内容。') : null,
-      data.empty ? h(Empty, { icon: '≡', title: '没有差异', hint: '工作副本与版本库在这一范围里内容一致。' }) : h('div', { className: 'svn-diff-body' + (wrap ? ' wrap' : '') },
+      data.binary ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, t('文件被标记为二进制，文本差异无法显示。')) : null,
+      data.outsideWc ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, t('该路径不在当前工作副本内，显示的是整个版本的差异。')) : null,
+      data.synthesized ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } }, t('该文件未纳入版本控制，下面按「新增」展示工作副本内容。')) : null,
+      data.empty ? h(Empty, { icon: '≡', title: t('没有差异'), hint: t('工作副本与版本库在这一范围里内容一致。') }) : h('div', { className: 'svn-diff-body' + (wrap ? ' wrap' : '') },
         shown.map((line, index) => h('div', { key: index, className: 'svn-dline ' + line.type },
           h('span', { className: 'svn-dno' }, line.oldNo === undefined ? '' : line.oldNo),
           h('span', { className: 'svn-dno' }, line.newNo === undefined ? '' : line.newNo),
           h('span', { className: 'svn-dtext' }, line.text === '' ? ' ' : line.text),
         )),
         lines.length > shown.length ? h('div', { className: 'svn-hint', style: { padding: '8px 12px' } },
-          '差异共 ' + lines.length + ' 行，仅显示前 ' + shown.length + ' 行；完整内容可复制。',
+          t('差异共 ') + lines.length + t(' 行，仅显示前 ') + shown.length + t(' 行；完整内容可复制。'),
         ) : null,
       ),
     )
@@ -1805,13 +2061,13 @@ export default function activate(ctx) {
     if (!state) return null
 
     const header = (right) => h('div', { className: 'svn-diff-head' },
-      h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, '← 返回'),
+      h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBack }, t('← 返回')),
       h('span', { className: 'svn-diff-title' }, 'blame · ' + state.label),
       right || null,
     )
 
     if (state.loading) {
-      return h('div', { className: 'svn-view' }, header(), h('div', { className: 'svn-loading' }, h(Spinner), '逐行溯源…'))
+      return h('div', { className: 'svn-view' }, header(), h('div', { className: 'svn-loading' }, h(Spinner), t('逐行溯源…')))
     }
     if (state.error) {
       return h('div', { className: 'svn-view' }, header(), h('div', { className: 'svn-errorbox' }, h('span', null, state.error)))
@@ -1821,22 +2077,22 @@ export default function activate(ctx) {
     const lines = (data.lines || []).slice(0, 3000)
     return h('div', { className: 'svn-view svn-blame' },
       header(h(React.Fragment, null,
-        data.remote ? h('span', { className: 'svn-tag', title: '该文件按仓库版本溯源，不含本地未提交的改动' }, '仓库版本') : null,
-        h('span', { className: 'svn-muted' }, data.total + ' 行'),
+        data.remote ? h('span', { className: 'svn-tag', title: t('该文件按仓库版本溯源，不含本地未提交的改动') }, t('仓库版本')) : null,
+        h('span', { className: 'svn-muted' }, data.total + t(' 行')),
       )),
       h('div', { className: 'svn-blame-body' },
         lines.map((line) => h('div', { key: line.line, className: 'svn-blame-row' },
           h('span', { className: 'svn-blame-no' }, line.line),
           h('span', {
             className: 'svn-blame-rev',
-            title: line.revision ? '查看 r' + line.revision + ' 的差异' : '本地未提交的改动',
+            title: line.revision ? t('查看 r') + line.revision + t(' 的差异') : t('本地未提交的改动'),
             onClick: () => { if (line.revision && props.onRevisionDiff) props.onRevisionDiff(line.revision) },
           }, line.revision ? 'r' + line.revision : '-'),
           h('span', { className: 'svn-blame-author', title: line.author || '' }, line.author || '-'),
           h('span', { className: 'svn-blame-text' }, line.text === '' ? ' ' : line.text),
         )),
         (data.lines || []).length > lines.length ? h('div', { className: 'svn-hint', style: { padding: 8 } },
-          '共 ' + data.total + ' 行，仅显示前 ' + lines.length + ' 行。',
+          t('共 ') + data.total + t(' 行，仅显示前 ') + lines.length + t(' 行。'),
         ) : null,
       ),
     )
@@ -1849,36 +2105,36 @@ export default function activate(ctx) {
   function TargetPaths({ paths, hidden }) {
     if (!paths.length) return null
     return h('details', { open: true },
-      h('summary', null, '操作路径（' + paths.length + ' 项' +
-        (hidden ? '，其中 ' + hidden + ' 项当前不可见' : '') + '）'),
+      h('summary', null, t('操作路径（') + paths.length + t(' 项') +
+        (hidden ? t('，其中 ') + hidden + t(' 项当前不可见') : '') + '）'),
       h('pre', { className: 'svn-msg', style: { maxHeight: 160 } }, paths.join('\n')),
     )
   }
 
   function CommitDialog(props) {
     return h(Modal, {
-      title: '提交 ' + props.paths.length + ' 项',
+      title: t('提交 ') + props.paths.length + t(' 项'),
       width: 640,
       onClose: props.onClose,
       footer: h(React.Fragment, null,
-        h('button', { type: 'button', className: 'svn-btn', onClick: props.onClose, disabled: !!props.busy }, '取消'),
+        h('button', { type: 'button', className: 'svn-btn', onClick: props.onClose, disabled: !!props.busy }, t('取消')),
         h('button', {
           type: 'button',
           className: 'svn-btn primary',
           onClick: props.onSubmit,
           disabled: !!props.busy || !props.paths.length || !props.message.trim(),
-        }, props.busy || '提交'),
+        }, props.busy || t('提交')),
       ),
     },
       h(TargetPaths, { paths: props.paths, hidden: props.hidden }),
       props.excluded.length ? h('details', { open: true },
-        h('summary', null, props.excluded.length + ' 项已排除'),
+        h('summary', null, props.excluded.length + t(' 项已排除')),
         h('ul', { className: 'svn-commit-list' }, props.excluded.map(({ path, reason }) =>
           h('li', { key: path }, path + '（' + reason + '）'))),
       ) : null,
       h('textarea', {
         className: 'svn-textarea',
-        placeholder: '提交信息（必填）…  Ctrl+Enter 提交',
+        placeholder: t('提交信息（必填）…  Ctrl+Enter 提交'),
         value: props.message,
         autoFocus: true,
         onChange: (event) => props.setMessage(event.target.value),
@@ -1886,7 +2142,7 @@ export default function activate(ctx) {
           if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') props.onSubmit()
         },
       }),
-      h('div', { className: 'svn-hint' }, '提交信息以 UTF-8 写入仓库；提交失败时工作副本保持原样。'),
+      h('div', { className: 'svn-hint' }, t('提交信息以 UTF-8 写入仓库；提交失败时工作副本保持原样。')),
     )
   }
 
@@ -1894,23 +2150,23 @@ export default function activate(ctx) {
     const [value, setValue] = useState(action.value)
     const switching = action.kind === 'switch'
     return h(Modal, {
-      title: switching ? '切换分支／标签' : '查询文件锁',
+      title: switching ? t('切换分支／标签') : t('查询文件锁'),
       width: 500,
       onClose,
       footer: h('button', { type: 'button', className: 'svn-btn primary',
         disabled: !!busy || !value.trim(),
         onClick: () => onSubmit(switching ? value.trim() : value),
-      }, busy || (switching ? '切换' : '查询')),
+      }, busy || (switching ? t('切换') : t('查询'))),
     },
-    switching ? h('div', null, '当前：' + (current.relativeUrl || current.url)) : null,
-    h('label', null, switching ? '目标仓库路径' : '文件相对工作副本根目录的路径',
+    switching ? h('div', null, t('当前：') + (current.relativeUrl || current.url)) : null,
+    h('label', null, switching ? t('目标仓库路径') : t('文件相对工作副本根目录的路径'),
       h('input', {
         className: 'svn-input', value, disabled: !!busy,
-        placeholder: switching ? '^/branches/release 或 ^/tags/v1.0' : 'docs/design.docx',
+        placeholder: switching ? t('^/branches/release 或 ^/tags/v1.0') : 'docs/design.docx',
         onChange: (event) => setValue(event.target.value),
       }),
     ),
-    switching ? h('div', { className: 'svn-hint' }, '切换前请提交或还原本地变更。') : null)
+    switching ? h('div', { className: 'svn-hint' }, t('切换前请提交或还原本地变更。')) : null)
   }
 
   function ConflictView({ api, wc, conflicts, path, onSelect, onResolve, busy, loading, error }) {
@@ -1918,7 +2174,7 @@ export default function activate(ctx) {
     const entry = conflicts.find((item) => item.path === path) || conflicts[0]
     return entry ? h('div', { className: 'svn-view' },
       h('div', { className: 'svn-toolbar' },
-        h('label', null, '冲突路径 ',
+        h('label', null, t('冲突路径 '),
           h('select', { className: 'svn-input', value: entry.path, disabled: !!busy,
             onChange: (event) => onSelect(event.target.value),
           }, conflicts.map((item) => h('option', { key: item.path, value: item.path }, item.path))),
@@ -1926,7 +2182,7 @@ export default function activate(ctx) {
       ),
       h(ConflictDetails, { key: JSON.stringify([entry.path, entry.item, entry.props, entry.treeConflicted]),
         api, wc, entry, onResolve, busy: busy || loading }),
-    ) : h(Empty, { icon: '✓', title: loading ? '正在读取冲突…' : '没有未解决的冲突' })
+    ) : h(Empty, { icon: '✓', title: loading ? t('正在读取冲突…') : t('没有未解决的冲突') })
   }
 
   function ConflictDetails({ api, wc, entry, onResolve, busy }) {
@@ -1954,22 +2210,22 @@ export default function activate(ctx) {
     }, [api, wc, entry.path, entry.treeConflicted, incoming])
     return h(React.Fragment, null,
       h('div', { className: 'svn-toolbar' },
-        h('span', null, [entry.item === 'conflicted' && '内容冲突', entry.props === 'conflicted' && '属性冲突',
-          entry.treeConflicted && '树冲突'].filter(Boolean).join(' · ')),
+        h('span', null, [entry.item === 'conflicted' && t('内容冲突'), entry.props === 'conflicted' && t('属性冲突'),
+          entry.treeConflicted && t('树冲突')].filter(Boolean).join(' · ')),
         h('select', { className: 'svn-input', value: accept, disabled: !!busy,
-          'aria-label': '解决方式', onChange: (event) => setAccept(event.target.value),
+          'aria-label': t('解决方式'), onChange: (event) => setAccept(event.target.value),
         },
-        h('option', { value: '' }, '选择解决方式'),
-        h('option', { value: 'working' }, '已手工处理，保留当前状态'),
-        text && entry.props !== 'conflicted' ? h('option', { value: 'mine-full' }, '覆盖为冲突前的本地版本') : null,
-        text && entry.props !== 'conflicted' ? h('option', { value: 'theirs-full' }, '覆盖为传入版本') : null),
+        h('option', { value: '' }, t('选择解决方式')),
+        h('option', { value: 'working' }, t('已手工处理，保留当前状态')),
+        text && entry.props !== 'conflicted' ? h('option', { value: 'mine-full' }, t('覆盖为冲突前的本地版本')) : null,
+        text && entry.props !== 'conflicted' ? h('option', { value: 'theirs-full' }, t('覆盖为传入版本')) : null),
         h('button', { type: 'button', className: 'svn-btn primary', disabled: !!busy || !accept,
           onClick: () => onResolve(entry, accept),
-        }, '确认解决'),
+        }, t('确认解决')),
       ),
       h('div', { className: 'svn-hint' }, entry.treeConflicted
-        ? '请先在工作副本中处理文件或目录的结构冲突，再确认解决。'
-        : '查看差异中的冲突标记。保留当前状态前，请先手工移除冲突标记。'),
+        ? t('请先在工作副本中处理文件或目录的结构冲突，再确认解决。')
+        : t('查看差异中的冲突标记。保留当前状态前，请先手工移除冲突标记。')),
       details?.error ? h('div', { className: 'svn-errorbox' }, details.error) : null,
       details?.data?.map((item, index) => h('div', { key: index, className: 'svn-hint' },
         [item.operation, item.action, item.reason, ...item.versions].filter(Boolean).join(' · '))),
@@ -1977,18 +2233,24 @@ export default function activate(ctx) {
         h('button', { type: 'button', className: 'svn-btn small', onClick: () => {
           setDiff({ loading: true })
           setIncoming(!incoming)
-        } }, incoming ? '查看工作副本差异' : '查看传入改动'),
+        } }, incoming ? t('查看工作副本差异') : t('查看传入改动')),
       ) : null,
       !entry.treeConflicted ? h(DiffView, {
-        diff: { ...diff, title: entry.path + (incoming ? ' · 传入改动' : ' · 工作副本与 BASE') },
+        diff: { ...diff, title: entry.path + (incoming ? t(' · 传入改动') : t(' · 工作副本与 BASE')) },
       }) : null,
     )
   }
 
   function WorkspacePanel() {
+    const [, setLocale] = useState(ctx.host?.locale)
+    useEffect(() => {
+      const observer = new window.MutationObserver(() => setLocale(ctx.host?.locale))
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
+      return () => observer.disconnect()
+    }, [])
     const [workspaces, setWorkspaces] = useState([])
     const [workspacePath, setWorkspacePath] = useState('')
-    const [message, setMessage] = useState('正在读取工作区…')
+    const [message, setMessage] = useState(t('正在读取工作区…'))
     const api = useMemo(() => makeApi(workspacePath), [workspacePath])
 
     useEffect(() => {
@@ -1999,16 +2261,16 @@ export default function activate(ctx) {
         localRows.sort((left, right) => (right.lastOpenedAt ?? 0) - (left.lastOpenedAt ?? 0))
         setWorkspaces(localRows)
         setWorkspacePath(localRows[0]?.path || '')
-        setMessage(localRows.length ? '' : '请先在 CC GUI 添加本机 SVN 工作区。')
+        setMessage(localRows.length ? '' : t('请先在 CC GUI 添加本机 SVN 工作区。'))
       }).catch((error) => {
-        if (active) setMessage('读取工作区失败：' + error.message)
+        if (active) setMessage(t('读取工作区失败：') + error.message)
       })
       return () => { active = false }
     }, [])
 
     return h('div', { className: 'svn-root svn-center' },
       workspaces.length ? h('label', { className: 'svn-workspace-picker' },
-        h('span', { className: 'svn-side-title' }, '工作区'),
+        h('span', { className: 'svn-side-title' }, t('工作区')),
         h('select', {
           className: 'svn-input',
           value: workspacePath,
@@ -2019,7 +2281,7 @@ export default function activate(ctx) {
     )
   }
 
-  const label = () => 'SVN 管理面板'
+  const label = () => t('SVN 管理面板')
   ctx.ui.registerCenterTab({ key: 'svn', title: label, component: WorkspacePanel })
   ctx.ui.registerSidebarNav({
     key: 'svn',
