@@ -31,4 +31,6 @@
 
 在插件目录执行 `npm ci --prefix test` 和 `npm test --prefix test`。需要 Node.js 22.12 或 24 以上版本，以及 `svn`、`svnadmin`。测试使用模拟的 CC GUI 宿主和自动清理的本地 SVN 仓库。
 
-遵循 [MIT 许可证](LICENSE)。
+插件读取 CC GUI 登记的工作区，并通过宿主运行本机 `svn`。界面和主题权限仅用于面板和样式。插件没有独立的上传服务，仓库访问由本机 SVN 客户端发起。
+
+本项目改编自 [EastChilde/dsh-svn](https://github.com/EastChilde/dsh-svn)，遵循 [MIT 许可证](LICENSE)。
