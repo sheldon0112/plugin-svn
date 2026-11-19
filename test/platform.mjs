@@ -17,7 +17,7 @@ test('Windows 盘符、UNC、大小写、分隔符及越界路径', () => {
   assert.equal(relativePath('\\\\server\\share\\wc', '//SERVER/share/wc/a'), 'a')
   assert.equal(pathKey('C:\\Work\\'), pathKey('c:/work'))
   assert.equal(localPath('C:\\Work\\', 'src\\中文 @.txt'), 'C:/Work/src/中文 @.txt')
-  for (const rel of ['C:foo', '../a', '..\\a', 'NUL.txt', 'aux', 'COM1.log', 'a:b', 'a?', 'a*', 'a.', 'a ', 'x\0y', 'x\ny']) {
+  for (const rel of ['C:foo', '../a', '..\\a', 'NUL.txt', 'aux', 'COM1.log', 'COM¹.txt', 'x\ty', 'a:b', 'a?', 'a*', 'a.', 'a ', 'x\0y', 'x\ny']) {
     assert.throws(() => localPath('C:\\Work', rel), undefined, rel)
   }
   assert.equal(localPath('/Users/Wc', 'a?'), '/Users/Wc/a?')

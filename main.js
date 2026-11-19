@@ -576,7 +576,7 @@ export default function activate(ctx) {
     const windows = isWindowsPath(root)
     const value = windows ? rel.replace(/\\/g, '/') : rel
     if (isAbsolute(value) || /^[a-z]:/i.test(value) || value.split('/').includes('..') || /[\0\r\n]/.test(value) ||
-        (windows && value.split('/').some((part) => part !== '.' && (/[<>:"|?*]/.test(part) || /[ .]$/.test(part) || /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(part))))) {
+        (windows && value.split('/').some((part) => part !== '.' && (/[<>:"|?*\x00-\x1f]/.test(part) || /[ .]$/.test(part) || /^(?:con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³])(?:\.|$)/i.test(part))))) {
       throw new Error(t('请输入工作副本内的相对路径'))
     }
     return value && value !== '.' ? normalizedPath(root) + '/' + value : root
@@ -708,7 +708,7 @@ export default function activate(ctx) {
         if (writes.has(pathKey(options.directory))) throw new Error(t('当前工作副本正在执行 SVN 操作'))
         writes.add(pathKey(options.directory))
         try {
-          await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), options.directory])
+          await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), isWindowsPath(options.directory) ? target(options.directory) : options.directory])
           try { await ctx.workspaces.add(options.directory) } catch (error) {
             throw new Error(t("检出成功，但登记工作区失败；请手工添加此目录。") + diagnose(error))
           }
