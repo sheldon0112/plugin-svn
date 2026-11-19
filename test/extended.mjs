@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { pathToFileURL } from 'node:url'
 import { test, after } from 'node:test'
@@ -45,6 +45,7 @@ test('真实仓库：检出、特殊路径、提交隔离、属性、忽略、�
   const api = ctx.testApi(wc)
   await api('/checkout', { url: repo + '/trunk', directory: wc, revision: 'HEAD' })
   assert.ok(calls.some((item) => item.registered === wc))
+  if (process.platform === 'win32') console.log('检出目录诊断', JSON.stringify({ temp, wc, entries: readdirSync(temp) }))
   await api('/state')
   const ignoredName = process.platform === 'win32' ? 'x[1].tmp' : 'x[1]*?.tmp'
   const names = ['a@b.txt', optionName, unselected, 'binary.dat']
