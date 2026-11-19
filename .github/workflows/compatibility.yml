@@ -1,0 +1,41 @@
+name: Cross-platform regression
+on:
+  push:
+    branches: ['compat/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: test/package-lock.json
+      - name: Install SVN on macOS
+        if: runner.os == 'macOS'
+        run: brew install subversion
+      - name: Install SVN on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install sliksvn --yes --no-progress
+          "C:\Program Files\SlikSvn\bin" >> $env:GITHUB_PATH
+      - run: node --version
+      - run: svn --version --quiet
+      - run: svnadmin --version --quiet
+      - id: dependencies
+        run: npm ci --prefix test
+      - name: Regression round 1
+        run: npm test --prefix test
+      - name: Regression round 2
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        run: npm test --prefix test

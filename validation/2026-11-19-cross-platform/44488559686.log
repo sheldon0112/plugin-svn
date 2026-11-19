@@ -1,0 +1,735 @@
+regression (macos-latest)	Set up job	﻿2026-11-19T08:33:12.1248780Z Current runner version: '2.338.2'
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1266740Z ##[group]Runner Image Provisioner
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1267460Z Hosted Compute Agent
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1267890Z Version: 20261028.624
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1268320Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1268780Z Build Date: 2026-10-28T21:51:42Z
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1269210Z Worker ID: {dc8a2029-edb0-4c91-95c4-024e56e404ce}
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1269680Z Region: westus
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1270060Z Cloud: MacCloud
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1270890Z ##[endgroup]
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1272070Z ##[group]Operating System
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1272580Z macOS
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1272920Z 26.7.2
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1273260Z 25G332
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1273590Z ##[endgroup]
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1273980Z ##[group]Runner Image
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1275380Z Image: macos-26-arm64
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1275930Z Version: 20261102.0473.1
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1276760Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20261102.0473/images/macos/macos-26-arm64-Readme.md
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1277990Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20261102.0473
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1278650Z ##[endgroup]
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1279820Z ##[group]GITHUB_TOKEN Permissions
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1281230Z Contents: read
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1281600Z Metadata: read
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1281950Z ##[endgroup]
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1283490Z Secret source: Actions
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1284040Z Cache mode: write
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1284540Z Prepare workflow directory
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1611020Z Prepare all required actions
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.1650610Z Getting action download info
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.3321790Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.5961810Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+regression (macos-latest)	Set up job	2026-11-19T08:33:12.8005790Z Complete job name: regression (macos-latest)
+regression (macos-latest)	Run actions/checkout@v4	﻿2026-11-19T08:33:12.8688340Z ##[group]Run actions/checkout@v4
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8689240Z with:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8689890Z   repository: sheldon0112/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8694540Z   token: ***
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8694940Z   ssh-strict: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8695810Z   ssh-user: git
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8696160Z   persist-credentials: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8697090Z   clean: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8697680Z   sparse-checkout-cone-mode: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8698590Z   fetch-depth: 1
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8699130Z   fetch-tags: false
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8699860Z   show-progress: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8700430Z   lfs: false
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8700780Z   submodules: false
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8701130Z   set-safe-directory: true
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8701530Z   allow-unsafe-pr-checkout: false
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:12.8702570Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4711950Z Syncing repository: sheldon0112/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4714610Z ##[group]Getting Git version info
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4718410Z Working directory is '/Users/runner/work/plugin-svn/plugin-svn'
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4723190Z [command]/opt/homebrew/bin/git version
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5287060Z git version 2.56.0
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5315730Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5321250Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/5346fa8a-e9bc-4f3b-b8b3-5357798b970a/.gitconfig'
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5322460Z Temporarily overriding HOME='/Users/runner/work/_temp/5346fa8a-e9bc-4f3b-b8b3-5357798b970a' before making global git config changes
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5324100Z Adding repository directory to the temporary git global config as a safe directory
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5325200Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/plugin-svn/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5492210Z Deleting the contents of '/Users/runner/work/plugin-svn/plugin-svn'
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5497860Z ##[group]Initializing the repository
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5500710Z [command]/opt/homebrew/bin/git init /Users/runner/work/plugin-svn/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5774090Z hint: Using 'master' as the name for the initial branch. This default branch name
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5775180Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5777550Z hint: to use in all of your new repositories, which will suppress this warning,
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5778430Z hint: call:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5778860Z hint:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5779750Z hint: 	git config --global init.defaultBranch <name>
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5780300Z hint:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5780720Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5781550Z hint: 'development'. The just-created branch can be renamed via this command:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5782350Z hint:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5782700Z hint: 	git branch -m <name>
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5783060Z hint:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5783540Z hint: Disable this message with "git config set advice.defaultBranchName false"
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5787290Z Initialized empty Git repository in /Users/runner/work/plugin-svn/plugin-svn/.git/
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5795990Z [command]/opt/homebrew/bin/git remote add origin https://github.com/sheldon0112/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5877520Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5878350Z ##[group]Disabling automatic garbage collection
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5880170Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5945110Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5946590Z ##[group]Setting up auth
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5948910Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.6021130Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.7309260Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.7406200Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.8371060Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.8513100Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9311600Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9384250Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9385450Z ##[group]Fetching the repository
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9390780Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0224e2f0d3cd600a2cc50de99f75c0276d7e959d:refs/remotes/origin/compat/windows-macos-20261119
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6189060Z From https://github.com/sheldon0112/plugin-svn
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6191020Z  * [new ref]         0224e2f0d3cd600a2cc50de99f75c0276d7e959d -> origin/compat/windows-macos-20261119
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6194200Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6195190Z ##[group]Determining the checkout info
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6196340Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6197680Z [command]/opt/homebrew/bin/git sparse-checkout disable
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6317050Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6393320Z ##[group]Checking out the ref
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6396120Z [command]/opt/homebrew/bin/git checkout --progress --force -B compat/windows-macos-20261119 refs/remotes/origin/compat/windows-macos-20261119
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6615860Z Switched to a new branch 'compat/windows-macos-20261119'
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6628740Z branch 'compat/windows-macos-20261119' set up to track 'origin/compat/windows-macos-20261119'.
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6636540Z ##[endgroup]
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6771070Z [command]/opt/homebrew/bin/git log -1 --format=%H
+regression (macos-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.6858590Z 0224e2f0d3cd600a2cc50de99f75c0276d7e959d
+regression (macos-latest)	Run actions/setup-node@v4	﻿2026-11-19T08:33:14.7184690Z ##[group]Run actions/setup-node@v4
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7185080Z with:
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7185280Z   node-version: 22
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7185470Z   cache: npm
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7185670Z   cache-dependency-path: test/package-lock.json
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7185940Z   always-auth: false
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7186130Z   check-latest: false
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7189230Z   token: ***
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.7189550Z ##[endgroup]
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.9106080Z Found in cache @ /Users/runner/hostedtoolcache/node/22.23.4/arm64
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.9113270Z (node:1655) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.9114100Z (Use `node --trace-deprecation ...` to show where the warning was created)
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:14.9117850Z ##[group]Environment details
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:15.7946660Z node: v22.23.4
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:15.8041230Z npm: 10.9.9
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:15.8064630Z yarn: 1.22.22
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:15.8065750Z ##[endgroup]
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:15.8066240Z [command]/Users/runner/hostedtoolcache/node/22.23.4/arm64/bin/npm config get cache
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.0120250Z /Users/runner/.npm
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.1268940Z Cache hit for: node-cache-macOS-arm64-npm-7c78aada3bb7657a480f226e96e623dd7076161b1aa32f018ee02657b1d17a84
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.1399690Z (node:1655) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.2780530Z Received 5072801 of 5072801 (100.0%), 46.1 MBs/sec
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.2793070Z Cache Size: ~5 MB (5072801 B)
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.2825230Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/9be580f8-96fe-4016-9f13-f43f6abf7746/cache.tzst -P -C /Users/runner/work/plugin-svn/plugin-svn --delay-directory-restore --use-compress-program unzstd
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.3355060Z Cache restored successfully
+regression (macos-latest)	Run actions/setup-node@v4	2026-11-19T08:33:16.3360390Z Cache restored from key: node-cache-macOS-arm64-npm-7c78aada3bb7657a480f226e96e623dd7076161b1aa32f018ee02657b1d17a84
+regression (macos-latest)	Install SVN on macOS	﻿2026-11-19T08:33:16.3534650Z ##[group]Run brew install subversion
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:16.3535090Z ^[[36;1mbrew install subversion^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:16.3586170Z shell: /bin/bash -e {0}
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:16.3586470Z ##[endgroup]
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.5320130Z ^[[32m==>^[[0m ^[[1mDownloading bottle manifests^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.5368590Z ✔︎ Bottle Manifest subversion (1.15.0)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6175990Z ^[[34m==>^[[0m ^[[1mWould install 1 formula:^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6176590Z subversion 1.15.0
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6183730Z ^[[34m==>^[[0m ^[[1mWould install 4 dependencies for subversion:^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6184840Z apr          1.7.6
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6185700Z apr-util     1.6.5_1
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6186720Z apache-serf  1.3.10_1
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.6187580Z utf8proc     2.12.0
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:19.7411410Z ^[[32m==>^[[0m ^[[1mFetching downloads for: ^[[32msubversion^[[39m^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:20.0567520Z ✔︎ Bottle Manifest apr (1.7.6)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:20.4002670Z ✔︎ Bottle Manifest apr-util (1.6.5_1)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:20.4128140Z ✔︎ Bottle Manifest apache-serf (1.3.10_1)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:20.4207770Z ✔︎ Bottle Manifest utf8proc (2.12.0)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:22.6992030Z ✔︎ Bottle subversion (1.15.0)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:22.7595660Z ✔︎ Bottle apr (1.7.6)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:22.7709470Z ✔︎ Bottle apr-util (1.6.5_1)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:22.9503480Z ✔︎ Bottle apache-serf (1.3.10_1)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:22.9605630Z ✔︎ Bottle utf8proc (2.12.0)
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:23.0161250Z ^[[32m==>^[[0m ^[[1mInstalling dependencies for subversion:^[[0m ^[[32mapr^[[39m, ^[[32mapr-util^[[39m, ^[[32mapache-serf^[[39m and ^[[32mutf8proc^[[39m^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:23.0264880Z ^[[32m==>^[[0m ^[[1mInstalling subversion dependency: ^[[32mapr^[[39m (1.7.6)^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:23.0355380Z ^[[34m==>^[[0m ^[[1mPouring apr--1.7.6.arm64_tahoe.bottle.tar.gz^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:24.9659760Z 🍺  /opt/homebrew/Cellar/apr/1.7.6: 58 files, 1.5MB
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:24.9667660Z ^[[32m==>^[[0m ^[[1mInstalling subversion dependency: ^[[32mapr-util^[[39m (1.6.5_1)^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:24.9918550Z ^[[34m==>^[[0m ^[[1mPouring apr-util--1.6.5_1.arm64_tahoe.bottle.tar.gz^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:26.6447620Z 🍺  /opt/homebrew/Cellar/apr-util/1.6.5_1: 55 files, 905.6KB
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:26.6450320Z ^[[32m==>^[[0m ^[[1mInstalling subversion dependency: ^[[32mapache-serf^[[39m (1.3.10_1)^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:26.6840770Z ^[[34m==>^[[0m ^[[1mPouring apache-serf--1.3.10_1.arm64_tahoe.bottle.tar.gz^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:28.1658260Z 🍺  /opt/homebrew/Cellar/apache-serf/1.3.10_1: 15 files, 858.9KB
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:28.1660990Z ^[[32m==>^[[0m ^[[1mInstalling subversion dependency: ^[[32mutf8proc^[[39m (2.12.0)^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:28.1697500Z ^[[34m==>^[[0m ^[[1mPouring utf8proc--2.12.0.arm64_tahoe.bottle.tar.gz^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:29.4943610Z 🍺  /opt/homebrew/Cellar/utf8proc/2.12.0: 15 files, 461.5KB
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:29.4953780Z ^[[32m==>^[[0m ^[[1mInstalling ^[[32msubversion^[[39m^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:29.4957640Z ^[[34m==>^[[0m ^[[1mPouring subversion--1.15.0.arm64_tahoe.bottle.1.tar.gz^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7410310Z 🍺  /opt/homebrew/Cellar/subversion/1.15.0: 221 files, 30.5MB
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7416650Z ^[[32m==>^[[0m ^[[1mCaveats^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7523170Z Bash completion has been installed to:
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7528630Z   /opt/homebrew/etc/bash_completion.d
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7533060Z ^[[34m==>^[[0m ^[[1msubversion^[[0m
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7533730Z svntools have been installed to:
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7534010Z   /opt/homebrew/opt/subversion/libexec
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7534190Z 
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7534420Z The perl bindings are located in various subdirectories of:
+regression (macos-latest)	Install SVN on macOS	2026-11-19T08:33:31.7534860Z   /opt/homebrew/opt/subversion/lib/perl5
+regression (macos-latest)	Run node --version	﻿2026-11-19T08:33:31.7618940Z ##[group]Run node --version
+regression (macos-latest)	Run node --version	2026-11-19T08:33:31.7619250Z ^[[36;1mnode --version^[[0m
+regression (macos-latest)	Run node --version	2026-11-19T08:33:31.7664700Z shell: /bin/bash -e {0}
+regression (macos-latest)	Run node --version	2026-11-19T08:33:31.7664950Z ##[endgroup]
+regression (macos-latest)	Run node --version	2026-11-19T08:33:31.8742630Z v22.23.4
+regression (macos-latest)	Run svn --version --quiet	﻿2026-11-19T08:33:31.8785170Z ##[group]Run svn --version --quiet
+regression (macos-latest)	Run svn --version --quiet	2026-11-19T08:33:31.8785650Z ^[[36;1msvn --version --quiet^[[0m
+regression (macos-latest)	Run svn --version --quiet	2026-11-19T08:33:31.8838190Z shell: /bin/bash -e {0}
+regression (macos-latest)	Run svn --version --quiet	2026-11-19T08:33:31.8838790Z ##[endgroup]
+regression (macos-latest)	Run svn --version --quiet	2026-11-19T08:33:31.9830110Z 1.15.0
+regression (macos-latest)	Run svnadmin --version --quiet	﻿2026-11-19T08:33:32.0066920Z ##[group]Run svnadmin --version --quiet
+regression (macos-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:32.0067300Z ^[[36;1msvnadmin --version --quiet^[[0m
+regression (macos-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:32.0102830Z shell: /bin/bash -e {0}
+regression (macos-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:32.0103060Z ##[endgroup]
+regression (macos-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:32.0544700Z 1.15.0
+regression (macos-latest)	Run npm ci --prefix test	﻿2026-11-19T08:33:32.0590860Z ##[group]Run npm ci --prefix test
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:32.0591200Z ^[[36;1mnpm ci --prefix test^[[0m
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:32.0629880Z shell: /bin/bash -e {0}
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:32.0630160Z ##[endgroup]
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4414580Z 
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4416250Z added 31 packages, and audited 32 packages in 1s
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4416830Z 
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4417230Z 8 packages are looking for funding
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4417860Z   run `npm fund` for details
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4421990Z 
+regression (macos-latest)	Run npm ci --prefix test	2026-11-19T08:33:33.4422270Z found 0 vulnerabilities
+regression (macos-latest)	Regression round 1	﻿2026-11-19T08:33:33.5285580Z ##[group]Run npm test --prefix test
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.5286130Z ^[[36;1mnpm test --prefix test^[[0m
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.5326160Z shell: /bin/bash -e {0}
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.5326450Z ##[endgroup]
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.7139720Z 
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.7140690Z > test
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.7141790Z > node --test regression.mjs extended.mjs platform.mjs
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.7142330Z 
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:33.7770770Z TAP version 13
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:39.0501210Z # svn: warning: W170000: URL 'file:///private/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/ccgui-svn-extended-zMpPXH/repo/trunk/newdir' non-existent in revision 4
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:39.0597740Z # svn: E200009: Could not display info for all targets because some targets don't exist
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1703800Z # Subtest: 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1797430Z ok 1 - 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1798030Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1821850Z   duration_ms: 12811.580666
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1822610Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1823860Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1824860Z # Subtest: 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1825610Z ok 2 - 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1826160Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1826470Z   duration_ms: 33.600875
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1826820Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1827500Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1828250Z # Subtest: 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1829180Z ok 3 - 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1829650Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1830660Z   duration_ms: 1937.189167
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1831130Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1831450Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1832310Z # Subtest: 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1832890Z ok 4 - 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1833640Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1865570Z   duration_ms: 1088.154083
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1906570Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1907300Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1911170Z # Subtest: Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1911900Z ok 5 - Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1912270Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1912670Z   duration_ms: 2.626291
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1959230Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1959930Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1960850Z # Subtest: 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1961760Z ok 6 - 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1962270Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1963320Z   duration_ms: 7.302375
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1963930Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1964280Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1964710Z # Subtest: 面板选择、预览、提交、冲突处理与切换
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1965000Z ok 7 - 面板选择、预览、提交、冲突处理与切换
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1965400Z   ---
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1965820Z   duration_ms: 12092.806084
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1966030Z   type: 'test'
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1966290Z   ...
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1966620Z 1..7
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1966830Z # tests 7
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1967110Z # suites 0
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1967440Z # pass 7
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1968100Z # fail 0
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1968500Z # cancelled 0
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1968930Z # skipped 0
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1969210Z # todo 0
+regression (macos-latest)	Regression round 1	2026-11-19T08:33:50.1969580Z # duration_ms 16423.526291
+regression (macos-latest)	Regression round 2	﻿2026-11-19T08:33:50.2183240Z ##[group]Run npm test --prefix test
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.2183700Z ^[[36;1mnpm test --prefix test^[[0m
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.2242640Z shell: /bin/bash -e {0}
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.2242940Z ##[endgroup]
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.5353230Z 
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.5354480Z > test
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.5355740Z > node --test regression.mjs extended.mjs platform.mjs
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.5356670Z 
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:50.6134640Z TAP version 13
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:56.1165060Z # svn: warning: W170000: URL 'file:///private/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/ccgui-svn-extended-0tPns9/repo/trunk/newdir' non-existent in revision 4
+regression (macos-latest)	Regression round 2	2026-11-19T08:33:56.1168570Z # svn: E200009: Could not display info for all targets because some targets don't exist
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0941170Z # Subtest: 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0944400Z ok 1 - 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0946680Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0947670Z   duration_ms: 13077.072917
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0948810Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0950540Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0952860Z # Subtest: 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0954230Z ok 2 - 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0956980Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0966600Z   duration_ms: 32.545333
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0967370Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.0968120Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1025160Z # Subtest: 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1026030Z ok 3 - 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1026660Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1028070Z   duration_ms: 1891.745375
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1028410Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1028760Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1029430Z # Subtest: 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1030030Z ok 4 - 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1034030Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1034650Z   duration_ms: 1018.13675
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1035010Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1036190Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1221560Z # Subtest: Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1223330Z ok 5 - Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1224310Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1225300Z   duration_ms: 3.384583
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1225660Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1226060Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1226790Z # Subtest: 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1227500Z ok 6 - 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1227950Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1228780Z   duration_ms: 7.991792
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1229500Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1229830Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1230630Z # Subtest: 面板选择、预览、提交、冲突处理与切换
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1231550Z ok 7 - 面板选择、预览、提交、冲突处理与切换
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1231920Z   ---
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1232250Z   duration_ms: 11314.043292
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1232790Z   type: 'test'
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1233110Z   ...
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1233600Z 1..7
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1233850Z # tests 7
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1234220Z # suites 0
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1234610Z # pass 7
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1234860Z # fail 0
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1235130Z # cancelled 0
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1235420Z # skipped 0
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1235630Z # todo 0
+regression (macos-latest)	Regression round 2	2026-11-19T08:34:07.1236010Z # duration_ms 16521.692916
+regression (macos-latest)	Post Run actions/setup-node@v4	﻿2026-11-19T08:34:07.1940960Z Post job cleanup.
+regression (macos-latest)	Post Run actions/setup-node@v4	2026-11-19T08:34:07.8445850Z (node:6399) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+regression (macos-latest)	Post Run actions/setup-node@v4	2026-11-19T08:34:07.8447060Z (Use `node --trace-deprecation ...` to show where the warning was created)
+regression (macos-latest)	Post Run actions/setup-node@v4	2026-11-19T08:34:07.8450540Z Cache hit occurred on the primary key node-cache-macOS-arm64-npm-7c78aada3bb7657a480f226e96e623dd7076161b1aa32f018ee02657b1d17a84, not saving cache.
+regression (macos-latest)	Post Run actions/checkout@v4	﻿2026-11-19T08:34:07.8569820Z Post job cleanup.
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0039470Z [command]/opt/homebrew/bin/git version
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0339560Z git version 2.56.0
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0374140Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/4f99d9eb-d8d8-4a8f-8bf6-8b2e35f381d2/.gitconfig'
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0386650Z Temporarily overriding HOME='/Users/runner/work/_temp/4f99d9eb-d8d8-4a8f-8bf6-8b2e35f381d2' before making global git config changes
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0389040Z Adding repository directory to the temporary git global config as a safe directory
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0391950Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/plugin-svn/plugin-svn
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0611880Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.0649450Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.2480360Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.2559530Z http.https://github.com/.extraheader
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.2561580Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.2668330Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.4074240Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+regression (macos-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:08.4321590Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+regression (macos-latest)	Complete job	﻿2026-11-19T08:34:08.5738200Z Cleaning up orphan processes
+regression (macos-latest)	Complete job	2026-11-19T08:34:09.6092690Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+regression (windows-latest)	Set up job	﻿2026-11-19T08:33:12.4354467Z Current runner version: '2.338.2'
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4416376Z ##[group]Runner Image Provisioner
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4417250Z Hosted Compute Agent
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4417829Z Version: 20261103.629
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4418529Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4419233Z Build Date: 2026-11-03T17:26:59Z
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4419873Z Worker ID: {ef6414bc-9912-4dc7-88eb-419dc2ae3b37}
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4420551Z Region: eastus
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4421096Z Cloud: Azure
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4421614Z ##[endgroup]
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4423007Z ##[group]Operating System
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4423635Z Microsoft Windows Server 2025
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4424571Z 10.0.26100
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4425068Z Datacenter
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4425537Z ##[endgroup]
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4426061Z ##[group]Runner Image
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4426619Z Image: windows-2025-vs2026
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4427468Z Version: 20261103.298.1
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4428570Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261103.298/images/windows/Windows2025-VS2026-Readme.md
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4430486Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261103.298
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4431425Z ##[endgroup]
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4432486Z ##[group]GITHUB_TOKEN Permissions
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4434370Z Contents: read
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4434978Z Metadata: read
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4435487Z ##[endgroup]
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4437829Z Secret source: Actions
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4438779Z Cache mode: write
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4439500Z Prepare workflow directory
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4804916Z Prepare all required actions
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.4854033Z Getting action download info
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.6603308Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+regression (windows-latest)	Set up job	2026-11-19T08:33:12.8072351Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+regression (windows-latest)	Set up job	2026-11-19T08:33:13.1048373Z Complete job name: regression (windows-latest)
+regression (windows-latest)	Run actions/checkout@v4	﻿2026-11-19T08:33:13.2681051Z ##[group]Run actions/checkout@v4
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2682317Z with:
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2682851Z   repository: sheldon0112/plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2687547Z   token: ***
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2688048Z   ssh-strict: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2688446Z   ssh-user: git
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2688858Z   persist-credentials: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2689315Z   clean: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2689722Z   sparse-checkout-cone-mode: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2690200Z   fetch-depth: 1
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2690591Z   fetch-tags: false
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2690999Z   show-progress: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2691420Z   lfs: false
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2691799Z   submodules: false
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2692209Z   set-safe-directory: true
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2692679Z   allow-unsafe-pr-checkout: false
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.2693369Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4242061Z Syncing repository: sheldon0112/plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4244767Z ##[group]Getting Git version info
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.4245883Z Working directory is 'D:\a\plugin-svn\plugin-svn'
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.5505849Z [command]"C:\Program Files\Git\bin\git.exe" version
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9835128Z git version 2.56.0.windows.4
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9897006Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9920647Z Temporarily overriding HOME='D:\a\_temp\ccbb1bbd-6977-4fcd-8e7e-0a2bb7f1a53d' before making global git config changes
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9923239Z Adding repository directory to the temporary git global config as a safe directory
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:13.9933055Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\plugin-svn\plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.0670836Z Deleting the contents of 'D:\a\plugin-svn\plugin-svn'
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.0720447Z ##[group]Initializing the repository
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.0761383Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\plugin-svn\plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.1739660Z Initialized empty Git repository in D:/a/plugin-svn/plugin-svn/.git/
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.1793817Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/sheldon0112/plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.2603670Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.2606075Z ##[group]Disabling automatic garbage collection
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.2613417Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.2998516Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.2999810Z ##[group]Setting up auth
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.3011294Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:14.3405492Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:15.9420927Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:15.9799784Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:16.5386680Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:16.5768985Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:17.1627874Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:17.2035351Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:17.2036182Z ##[group]Fetching the repository
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:17.2055548Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0224e2f0d3cd600a2cc50de99f75c0276d7e959d:refs/remotes/origin/compat/windows-macos-20261119
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2391563Z From https://github.com/sheldon0112/plugin-svn
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2392506Z  * [new ref]         0224e2f0d3cd600a2cc50de99f75c0276d7e959d -> origin/compat/windows-macos-20261119
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2437598Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2438076Z ##[group]Determining the checkout info
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2441057Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.2451029Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.3025545Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.3454120Z ##[group]Checking out the ref
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.3466194Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B compat/windows-macos-20261119 refs/remotes/origin/compat/windows-macos-20261119
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.4457423Z Switched to a new branch 'compat/windows-macos-20261119'
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.4605004Z branch 'compat/windows-macos-20261119' set up to track 'origin/compat/windows-macos-20261119'.
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.4771395Z ##[endgroup]
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.5458668Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+regression (windows-latest)	Run actions/checkout@v4	2026-11-19T08:33:18.5950866Z 0224e2f0d3cd600a2cc50de99f75c0276d7e959d
+regression (windows-latest)	Run actions/setup-node@v4	﻿2026-11-19T08:33:18.6575941Z ##[group]Run actions/setup-node@v4
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6576318Z with:
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6576500Z   node-version: 22
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6576698Z   cache: npm
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6576931Z   cache-dependency-path: test/package-lock.json
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6577230Z   always-auth: false
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6577434Z   check-latest: false
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6580330Z   token: ***
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.6580527Z ##[endgroup]
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.8968361Z Found in cache @ C:\hostedtoolcache\windows\node\22.23.4\x64
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.8978460Z (node:9168) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.8982790Z (Use `node --trace-deprecation ...` to show where the warning was created)
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:18.8984645Z ##[group]Environment details
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.2503412Z node: v22.23.4
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.2503951Z npm: 10.9.9
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.2504326Z yarn: 1.22.22
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.2505583Z ##[endgroup]
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.3351031Z [command]C:\Windows\system32\cmd.exe /D /S /C "C:\hostedtoolcache\windows\node\22.23.4\x64\npm.cmd config get cache"
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:24.9579924Z C:\npm\cache
+regression (windows-latest)	Run actions/setup-node@v4	2026-11-19T08:33:25.2979206Z npm cache is not found
+regression (windows-latest)	Install SVN on Windows	﻿2026-11-19T08:33:25.3335232Z ##[group]Run choco install sliksvn --yes --no-progress
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:25.3335763Z ^[[36;1mchoco install sliksvn --yes --no-progress^[[0m
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:25.3336132Z ^[[36;1m"C:\Program Files\SlikSvn\bin" >> $env:GITHUB_PATH^[[0m
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:25.4060720Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:25.4061246Z ##[endgroup]
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:28.8309595Z Chocolatey v2.7.5
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:29.0944783Z Installing the following packages:
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:29.0949982Z sliksvn
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:29.0954210Z By installing, you accept licenses for the packages.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:36.6601468Z Downloading package from source 'https://community.chocolatey.org/api/v2/'
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:37.4366262Z 
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:37.4367081Z sliksvn v1.14.5 [Approved]
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:37.5379077Z sliksvn package files install completed. Performing other installation steps.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:40.4782843Z Extracting 64-bit C:\ProgramData\chocolatey\lib\sliksvn\tools\Slik-Subversion-1.14.5-x64.zip to C:\ProgramData\chocolatey\lib\sliksvn\tools...
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:40.9237701Z C:\ProgramData\chocolatey\lib\sliksvn\tools
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:40.9472367Z Installing 64-bit sliksvn...
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:45.6296304Z sliksvn has been installed.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:46.5151065Z Added C:\ProgramData\chocolatey\bin\svn-populate-node-origins-index.exe shim pointed to 'c:\program files\sliksvn\bin\svn-populate-node-origins-index.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:46.7222843Z Added C:\ProgramData\chocolatey\bin\svn.exe shim pointed to 'c:\program files\sliksvn\bin\svn.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:46.9311088Z Added C:\ProgramData\chocolatey\bin\svnadmin.exe shim pointed to 'c:\program files\sliksvn\bin\svnadmin.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:47.1696331Z Added C:\ProgramData\chocolatey\bin\svnauthz-validate.exe shim pointed to 'c:\program files\sliksvn\bin\svnauthz-validate.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:47.3814047Z Added C:\ProgramData\chocolatey\bin\svnauthz.exe shim pointed to 'c:\program files\sliksvn\bin\svnauthz.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:47.5887768Z Added C:\ProgramData\chocolatey\bin\svnbench.exe shim pointed to 'c:\program files\sliksvn\bin\svnbench.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:48.0163270Z Added C:\ProgramData\chocolatey\bin\svndumpfilter.exe shim pointed to 'c:\program files\sliksvn\bin\svndumpfilter.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:48.3211440Z Added C:\ProgramData\chocolatey\bin\svnfsfs.exe shim pointed to 'c:\program files\sliksvn\bin\svnfsfs.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:48.5521400Z Added C:\ProgramData\chocolatey\bin\svnlook.exe shim pointed to 'c:\program files\sliksvn\bin\svnlook.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:48.7763725Z Added C:\ProgramData\chocolatey\bin\svnmucc.exe shim pointed to 'c:\program files\sliksvn\bin\svnmucc.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:48.9907224Z Added C:\ProgramData\chocolatey\bin\svnrdump.exe shim pointed to 'c:\program files\sliksvn\bin\svnrdump.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:49.2125003Z Added C:\ProgramData\chocolatey\bin\svnserve.exe shim pointed to 'c:\program files\sliksvn\bin\svnserve.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:49.4401280Z Added C:\ProgramData\chocolatey\bin\svnsync.exe shim pointed to 'c:\program files\sliksvn\bin\svnsync.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:49.6574589Z Added C:\ProgramData\chocolatey\bin\svnversion.exe shim pointed to 'c:\program files\sliksvn\bin\svnversion.exe'.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.2010769Z C:\ProgramData\chocolatey\lib\sliksvn\Slik-Subversion-1.14.5-x64.zip.txt
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.3794308Z   sliksvn may be able to be automatically uninstalled.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.3861261Z Environment Vars (like PATH) have changed. Close/reopen your shell to
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.3861971Z  see the changes (or in powershell/cmd.exe just type `refreshenv`).
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.6101466Z  The install of sliksvn was successful.
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.6107025Z   Deployed to 'C:\Program Files\SlikSvn'
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.6446733Z 
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.6447264Z Chocolatey installed 1/1 packages. 
+regression (windows-latest)	Install SVN on Windows	2026-11-19T08:33:50.6447904Z  See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+regression (windows-latest)	Run node --version	﻿2026-11-19T08:33:50.8607508Z ##[group]Run node --version
+regression (windows-latest)	Run node --version	2026-11-19T08:33:50.8607862Z ^[[36;1mnode --version^[[0m
+regression (windows-latest)	Run node --version	2026-11-19T08:33:50.8678767Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Run node --version	2026-11-19T08:33:50.8679127Z ##[endgroup]
+regression (windows-latest)	Run node --version	2026-11-19T08:33:51.1756932Z v22.23.4
+regression (windows-latest)	Run svn --version --quiet	﻿2026-11-19T08:33:51.3227633Z ##[group]Run svn --version --quiet
+regression (windows-latest)	Run svn --version --quiet	2026-11-19T08:33:51.3228008Z ^[[36;1msvn --version --quiet^[[0m
+regression (windows-latest)	Run svn --version --quiet	2026-11-19T08:33:51.3304828Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Run svn --version --quiet	2026-11-19T08:33:51.3305197Z ##[endgroup]
+regression (windows-latest)	Run svn --version --quiet	2026-11-19T08:33:51.6893076Z 1.14.5-SlikSvn
+regression (windows-latest)	Run svnadmin --version --quiet	﻿2026-11-19T08:33:51.8093873Z ##[group]Run svnadmin --version --quiet
+regression (windows-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:51.8094267Z ^[[36;1msvnadmin --version --quiet^[[0m
+regression (windows-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:51.8169337Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:51.8169707Z ##[endgroup]
+regression (windows-latest)	Run svnadmin --version --quiet	2026-11-19T08:33:52.1346965Z 1.14.5-SlikSvn
+regression (windows-latest)	Run npm ci --prefix test	﻿2026-11-19T08:33:52.2556611Z ##[group]Run npm ci --prefix test
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:33:52.2556974Z ^[[36;1mnpm ci --prefix test^[[0m
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:33:52.2627130Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:33:52.2627505Z ##[endgroup]
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8612832Z 
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8613782Z added 31 packages, and audited 32 packages in 8s
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8614297Z 
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8614584Z 8 packages are looking for funding
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8615067Z   run `npm fund` for details
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8625736Z 
+regression (windows-latest)	Run npm ci --prefix test	2026-11-19T08:34:00.8626113Z found 0 vulnerabilities
+regression (windows-latest)	Regression round 1	﻿2026-11-19T08:34:04.6485961Z ##[group]Run npm test --prefix test
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:04.6486340Z ^[[36;1mnpm test --prefix test^[[0m
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:04.6558993Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:04.6559362Z ##[endgroup]
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:05.4342695Z 
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:05.4343396Z > test
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:05.4344083Z > node --test regression.mjs extended.mjs platform.mjs
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:05.4344531Z 
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:05.7129655Z TAP version 13
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.7148187Z # svn: E135000: Inconsistent line ending style
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.7941680Z # svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-xibFn6\\????': The filename, directory name, or volume label syntax is incorrect.  
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9305952Z # svn: E155007: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-xibFn6\\space @wc' is not a working copy
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9772248Z # Subtest: 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9792366Z not ok 1 - 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9798883Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9807652Z   duration_ms: 1810.2639
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9808311Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9809027Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:40:1'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9809881Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9810613Z   error: 'svn: E135000: Inconsistent line ending style'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9811332Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9811888Z   stack: |-
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9813159Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9815437Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:967:13)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9816875Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:65:3)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9836252Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9851514Z     async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9867390Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9872908Z # Subtest: 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9873659Z ok 2 - 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9874123Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9874497Z   duration_ms: 44.2424
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9874930Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9875295Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9875915Z # Subtest: 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9878346Z not ok 3 - 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制） # TODO SlikSVN 1.14.5 默认 Windows 代码页会丢失中文参数，待 UTF-8 客户端／环境补测
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9879138Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9879430Z   duration_ms: 31.7411
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9879765Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9880310Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:138:1'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9880968Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9882691Z   error: "svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-xibFn6\\????': The filename, directory name, or volume label syntax is incorrect."
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9884137Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9884493Z   stack: |-
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9885394Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9886752Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:711:11)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9888036Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:144:3)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9888954Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9889781Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9890437Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9891026Z # Subtest: 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9892160Z not ok 4 - 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制） # TODO SlikSVN 1.14.5 将 space @wc 创建为 space@wc，待客户端修复
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9895471Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9895772Z   duration_ms: 138.5935
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9896129Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9896678Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:152:1'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9897377Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9898752Z   error: "svn: E155007: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-xibFn6\\space @wc' is not a working copy"
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9901842Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9902284Z   stack: |-
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9903033Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9904326Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-xibFn6/test-main.mjs:674:30)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9905507Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:159:3)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9906421Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9907195Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9907796Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9986003Z # Subtest: Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9987089Z ok 5 - Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9988328Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9988687Z   duration_ms: 3.2603
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9989042Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9989347Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9990412Z # Subtest: 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9992466Z ok 6 - 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9993060Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9993364Z   duration_ms: 60.5009
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9993702Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:08.9993986Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9771221Z # Subtest: 面板选择、预览、提交、冲突处理与切换
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9773021Z ok 7 - 面板选择、预览、提交、冲突处理与切换
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9773442Z   ---
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9773758Z   duration_ms: 5978.371
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9775642Z   type: 'test'
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9775968Z   ...
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9976024Z 1..7
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9976363Z # tests 7
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9977447Z # suites 0
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9978465Z # pass 4
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9979527Z # fail 1
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9980534Z # cancelled 0
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9981552Z # skipped 0
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9982554Z # todo 2
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:12.9983643Z # duration_ms 7380.3674
+regression (windows-latest)	Regression round 1	2026-11-19T08:34:13.1000446Z ##[error]Process completed with exit code 1.
+regression (windows-latest)	Regression round 2	﻿2026-11-19T08:34:13.1181539Z ##[group]Run npm test --prefix test
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.1181905Z ^[[36;1mnpm test --prefix test^[[0m
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.1252064Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.1252424Z ##[endgroup]
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.8630101Z 
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.8630780Z > test
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.8631439Z > node --test regression.mjs extended.mjs platform.mjs
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.8631863Z 
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:13.9774308Z TAP version 13
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.5787159Z # svn: E135000: Inconsistent line ending style
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.6763216Z # svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-1WAGlb\\????': The filename, directory name, or volume label syntax is incorrect.  
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8261700Z # svn: E155007: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-1WAGlb\\space @wc' is not a working copy
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8639187Z # Subtest: 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8653834Z not ok 1 - 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8655105Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8655740Z   duration_ms: 1500.1668
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8656274Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8656966Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:40:1'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8662955Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8663768Z   error: 'svn: E135000: Inconsistent line ending style'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8667156Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8667752Z   stack: |-
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8668672Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8670253Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:967:13)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8671250Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:65:3)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8671812Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8672635Z     async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8673285Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8673822Z # Subtest: 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8674163Z ok 2 - 大输出、认证代理证书与超时错误；日志有界脱敏
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8674387Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8674566Z   duration_ms: 53.884
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8674768Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8674950Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8675303Z # Subtest: 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8679113Z not ok 3 - 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制） # TODO SlikSVN 1.14.5 默认 Windows 代码页会丢失中文参数，待 UTF-8 客户端／环境补测
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8679966Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8680290Z   duration_ms: 38.0013
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8680626Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8681143Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:138:1'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8681768Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8682712Z   error: "svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-1WAGlb\\????': The filename, directory name, or volume label syntax is incorrect."
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8683498Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8683705Z   stack: |-
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8684148Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8684877Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:711:11)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8685843Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:144:3)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8686362Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8686818Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8687184Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8688102Z # Subtest: 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8691723Z not ok 4 - 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制） # TODO SlikSVN 1.14.5 将 space @wc 创建为 space@wc，待客户端修复
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8695013Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8695204Z   duration_ms: 154.0198
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8695420Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8695751Z   location: 'D:\\a\\plugin-svn\\plugin-svn\\test\\extended.mjs:152:1'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8696138Z   failureType: 'testCodeFailure'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8696739Z   error: "svn: E155007: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-svn-extended-1WAGlb\\space @wc' is not a working copy"
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8697326Z   code: 'ERR_TEST_FAILURE'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8697540Z   stack: |-
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8697983Z     svn (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:619:13)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8699290Z     async api (file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-svn-extended-1WAGlb/test-main.mjs:674:30)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8700642Z     async TestContext.<anonymous> (file:///D:/a/plugin-svn/plugin-svn/test/extended.mjs:159:3)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8701562Z     async Test.run (node:internal/test_runner/test:1054:7)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8702049Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8702428Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8940472Z # Subtest: Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8941421Z ok 5 - Windows 盘符、UNC、大小写、分隔符及越界路径
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8943411Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8943882Z   duration_ms: 5.2101
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8944369Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8944746Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8945436Z # Subtest: 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8948592Z ok 6 - 安装包复制、启动注册及卸载清理（模拟宿主）
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8949162Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8950385Z   duration_ms: 26.7262
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8950854Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:16.8951492Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0721736Z # Subtest: 面板选择、预览、提交、冲突处理与切换
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0724047Z ok 7 - 面板选择、预览、提交、冲突处理与切换
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0725549Z   ---
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0726010Z   duration_ms: 4885.6883
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0726539Z   type: 'test'
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0726894Z   ...
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0964580Z 1..7
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0965265Z # tests 7
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0966601Z # suites 0
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0967220Z # pass 4
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0967737Z # fail 1
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0968051Z # cancelled 0
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0968761Z # skipped 0
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0969939Z # todo 2
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.0970638Z # duration_ms 6154.7573
+regression (windows-latest)	Regression round 2	2026-11-19T08:34:20.1733625Z ##[error]Process completed with exit code 1.
+regression (windows-latest)	Post Run actions/checkout@v4	﻿2026-11-19T08:34:20.1993778Z Post job cleanup.
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.4280227Z [command]"C:\Program Files\Git\bin\git.exe" version
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.4719855Z git version 2.56.0.windows.4
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.4887677Z Temporarily overriding HOME='D:\a\_temp\e859856d-9b34-419e-904f-16b417f0a3a4' before making global git config changes
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.4889227Z Adding repository directory to the temporary git global config as a safe directory
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.4937259Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\plugin-svn\plugin-svn
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.5425605Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:20.5880549Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.1879172Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.2362749Z http.https://github.com/.extraheader
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.2413251Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.2825537Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.9081223Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+regression (windows-latest)	Post Run actions/checkout@v4	2026-11-19T08:34:21.9554486Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+regression (windows-latest)	Complete job	﻿2026-11-19T08:34:22.5963150Z Cleaning up orphan processes
+regression (windows-latest)	Complete job	2026-11-19T08:34:22.6727762Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,22 @@
+
+> test
+> node --test regression.mjs extended.mjs platform.mjs
+
+svn: warning: W170000: URL 'file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-svn-extended-SK9FuI/repo/trunk/newdir' non-existent in revision 4
+
+svn: E200009: Could not display info for all targets because some targets don't exist
+✔ 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁 (12449.62425ms)
+✔ 大输出、认证代理证书与超时错误；日志有界脱敏 (22.472209ms)
+✔ 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制） (1958.789875ms)
+✔ 真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制） (1019.519334ms)
+✔ Windows 盘符、UNC、大小写、分隔符及越界路径 (1.135834ms)
+✔ 安装包复制、启动注册及卸载清理（模拟宿主） (4.146417ms)
+✔ 面板选择、预览、提交、冲突处理与切换 (10632.546ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15895.270208
