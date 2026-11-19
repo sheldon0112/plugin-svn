@@ -551,9 +551,35 @@ export default function activate(ctx) {
 
   function isAbsolute(path) { return /^(?:\/|[a-z]:[\\/]|\\\\)/i.test(path) }
 
+  function isWindowsPath(path) { return /^(?:[a-z]:|\\\\|\/\/[^/])/i.test(path) }
+
+  function normalizedPath(path) {
+    const value = isWindowsPath(path) ? path.replace(/\\/g, '/') : path
+    return value.replace(/\/+$/, '')
+  }
+
+  function pathKey(path) {
+    const value = normalizedPath(path)
+    return isWindowsPath(path) ? value.toLowerCase() : value
+  }
+
+  function relativePath(root, path) {
+    const base = normalizedPath(root)
+    const value = normalizedPath(path)
+    const key = pathKey(root)
+    const candidate = pathKey(path)
+    if (candidate === key) return '.'
+    return candidate.startsWith(key + '/') ? value.slice(base.length + 1) : null
+  }
+
   function localPath(root, rel = '') {
-    if (isAbsolute(rel) || rel.split(/[\\/]/).includes('..')) throw new Error(t('请输入工作副本内的相对路径'))
-    return rel && rel !== '.' ? root.replace(/\/$/, '') + '/' + rel : root
+    const windows = isWindowsPath(root)
+    const value = windows ? rel.replace(/\\/g, '/') : rel
+    if (isAbsolute(value) || /^[a-z]:/i.test(value) || value.split('/').includes('..') || /[\0\r\n]/.test(value) ||
+        (windows && value.split('/').some((part) => part !== '.' && (/[<>:"|?*]/.test(part) || /[ .]$/.test(part) || /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(part))))) {
+      throw new Error(t('请输入工作副本内的相对路径'))
+    }
+    return value && value !== '.' ? normalizedPath(root) + '/' + value : root
   }
 
   const operations = []
@@ -651,7 +677,7 @@ export default function activate(ctx) {
         if (!path) throw new Error(t('当前工作区没有 SVN 工作副本'))
         info = {
           path,
-          name: path.split('/').pop() || path,
+          name: normalizedPath(path).split('/').pop() || path,
           revision: Number(entry.getAttribute('revision')),
           url: field(entry, 'url'),
           root: field(entry, 'repository > root'),
@@ -661,7 +687,7 @@ export default function activate(ctx) {
           lastChangedDate: field(entry, 'commit > date'),
         }
         // The active workspace can be nested or switched. Use its URL for the WC root.
-        if (path !== workspacePath.replace(/\/$/, '')) {
+        if (pathKey(path) !== pathKey(workspacePath)) {
           const rootEntry = parseXml(await svn('info', ['--xml'], [target(path)])).querySelector('entry')
           info.url = field(rootEntry, 'url')
           info.relativeUrl = field(rootEntry, 'relative-url')
@@ -679,15 +705,15 @@ export default function activate(ctx) {
         if (!isAbsolute(options.directory) || /[\r\n]/.test(options.directory)) throw new Error(t("请输入本机绝对目录"))
         const revision = options.revision || 'HEAD'
         if (!/^(?:HEAD|\d+)$/.test(revision)) throw new Error(t("修订必须为 HEAD 或非负整数"))
-        if (writes.has(options.directory)) throw new Error(t('当前工作副本正在执行 SVN 操作'))
-        writes.add(options.directory)
+        if (writes.has(pathKey(options.directory))) throw new Error(t('当前工作副本正在执行 SVN 操作'))
+        writes.add(pathKey(options.directory))
         try {
           await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), options.directory])
           try { await ctx.workspaces.add(options.directory) } catch (error) {
             throw new Error(t("检出成功，但登记工作区失败；请手工添加此目录。") + diagnose(error))
           }
           return { directory: options.directory }
-        } finally { writes.delete(options.directory) }
+        } finally { writes.delete(pathKey(options.directory)) }
       }
 
       const root = options.wc
@@ -761,9 +787,10 @@ export default function activate(ctx) {
           const commit = wc?.querySelector('commit')
           const repos = entry.querySelector('repos-status')
           const raw = entry.getAttribute('path')
-          if (!wc || (raw !== root && !raw.startsWith(root + '/'))) return []
+          const relative = raw && relativePath(root, raw)
+          if (!wc || relative == null) return []
           return [{
-            path: raw === root ? '.' : raw.slice(root.length + 1),
+            path: relative,
             item: wc.getAttribute('item'),
             props: wc.getAttribute('props'),
             switched: wc.getAttribute('switched') === 'true',
@@ -853,7 +880,7 @@ export default function activate(ctx) {
         }
         const synthesized = !validRevision && options.unversioned === true
         if (synthesized) {
-          args.push('--old', /^[a-z]:/i.test(root) ? 'NUL' : '/dev/null', '--new', target(location))
+          args.push('--old', isWindowsPath(root) ? 'NUL' : '/dev/null', '--new', target(location))
           destinations = []
         }
         const diff = await svn('diff', args, destinations)
@@ -872,7 +899,7 @@ export default function activate(ctx) {
         return { lines, total: rows.length, remote: true, truncated: rows.length > lines.length }
       }
 
-      if (writes.has(root)) throw new Error(t('当前工作副本正在执行 SVN 操作'))
+      if (writes.has(pathKey(root))) throw new Error(t('当前工作副本正在执行 SVN 操作'))
       const paths = options.paths?.map((item) => localPath(root, item)) || []
       const targets = paths.map((item) => target(item))
       const scoped = ['/commit', '/revert', '/delete', '/add', '/resolve'].includes(route)
@@ -888,7 +915,7 @@ export default function activate(ctx) {
         '/cleanup': ['cleanup', [], [root]],
       }
       const command = commands[route]
-      writes.add(root)
+      writes.add(pathKey(root))
       try {
         if (route === '/property-set' || route === '/property-delete') {
           if (!/^[A-Za-z_][A-Za-z0-9_.:-]*$/.test(options.name || '')) throw new Error(t("属性名称无效"))
@@ -970,7 +997,7 @@ export default function activate(ctx) {
           conflicts: countConflicts(output),
         }
       } finally {
-        writes.delete(root)
+        writes.delete(pathKey(root))
       }
     }
   }

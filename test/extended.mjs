@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { pathToFileURL } from 'node:url'
-import { test } from 'node:test'
+import { test, after } from 'node:test'
 import { JSDOM } from 'jsdom'
 import React from 'react'
 
@@ -15,7 +15,7 @@ const source = readFileSync(new URL('../main.js', import.meta.url), 'utf8').repl
 const temp = mkdtempSync(tmpdir() + '/ccgui-svn-extended-')
 writeFileSync(temp + '/test-main.mjs', source)
 const { default: activate } = await import(pathToFileURL(temp + '/test-main.mjs'))
-console.log('验证现场（保留）：' + temp)
+after(() => { dom.window.close(); rmSync(temp, { recursive: true, force: true }) })
 const run = (...args) => execFileSync('svn', args, { encoding: 'utf8' })
 const calls = []
 let failure
@@ -42,6 +42,7 @@ test('真实仓库：检出、特殊路径、提交隔离、属性、忽略、�
   await api('/checkout', { url: repo + '/trunk', directory: wc, revision: 'HEAD' })
   assert.ok(calls.some((item) => item.registered === wc))
   await api('/state')
+  const ignoredName = process.platform === 'win32' ? 'x[1].tmp' : 'x[1]*?.tmp'
   const names = ['a@b.txt', '-选项.txt', '未选.txt', 'binary.dat']
   for (const name of names) writeFileSync(wc + '/' + name, name === 'binary.dat' ? Buffer.from([0, 1, 255]) : 'base\n')
   mkdirSync(wc + '/newdir')
@@ -56,12 +57,12 @@ test('真实仓库：检出、特殊路径、提交隔离、属性、忽略、�
   assert.equal(run('cat', repo + '/trunk/' + encodeURIComponent('未选.txt')), 'base\n')
   assert.equal(readFileSync(wc + '/未选.txt', 'utf8'), 'keep local\n')
   await api('/property-set', { wc, path: '.', name: 'svn:ignore', value: 'old\n' })
-  writeFileSync(wc + '/x[1]*?.tmp', 'ignore')
-  await api('/ignore', { wc, path: 'x[1]*?.tmp' })
+  writeFileSync(wc + '/' + ignoredName, 'ignore')
+  await api('/ignore', { wc, path: ignoredName })
   assert.match((await api('/properties', { wc, path: '.' }))[0].value, /old/)
-  assert.ok((await api('/status', { wc, ignored: true })).entries.some((item) => item.path === 'x[1]*?.tmp' && item.item === 'ignored'))
+  assert.ok((await api('/status', { wc, ignored: true })).entries.some((item) => item.path === ignoredName && item.item === 'ignored'))
   await api('/property-set', { wc, path: '.', name: 'svn:ignore', value: 'old\n' })
-  assert.ok((await api('/status', { wc, ignored: true })).entries.some((item) => item.path === 'x[1]*?.tmp' && item.item === 'unversioned'))
+  assert.ok((await api('/status', { wc, ignored: true })).entries.some((item) => item.path === ignoredName && item.item === 'unversioned'))
   await api('/property-set', { wc, path: '.', name: 'svn:ignore', value: '*.tmp\n' })
   assert.ok((await api('/status', { wc, ignored: true })).entries.some((item) => item.item === 'ignored'))
   await api('/property-delete', { wc, path: '.', name: 'svn:ignore' })
@@ -98,7 +99,7 @@ test('真实仓库：检出、特殊路径、提交隔离、属性、忽略、�
   await api('/lock', { wc, path: 'binary.dat' })
   assert.equal((await api('/lock-info', { wc, path: 'binary.dat' })).canUnlock, true)
   await api('/unlock', { wc, path: 'binary.dat' })
-  unlinkSync(wc + '/x[1]*?.tmp')
+  unlinkSync(wc + '/' + ignoredName)
   await api('/switch', { wc, destination: '^/branches/test@tag' })
   assert.equal(run('info', '--show-item', 'relative-url', wc + '@').trim(), '^/branches/test@tag')
   assert.ok(calls.filter((item) => item.args?.[0] === 'commit').every((item) => item.timeoutMs === 300000))

@@ -178,7 +178,7 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     await click('提交', commit)
     await closed()
     assert.equal(svn('cat', trunk + '/' + a), 'base a\n')
-    assert.deepEqual(simulatedCommit.slice(simulatedCommit.indexOf('--') + 1), [wc + '/' + b + '@'])
+    assert.deepEqual(simulatedCommit.slice(simulatedCommit.indexOf('--') + 1), [(process.platform === 'win32' ? wc.replace(/\\/g, '/') : wc) + '/' + b + '@'])
     assert.equal(svn('cat', trunk + '/' + b), 'base b\n')
     assert.equal(readFileSync(wc + '/' + a, 'utf8'), 'keep local a\n')
 
