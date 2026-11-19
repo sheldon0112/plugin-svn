@@ -1,0 +1,3241 @@
+[
+  {
+    "bin": "svn",
+    "args": [
+      "checkout",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "--ignore-externals",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/中文 空格@.txt@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "初始提交",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/中文 空格@.txt@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/dir@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/dir/child.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "selected only",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/中文 空格@.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--show-updates",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:qa",
+      "中文\nvalue",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "property",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propdel",
+      "--non-interactive",
+      "--",
+      "custom:qa",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\r\n",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\nx\\[1].tmp\n",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--no-ignore",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "lock",
+      "--non-interactive",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "unlock",
+      "--non-interactive",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "7:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "-r",
+      "27",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-c",
+      "27",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@27"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-r",
+      "26:27",
+      "--old",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo",
+      "--",
+      "trunk/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "blame",
+      "--non-interactive",
+      "-r",
+      "1:27",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@27"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "copy",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "-m",
+      "branch",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches/qa%40tag@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches/qa%40tag@HEAD",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "28:29",
+      "--accept",
+      "postpone",
+      "--dry-run",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches/qa%40tag@HEAD",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "28:29",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/branches/qa%40tag@HEAD",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@29",
+      "--new",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk/a.txt@30",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "theirs-full",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:conflict",
+      "local",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "/dev/null",
+      "--new",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/new.txt@",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "binary",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/binary.dat"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "delete directory",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "cleanup",
+      "--non-interactive",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "/private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-7Wn2dW/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  }
+]

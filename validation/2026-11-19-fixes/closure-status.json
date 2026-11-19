@@ -1,0 +1,32 @@
+{
+  "D-01": {
+    "result": "通过",
+    "files": [
+      "main.js",
+      "test/clipboard-fix.mjs",
+      "test/package.json"
+    ],
+    "validation": "24 项边界通过、三个复制入口 UI 测试通过、双平台 CI 两轮通过"
+  },
+  "D-02": {
+    "result": "阻塞",
+    "reason": "用户保留 README 原样的明确约束"
+  },
+  "L-01": {
+    "result": "阻塞",
+    "reason": "真实 Windows SlikSVN 1.14.5 两种环境均无法处理中文目录，需验证可替代 Unicode 客户端或宿主能力"
+  },
+  "L-02": {
+    "result": "通过",
+    "files": [
+      "main.js",
+      "test/extended.mjs",
+      "test/edge-coverage.mjs"
+    ],
+    "validation": "真实 Windows/macOS 两轮含四种目录名及后续写入、提交、删除的普通断言通过"
+  },
+  "E-01": {
+    "result": "阻塞",
+    "reason": "上游未合并；重新校验通过但自动审核再次跳过，无合并权限"
+  }
+}

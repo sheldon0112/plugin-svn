@@ -1,0 +1,59 @@
+QA-001 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 检出并登记工作区 
+QA-002 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 拒绝无效目标、凭据 URL 与修订 
+QA-003 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 中文空格与 @ 文件真实提交 
+QA-004 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 仅提交所选文件 
+QA-005 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 远端变更查询不写本地；更新后写入 
+QA-006 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 属性读写、删除与提交 
+QA-007 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 保留旧规则、追加及去重、显示忽略项 
+QA-008 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 查询、加锁、拒绝重复加锁、解锁 
+QA-009 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 20 条分页及作者、关键词、路径、日期过滤 
+QA-010 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 读取改动路径、整版和仓库文件差异、逐行溯源 
+QA-011 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 创建、重复检查、脏工作区拒绝、干净切换 
+QA-012 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 预演不修改，正式合并写入，脏工作区保护 
+QA-013 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实文本冲突及传入版本比较 
+QA-014 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实property冲突与 working 解决 
+QA-015 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实tree冲突与 working 解决 
+QA-016 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 未纳入文件合成差异、二进制提示和 CRLF 解析 
+QA-017 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 目录删除提交与 svn cleanup 
+QA-018 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实本地仓库连接 
+QA-019 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 依赖缺失 
+QA-020 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 认证失败 
+QA-021 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 代理失败 
+QA-022 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 证书失败 
+QA-023 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 超时 
+QA-024 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 权限只读 
+QA-025 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 64 KiB 拒绝、日志脱敏与 100 条上限 
+QA-026 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 相对路径越界、盘符、UNC、大小写与长路径字符串 
+QA-027 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 现代接口及回退分支 
+QA-028 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实中文 CRLF 文件及只读写入拒绝 
+QA-029 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 目录安装、同 ID 覆盖升级、清理 
+QA-030 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 检出并登记工作区 
+QA-031 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 拒绝无效目标、凭据 URL 与修订 
+QA-032 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 中文空格与 @ 文件真实提交 
+QA-033 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 仅提交所选文件 
+QA-034 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 远端变更查询不写本地；更新后写入 
+QA-035 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 属性读写、删除与提交 
+QA-036 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 保留旧规则、追加及去重、显示忽略项 
+QA-037 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 查询、加锁、拒绝重复加锁、解锁 
+QA-038 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 20 条分页及作者、关键词、路径、日期过滤 
+QA-039 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 读取改动路径、整版和仓库文件差异、逐行溯源 
+QA-040 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 创建、重复检查、脏工作区拒绝、干净切换 
+QA-041 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 预演不修改，正式合并写入，脏工作区保护 
+QA-042 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 真实文本冲突及传入版本比较 
+QA-043 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 真实property冲突与 working 解决 
+QA-044 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 真实tree冲突与 working 解决 
+QA-045 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 未纳入文件合成差异、二进制提示和 CRLF 解析 
+QA-046 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 目录删除提交与 svn cleanup 
+QA-047 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 真实本地仓库连接 
+QA-048 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 依赖缺失 
+QA-049 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 认证失败 
+QA-050 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 代理失败 
+QA-051 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 证书失败 
+QA-052 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 超时 
+QA-053 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 权限只读 
+QA-054 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 64 KiB 拒绝、日志脱敏与 100 条上限 
+QA-055 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 相对路径越界、盘符、UNC、大小写与长路径字符串 
+QA-056 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 现代接口及回退分支 
+QA-057 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 模拟 UTF-16 路径、CRLF 与只读拒绝边界 
+QA-058 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 目录安装、同 ID 覆盖升级、清理 
+汇总 {"通过":58}
