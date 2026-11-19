@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { mkdtempSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, dirname } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -30,7 +30,7 @@ try {
   ['L-02-original', 'space @wc', '', { LC_ALL: 'en_US.UTF-8' }],
   ['L-02-trailing-separator-candidate', 'space @wc', '/', { LC_ALL: 'en_US.UTF-8' }],
  ]) {
-  const parent = join(root, 'case-' + (++i)); const directory = join(parent, name)
+  const parent = join(root, 'case-' + (++i)); mkdirSync(parent); const directory = join(parent, name)
   const args = ['checkout', '--non-interactive', '--ignore-externals', '--', url + '@HEAD', directory + suffix]
   const outcome = execute(svn, args, env)
   let names = []; try { names = readdirSync(parent) } catch {}
