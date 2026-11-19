@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { pathToFileURL } from 'node:url'
 import { test, after } from 'node:test'
@@ -12,7 +12,7 @@ globalThis.DOMParser = dom.window.DOMParser
 // Expose the real API factory only in the test copy of the self-contained entry.
 const source = readFileSync(new URL('../main.js', import.meta.url), 'utf8').replace(
   "  const label = () => t('SVN 管理面板')", "  ctx.testApi = makeApi; ctx.testOperations = operations;\n  const label = () => t('SVN 管理面板')")
-const temp = mkdtempSync(tmpdir() + '/ccgui-svn-extended-')
+const temp = realpathSync(mkdtempSync(tmpdir() + '/ccgui-svn-extended-'))
 writeFileSync(temp + '/test-main.mjs', source)
 const { default: activate } = await import(pathToFileURL(temp + '/test-main.mjs'))
 after(() => { dom.window.close(); rmSync(temp, { recursive: true, force: true }) })
