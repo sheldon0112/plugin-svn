@@ -273,7 +273,8 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     await waitFor(() => document.querySelector('select[aria-label="SVN operation type"]'))
     assert.ok(modal().textContent.includes('Operation history'))
     assert.ok(button('More SVN operations'))
-    window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' }))
+    await React.act(async () => { await delay(0) })
+    await React.act(async () => { window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' })) })
     await closed()
 
   } finally {

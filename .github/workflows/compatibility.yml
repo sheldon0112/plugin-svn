@@ -27,14 +27,15 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          choco install svn --yes --no-progress
+          choco install sliksvn --yes --no-progress
           "C:\Program Files\SlikSvn\bin" >> $env:GITHUB_PATH
       - run: node --version
       - run: svn --version --quiet
       - run: svnadmin --version --quiet
-      - run: npm ci --prefix test
+      - id: dependencies
+        run: npm ci --prefix test
       - name: Regression round 1
         run: npm test --prefix test
       - name: Regression round 2
-        if: success() || failure()
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
         run: npm test --prefix test
