@@ -176,14 +176,4 @@ Pull requests are welcome. Keep the plugin entry self-contained and run the rele
 
 Distributed under the [MIT License](LICENSE), retaining upstream copyright and license notices.
 
-## 0.1.9 operations and limits
 
-Checkout registers the resulting local working copy with CC GUI. Use a new destination directory; SVN rejects conflicting existing files and partial checkouts are not automatically deleted. Externals are ignored.
-
-More SVN operations provides connection diagnostics, merge with dry-run enabled by default, repository-to-repository branch/tag creation, single-path property editing (including svn:ignore), and the last 100 redacted session operation records. Read properties before replacing their entire value. Do not overwrite base64/binary properties as text.
-
-Reads use a 60-second timeout and writes use 300 seconds. The host cannot cancel an executing run through the current SDK. After errors, local status is refreshed; verify repository history before retrying a timed-out commit. Output at the host 64 KiB limit is rejected as potentially incomplete. Operation records contain command names, elapsed time, exit codes and redacted errors, without arguments or commit messages; reload clears them.
-
-Merge rejects working-copy paths containing @. Switch supports working-copy root directory names containing @. Local diffs, commits and properties for filenames containing @ have real SVN regression coverage. Windows path handling was added but this release was verified on macOS only; Windows and non-UTF-8 content require platform validation. Target existence is checked before repository copy, but concurrent remote changes between the check and copy still require result verification.
-
-The UI regression simulates commits; extended.mjs additionally exercises actual commits, properties, branch creation, merge and locks in a temporary repository.
