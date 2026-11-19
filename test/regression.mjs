@@ -266,6 +266,7 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     input(document.querySelector('select[aria-label="SVN 操作类型"]'), 'properties')
     await click('确定 · 读取属性', modal())
     await waitFor(() => modal()?.textContent.includes('无属性'))
+    await waitFor(() => !document.querySelector('select[aria-label="SVN 操作类型"]').disabled)
     input(document.querySelector('select[aria-label="SVN 操作类型"]'), 'operations')
     await waitFor(() => modal()?.textContent.includes('模拟部分完成后失败'))
     locale = 'en'
@@ -273,8 +274,7 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     await waitFor(() => document.querySelector('select[aria-label="SVN operation type"]'))
     assert.ok(modal().textContent.includes('Operation history'))
     assert.ok(button('More SVN operations'))
-    await React.act(async () => { await delay(0) })
-    await React.act(async () => { window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' })) })
+    window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' }))
     await closed()
 
   } finally {
