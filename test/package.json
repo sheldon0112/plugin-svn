@@ -6,6 +6,6 @@
   },
   "private": true,
   "scripts": {
-    "test": "node --test regression.mjs"
+    "test": "node --test regression.mjs extended.mjs"
   }
 }

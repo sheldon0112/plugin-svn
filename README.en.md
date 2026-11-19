@@ -6,10 +6,12 @@ Manage local Subversion working copies inside CC GUI: inspect changes, browse hi
 
 - **Personal repository**: [sheldon0112/plugin-svn](https://github.com/sheldon0112/plugin-svn)
 - **Author**: AnnoDomini
-- **Current version**: `0.1.8`
+- **Current version**: `0.1.9`
 - **Plugin ID**: `ccgui-svn`
 - **Minimum host version**: CC GUI `1.2.4`, plugin SDK `^0.3`
 - **License**: [MIT](LICENSE)
+
+The current compatibility target is Windows 11 only; exact environments still require real Windows certification. Other platforms are future extensions outside this scope. See [0.1.9 delivery notes](docs/release-0.1.9.md).
 
 ## Features
 
@@ -106,7 +108,7 @@ Click **Switch branch or tag**, review the current path, and enter a repository-
 ^/tags/v1.0
 ```
 
-Before switching, resolve local changes, unversioned files, file locks held by the working copy, and switched child paths. Switching refreshes status and history. Switching is currently unsupported when the working-copy root directory name contains `@`; rename that directory first.
+Before switching, resolve local changes, unversioned files, file locks held by the working copy, and switched child paths. Switching refreshes status and history. Switching supports working-copy root directory names containing `@`.
 
 ## Permissions and data
 
@@ -160,7 +162,7 @@ npm ci --prefix test
 npm test --prefix test
 ```
 
-The test uses a mocked CC GUI host and temporary local SVN repositories, which are cleaned up afterward. Commit calls return a simulated result, so actual commits and host integration still require verification in CC GUI.
+Tests use a mocked CC GUI host and temporary local SVN repositories. The UI regression cleans up its repositories and simulates commits; extended.mjs preserves its fixture directory and tests actual commits. Real CC GUI host integration still requires separate verification.
 
 After modifying the plugin, reinstall from the local directory and check workspace selection, language, theme, and the relevant SVN operations in CC GUI.
 
@@ -173,3 +175,15 @@ Pull requests are welcome. Keep the plugin entry self-contained and run the rele
 ## License
 
 Distributed under the [MIT License](LICENSE), retaining upstream copyright and license notices.
+
+## 0.1.9 operations and limits
+
+Checkout registers the resulting local working copy with CC GUI. Use a new destination directory; SVN rejects conflicting existing files and partial checkouts are not automatically deleted. Externals are ignored.
+
+More SVN operations provides connection diagnostics, merge with dry-run enabled by default, repository-to-repository branch/tag creation, single-path property editing (including svn:ignore), and the last 100 redacted session operation records. Read properties before replacing their entire value. Do not overwrite base64/binary properties as text.
+
+Reads use a 60-second timeout and writes use 300 seconds. The host cannot cancel an executing run through the current SDK. After errors, local status is refreshed; verify repository history before retrying a timed-out commit. Output at the host 64 KiB limit is rejected as potentially incomplete. Operation records contain command names, elapsed time, exit codes and redacted errors, without arguments or commit messages; reload clears them.
+
+Merge rejects working-copy paths containing @. Switch supports working-copy root directory names containing @. Local diffs, commits and properties for filenames containing @ have real SVN regression coverage. Windows path handling was added but this release was verified on macOS only; Windows and non-UTF-8 content require platform validation. Target existence is checked before repository copy, but concurrent remote changes between the check and copy still require result verification.
+
+The UI regression simulates commits; extended.mjs additionally exercises actual commits, properties, branch creation, merge and locks in a temporary repository.

@@ -25,7 +25,6 @@ export default function activate(ctx) {
     "文件已由 ": "File is locked by ",
     " 锁定": ".",
     "当前工作副本没有此文件的有效锁": "This working copy does not hold a valid lock for the file",
-    "SVN 切换不支持工作副本根目录名称包含 @，请先重命名该目录": "SVN cannot switch when the working copy root name contains @. Rename that directory first.",
     "请输入仓库相对路径，例如 ^/branches/release": "Enter a repository-relative path, such as ^/branches/release",
     "请先处理工作副本中的本地变更、未纳入文件、文件锁或已单独切换的子路径": "Resolve local changes, unversioned files, file locks, or switched child paths before switching",
     "不支持的 SVN 操作": "Unsupported SVN operation",
@@ -224,7 +223,7 @@ export default function activate(ctx) {
     "提交": "Commit",
     " 项已排除": " excluded",
     "提交信息（必填）…  Ctrl+Enter 提交": "Commit message (required)… Ctrl+Enter to commit",
-    "提交信息以 UTF-8 写入仓库；提交失败时工作副本保持原样。": "Commit messages are written in UTF-8. If the commit fails, the working copy is left as is.",
+    "提交信息以 UTF-8 写入仓库；失败或超时后请核对工作副本及提交历史。": "Commit messages use UTF-8. After failure or timeout, verify working-copy status and repository history.",
     "切换": "Switch",
     "当前：": "Current: ",
     "目标仓库路径": "Target repository path",
@@ -253,6 +252,68 @@ export default function activate(ctx) {
     "工作区": "Workspace",
     "SVN 管理面板": "SVN Manager",
   }
+  Object.assign(english, {
+  "SVN 合并不支持工作副本路径包含 @，请使用不含 @ 的工作副本": "SVN merge does not support @ in the working-copy path. Use another working copy without @.",
+  "命令超时，操作可能已部分完成；请刷新状态。提交请先核对历史，勿直接重试。": "Command timed out and may have partly completed. Refresh status; verify commit history before retrying.",
+  "认证失败：请在终端对同一工作副本完成 SVN 登录，再重试。": "Authentication failed. Authenticate with SVN in a terminal for this working copy, then retry.",
+  "证书验证失败：请核实服务器证书及本机 SVN 信任配置；不要关闭证书校验。": "Certificate validation failed. Verify the certificate and local SVN trust settings; keep validation enabled.",
+  "连接失败：请检查网络及本机 SVN servers 文件中的代理配置。": "Connection failed. Check the network and proxy settings in the local SVN servers file.",
+  "无法启动 SVN：请检查宿主可执行文件搜索路径及 exec:svn 授权。": "Cannot start SVN. Check the host executable search path and exec:svn permission.",
+  "SVN 输出达到宿主 64 KiB 上限，内容可能不完整；请缩小查询范围。写操作请刷新并核对实际结果。": "SVN output reached the host 64 KiB limit and may be incomplete. Narrow the query; verify actual results after writes.",
+  "成功": "Succeeded",
+  "请输入不含凭据的 SVN 仓库 URL": "Enter an SVN repository URL without embedded credentials",
+  "请输入本机绝对目录": "Enter an absolute local directory",
+  "修订必须为 HEAD 或非负整数": "Revision must be HEAD or a nonnegative integer",
+  "检出成功，但登记工作区失败；请手工添加此目录。": "Checkout succeeded but workspace registration failed. Add this directory manually. ",
+  "请输入有效的仓库相对路径": "Enter a valid repository-relative path",
+  "连接成功；认证与代理由本机 SVN 配置处理。更新、切换忽略 externals。": "Connected. Authentication and proxy use local SVN settings. Update and switch ignore externals.",
+  "属性名称无效": "Invalid property name",
+  "请输入修订范围，例如 10:12": "Enter a revision range, such as 10:12",
+  "合并前请提交或还原本地变更": "Commit or revert local changes before merging",
+  "请填写有效修订和提交说明": "Enter a valid revision and commit message",
+  "目标分支／标签已存在，请使用新路径": "The target branch or tag already exists. Use a new path.",
+  "s（读取最多 60s，写入最多 300s）": "s (reads: 60s maximum, writes: 300s maximum)",
+  "更多 SVN 操作": "More SVN operations",
+  "显示忽略项": "Show ignored items",
+  "检出": "Checkout",
+  "仓库 URL": "Repository URL",
+  "本机绝对目标目录": "Absolute local destination directory",
+  "修订（HEAD 或数字）": "Revision (HEAD or number)",
+  "连接诊断": "Connection diagnostics",
+  "合并": "Merge",
+  "来源仓库路径（^/branches/name）": "Source repository path (^/branches/name)",
+  "修订范围（如 10:12）": "Revision range (such as 10:12)",
+  "创建分支／标签": "Create branch or tag",
+  "来源仓库路径": "Source repository path",
+  "目标仓库路径": "Destination repository path",
+  "来源修订": "Source revision",
+  "提交说明": "Commit message",
+  "读取属性": "Read properties",
+  "工作副本相对路径": "Working-copy-relative path",
+  "设置属性／忽略规则": "Set property or ignore rules",
+  "属性名（忽略规则用 svn:ignore）": "Property name (svn:ignore for ignore rules)",
+  "完整属性值（将替换原值；每行一条忽略规则）": "Full property value (replaces the existing value; one ignore pattern per line)",
+  "删除属性": "Delete property",
+  "属性名": "Property name",
+  "操作记录": "Operation history",
+  "（编码：": " (encoding: ",
+  "，请勿作为文本覆盖）": "; do not overwrite as text)",
+  "无属性": "No properties",
+  "检出并登记成功，关闭后可选择新工作区。": "Checked out and registered. Close this dialog to select the new workspace.",
+  "操作完成，请核对状态；有冲突时进入冲突工作台。": "Completed. Verify status and open the conflict workbench if needed.",
+  "SVN 操作": "SVN operations",
+  "执行中（读取最多 60 秒，写入最多 300 秒）…": "Running (reads: up to 60s, writes: up to 300s)…",
+  "SVN 操作类型": "SVN operation type",
+  "仅预演（不修改工作副本）；正式合并前请先预演": "Dry run only (does not modify the working copy); preview before merging",
+  "请先读取属性。设置会替换该属性的完整值；修改后需要提交。继承属性不在此处编辑。": "Read properties first. Setting a property replaces its full value and needs a commit. Inherited properties are not edited here.",
+  "复用本机 SVN 凭据和 servers 代理配置，不读取密码；连接失败请在终端对同一工作副本执行 svn info。": "Uses local SVN credentials and servers proxy settings without reading passwords. If connection fails, run svn info for this working copy in a terminal.",
+  "目标请使用新目录；SVN 失败可能留下部分工作副本，请核对后再重试。不会自动删除目标内容。": "Use a new directory. Failed checkout may leave a partial working copy; verify before retrying. Existing content is never automatically removed.",
+  "当前插件会话最近 100 次命令，不记录参数、提交说明或凭据。": "Last 100 commands in this plugin session. Arguments, commit messages and credentials are not recorded.",
+  "ms 退出码：": "ms exit code: ",
+  "未返回": "unavailable",
+  "复制脱敏操作记录": "Copy redacted operation history",
+  "检出工作副本": "Checkout working copy"
+})
   ctx.i18n.addBundle('en', 'ccgui-svn', english)
   ctx.i18n.addBundle('zh-CN', 'ccgui-svn', Object.fromEntries(Object.keys(english).map((label) => [label, label])))
 
@@ -467,7 +528,9 @@ export default function activate(ctx) {
 .svn-pane-logmsg { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .svn-pane-logmeta { font-size: 10px; color: var(--svn-muted); flex: none; }
 .svn-pane-empty { font-size: 11.5px; color: var(--svn-muted); line-height: 1.65; }
-@media (max-width: 860px) { .svn-side { display: none; } .svn-log { width: 100%; } .svn-detail { display: none; } }
+.svn-center { container-type: inline-size; }
+@media (max-width: 860px) { .svn-body, .svn-history { flex-direction: column; overflow: auto; } .svn-side, .svn-log, .svn-detail { display: block; width: 100%; min-height: 180px; flex: none; } .svn-head { flex-wrap: wrap; } .svn-headmain { flex: 1; } .svn-head-actions { margin-left: 0; width: 100%; flex-wrap: wrap; } }
+@container (max-width: 860px) { .svn-body, .svn-history { flex-direction: column; overflow: auto; } .svn-side, .svn-log, .svn-detail { display: block; width: 100%; min-height: 180px; flex: none; } .svn-head { flex-wrap: wrap; } .svn-headmain { flex: 1; } .svn-head-actions { margin-left: 0; width: 100%; flex-wrap: wrap; } }
 `)
 
   const writes = new Set()
@@ -486,20 +549,54 @@ export default function activate(ctx) {
     return path + '@' + revision
   }
 
+  function isAbsolute(path) { return /^(?:\/|[a-z]:[\\/]|\\\\)/i.test(path) }
+
   function localPath(root, rel = '') {
-    if (rel.startsWith('/') || rel.split('/').includes('..')) throw new Error(t('请输入工作副本内的相对路径'))
+    if (isAbsolute(rel) || rel.split(/[\\/]/).includes('..')) throw new Error(t('请输入工作副本内的相对路径'))
     return rel && rel !== '.' ? root.replace(/\/$/, '') + '/' + rel : root
   }
 
+  const operations = []
+  const operationListeners = new Set()
+  function redact(value) {
+    return String(value).replace(/([a-z][a-z0-9+.-]*:\/\/)[^\s/]+/gi, '$1[仓库]')
+      .replace(/((?:password|passwd|token|secret|authorization)\s*[:=]\s*)\S+/gi, '$1[已隐藏]')
+  }
+  function diagnose(error) {
+    const message = String(error?.message || error)
+    const hint = /timed out|timeout/i.test(message) ? t("命令超时，操作可能已部分完成；请刷新状态。提交请先核对历史，勿直接重试。")
+      : /E170001|E215004|authentication|authorization failed/i.test(message) ? t("认证失败：请在终端对同一工作副本完成 SVN 登录，再重试。")
+      : /certificate|E230001/i.test(message) ? t("证书验证失败：请核实服务器证书及本机 SVN 信任配置；不要关闭证书校验。")
+      : /proxy|E170013|E670002|could not resolve|connection refused/i.test(message) ? t("连接失败：请检查网络及本机 SVN servers 文件中的代理配置。")
+      : /failed to start|ENOENT/i.test(message) ? t("无法启动 SVN：请检查宿主可执行文件搜索路径及 exec:svn 授权。") : ''
+    return redact(message + (hint ? '\n' + hint : ''))
+  }
+
   async function svn(command, args, targets) {
-    const result = await ctx.bridge.invoke('plugin_exec_run', {
-      bin: 'svn',
-      args: [command, '--non-interactive', ...args, '--', ...targets],
-      env: { LC_ALL: 'en_US.UTF-8' },
-      timeoutMs: 120000,
-    })
-    if (result.code !== 0) throw new Error(result.stderr.trim() || t('SVN 执行失败'))
-    return result.stdout
+    const started = Date.now()
+    const writing = ['update', 'commit', 'revert', 'delete', 'add', 'resolve', 'cleanup', 'propset', 'propdel', 'lock', 'unlock', 'switch', 'checkout', 'merge', 'copy'].includes(command)
+    const record = { command, started, code: null }
+    try {
+      const result = await ctx.bridge.invoke('plugin_exec_run', {
+        bin: 'svn', args: [command, '--non-interactive', ...args, '--', ...targets],
+        env: { LC_ALL: 'en_US.UTF-8' }, timeoutMs: writing ? 300000 : 60000,
+      })
+      record.code = result.code
+      if ([result.stdout, result.stderr].some((text) => new TextEncoder().encode(text).length >= 65530)) {
+        throw new Error(t("SVN 输出达到宿主 64 KiB 上限，内容可能不完整；请缩小查询范围。写操作请刷新并核对实际结果。"))
+      }
+      if (result.code !== 0) throw new Error(result.stderr.trim() || t('SVN 执行失败'))
+      record.detail = result.stderr ? redact(result.stderr) : t("成功")
+      return result.stdout
+    } catch (error) {
+      record.detail = diagnose(error)
+      throw new Error(record.detail)
+    } finally {
+      record.elapsed = Date.now() - started
+      operations.unshift(record)
+      operations.splice(100)
+      for (const listener of operationListeners) listener()
+    }
   }
 
   function countConflicts(output) {
@@ -547,7 +644,7 @@ export default function activate(ctx) {
     let info
     return async function api(route, options = {}) {
       if (route === '/state') {
-        if (!workspacePath || !workspacePath.startsWith('/')) throw new Error(t('请打开本机 SVN 工作区'))
+        if (!workspacePath || !isAbsolute(workspacePath)) throw new Error(t('请打开本机 SVN 工作区'))
         const doc = parseXml(await svn('info', ['--xml'], [target(workspacePath)]))
         const entry = doc.querySelector('entry')
         const path = field(entry, 'wc-info > wcroot-abspath')
@@ -576,6 +673,23 @@ export default function activate(ctx) {
         return { workingCopies: [info] }
       }
 
+      if (route === '/checkout') {
+        const url = new URL(options.url)
+        if (!['file:', 'http:', 'https:', 'svn:', 'svn+ssh:'].includes(url.protocol) || url.username || url.password) throw new Error(t("请输入不含凭据的 SVN 仓库 URL"))
+        if (!isAbsolute(options.directory) || /[\r\n]/.test(options.directory)) throw new Error(t("请输入本机绝对目录"))
+        const revision = options.revision || 'HEAD'
+        if (!/^(?:HEAD|\d+)$/.test(revision)) throw new Error(t("修订必须为 HEAD 或非负整数"))
+        if (writes.has(options.directory)) throw new Error(t('当前工作副本正在执行 SVN 操作'))
+        writes.add(options.directory)
+        try {
+          await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), options.directory])
+          try { await ctx.workspaces.add(options.directory) } catch (error) {
+            throw new Error(t("检出成功，但登记工作区失败；请手工添加此目录。") + diagnose(error))
+          }
+          return { directory: options.directory }
+        } finally { writes.delete(options.directory) }
+      }
+
       const root = options.wc
       const repoTarget = options.path?.startsWith('/')
       const path = repoTarget ? options.path.split('/').map(encodeURIComponent).join('/') : ''
@@ -583,6 +697,21 @@ export default function activate(ctx) {
       const revision = Number(options.revision)
       const validRevision = Number.isSafeInteger(revision) && revision > 0
       const location = repoTarget ? info.root.replace(/\/$/, '') + path : localPath(root, rel)
+
+      function repositoryUrl(value = '') {
+        const segments = value.slice(2).split('/')
+        if (!value.startsWith('^/') || segments.some((part) => !part || part === '.' || part === '..')) throw new Error(t("请输入有效的仓库相对路径"))
+        return info.root.replace(/\/$/, '') + '/' + segments.map(encodeURIComponent).join('/')
+      }
+
+      if (route === '/properties') {
+        const doc = parseXml(await svn('proplist', ['--xml', '-v'], [target(location)]))
+        return Array.from(doc.querySelectorAll('property'), (node) => ({ name: node.getAttribute('name'), value: node.textContent, encoding: node.getAttribute('encoding') }))
+      }
+      if (route === '/diagnose') {
+        await svn('info', ['--xml', '-r', 'HEAD'], [target(info.url, 'HEAD')])
+        return { output: t("连接成功；认证与代理由本机 SVN 配置处理。更新、切换忽略 externals。") }
+      }
 
       if (route === '/conflict' || route === '/conflict-incoming') {
         const doc = parseXml(await svn('info', ['--xml'], [target(location)]))
@@ -624,6 +753,7 @@ export default function activate(ctx) {
 
       if (route === '/status') {
         const args = ['--xml', '--ignore-externals']
+        if (options.ignored) args.push('--no-ignore')
         if (options.remote) args.push('--show-updates')
         const doc = parseXml(await svn('status', args, [target(root)]))
         const entries = Array.from(doc.querySelectorAll('entry')).flatMap((entry) => {
@@ -723,7 +853,7 @@ export default function activate(ctx) {
         }
         const synthesized = !validRevision && options.unversioned === true
         if (synthesized) {
-          args.push('--old', '/dev/null', '--new', target(location))
+          args.push('--old', /^[a-z]:/i.test(root) ? 'NUL' : '/dev/null', '--new', target(location))
           destinations = []
         }
         const diff = await svn('diff', args, destinations)
@@ -749,7 +879,7 @@ export default function activate(ctx) {
       if (scoped && !targets.length) throw new Error(t('请先勾选操作路径'))
       const modes = ['working', 'base', 'mine-full', 'theirs-full', 'mine-conflict', 'theirs-conflict']
       const commands = {
-        '/update': ['update', ['--accept', 'postpone', '--ignore-externals'], [root]],
+        '/update': ['update', ['--accept', 'postpone', '--ignore-externals'], [target(root)]],
         '/commit': ['commit', ['--depth', 'empty', '-m', options.message || ''], targets],
         '/revert': ['revert', ['--depth', 'empty'], targets],
         '/delete': ['delete', [], targets],
@@ -760,6 +890,37 @@ export default function activate(ctx) {
       const command = commands[route]
       writes.add(root)
       try {
+        if (route === '/property-set' || route === '/property-delete') {
+          if (!/^[A-Za-z_][A-Za-z0-9_.:-]*$/.test(options.name || '')) throw new Error(t("属性名称无效"))
+          await svn(route === '/property-set' ? 'propset' : 'propdel', [], route === '/property-set'
+            ? [options.name, options.value || '', target(location)] : [options.name, target(location)])
+          return {}
+        }
+        if (route === '/merge') {
+          if (root.includes('@')) throw new Error(t("SVN 合并不支持工作副本路径包含 @，请使用不含 @ 的工作副本"))
+          if (!/^[0-9]+:[0-9]+$/.test(options.range || '')) throw new Error(t("请输入修订范围，例如 10:12"))
+          if (options.dryRun !== true) {
+            const status = await api('/status', { wc: root })
+            if (status.entries.some(hasLocalChange)) throw new Error(t("合并前请提交或还原本地变更"))
+          }
+          const source = repositoryUrl(options.source)
+          const args = ['-r', options.range, '--accept', 'postpone']
+          if (options.dryRun === true) args.push('--dry-run')
+          const output = await svn('merge', args, [target(source, 'HEAD'), root])
+          return { output, conflicts: countConflicts(output) }
+        }
+        if (route === '/copy') {
+          const revision = options.revision || 'HEAD'
+          if (!/^(?:HEAD|\d+)$/.test(revision) || !options.message?.trim()) throw new Error(t("请填写有效修订和提交说明"))
+          const destination = repositoryUrl(options.destination)
+          const parent = destination.slice(0, destination.lastIndexOf('/'))
+          const name = decodeURIComponent(destination.slice(destination.lastIndexOf('/') + 1))
+          const listing = parseXml(await svn('list', ['--xml'], [target(parent, 'HEAD')]))
+          if (Array.from(listing.querySelectorAll('entry > name')).some((node) => node.textContent === name)) throw new Error(t("目标分支／标签已存在，请使用新路径"))
+          const output = await svn('copy', ['-r', revision, '-m', options.message],
+            [target(repositoryUrl(options.source), revision), target(repositoryUrl(options.destination))])
+          return { output }
+        }
         if (route === '/ignore') {
           const name = rel.split('/').at(-1)
           const parent = rel.includes('/') ? rel.slice(0, rel.lastIndexOf('/')) : '.'
@@ -788,9 +949,6 @@ export default function activate(ctx) {
           return {}
         }
         if (route === '/switch') {
-          if (root.split('/').at(-1).includes('@')) {
-            throw new Error(t('SVN 切换不支持工作副本根目录名称包含 @，请先重命名该目录'))
-          }
           const destination = options.destination.trim()
           const segments = destination.slice(2).split('/')
           if (!destination.startsWith('^/') || segments.some((segment) => !segment || segment === '.' || segment === '..')) {
@@ -1044,9 +1202,19 @@ export default function activate(ctx) {
     const [itemFilter, setItemFilter] = useState('all')
     const [pathFilter, setPathFilter] = useState('')
     const [remote, setRemote] = useState(false)
+    const [ignored, setIgnored] = useState(false)
+    const [advanced, setAdvanced] = useState(false)
     const [diff, setDiff] = useState(null)
     const [blame, setBlame] = useState(null)
     const [busy, setBusy] = useState('')
+    const [elapsed, setElapsed] = useState(0)
+    useEffect(() => {
+      setElapsed(0)
+      if (!busy) return
+      const start = Date.now()
+      const timer = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 1000)
+      return () => clearInterval(timer)
+    }, [busy])
     const [toast, setToast] = useState(null)
     const [confirm, setConfirm] = useState(null)
     const [commitSelection, setCommitSelection] = useState(null)
@@ -1098,7 +1266,7 @@ export default function activate(ctx) {
       setStatusLoading(true)
       setStatusError('')
       try {
-        const data = await api('/status', { wc: currentPath, remote: !!(options && options.remote) })
+        const data = await api('/status', { wc: currentPath, remote: !!(options && options.remote), ignored })
         if (seq !== statusSeq.current) return
         setStatus(data)
         setSelected((prev) => {
@@ -1111,7 +1279,7 @@ export default function activate(ctx) {
       } finally {
         if (seq === statusSeq.current) setStatusLoading(false)
       }
-    }, [currentPath])
+    }, [currentPath, ignored])
 
     const loadLog = useCallback(async (options) => {
       if (!currentPath) return
@@ -1160,12 +1328,15 @@ export default function activate(ctx) {
       }
     }, [currentPath])
 
+    useEffect(() => { if (currentPath) loadStatus({ remote }) }, [ignored])
+
     async function perform(label, fn) {
       setBusy(label)
       try {
         return await fn()
       } catch (err) {
-        notify(String((err && err.message) || err), 'err')
+        notify(diagnose(err), 'err')
+        await refreshAll()
         return null
       } finally {
         setBusy('')
@@ -1483,13 +1654,15 @@ export default function activate(ctx) {
             current ? current.name + ' · ' + current.path : t('选择一个工作副本')),
         ),
         h('div', { className: 'svn-head-actions' },
-          busy ? h('span', { className: 'svn-busy' }, h(Spinner), busy) : null,
+          busy ? h('span', { className: 'svn-busy' }, h(Spinner), busy + ' ' + elapsed + t("s（读取最多 60s，写入最多 300s）")) : null,
           h('button', { type: 'button', className: 'svn-icon', title: t('刷新'), onClick: () => refreshAll(), disabled: !!busy }, '⟳'),
           h('button', { type: 'button', className: 'svn-btn', onClick: askUpdate, disabled: !!busy || !current || current.ok === false }, t('↓ 更新')),
           h('button', { type: 'button', className: 'svn-btn', disabled: !!busy || !current,
             onClick: () => setPathAction({ kind: 'lock', value: '' }) }, t('文件锁')),
           h('button', { type: 'button', className: 'svn-btn', disabled: !!busy || !current,
             onClick: () => setPathAction({ kind: 'switch', value: '' }) }, t('切换分支／标签')),
+          h('button', { type: 'button', className: 'svn-btn', disabled: !!busy, onClick: () => setAdvanced(true) }, t("更多 SVN 操作")),
+          h('label', null, h('input', { type: 'checkbox', checked: ignored, onChange: (event) => { setIgnored(event.target.checked) } }), t("显示忽略项")),
           h('button', { type: 'button', className: 'svn-btn primary', onClick: () => openCommitDialog(), disabled: !!busy || !current || current.ok === false }, t('✓ 提交')),
         ),
       ),
@@ -1597,6 +1770,7 @@ export default function activate(ctx) {
         ),
       ),
 
+      advanced ? h(AdvancedDialog, { api, current, busy, onClose: () => setAdvanced(false), onChanged: refreshAll }) : null,
       toast ? h('div', { className: 'svn-toast' + (toast.kind === 'err' ? ' err' : toast.kind === 'warn' ? ' warn' : '') }, toast.message) : null,
 
       confirm ? h(ConfirmDialog, {
@@ -2142,7 +2316,7 @@ export default function activate(ctx) {
           if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') props.onSubmit()
         },
       }),
-      h('div', { className: 'svn-hint' }, t('提交信息以 UTF-8 写入仓库；提交失败时工作副本保持原样。')),
+      h('div', { className: 'svn-hint' }, t('提交信息以 UTF-8 写入仓库；失败或超时后请核对工作副本及提交历史。')),
     )
   }
 
@@ -2159,7 +2333,7 @@ export default function activate(ctx) {
       }, busy || (switching ? t('切换') : t('查询'))),
     },
     switching ? h('div', null, t('当前：') + (current.relativeUrl || current.url)) : null,
-    h('label', null, switching ? t('目标仓库路径') : t('文件相对工作副本根目录的路径'),
+    h('label', null, switching ? t(t("目标仓库路径")) : t('文件相对工作副本根目录的路径'),
       h('input', {
         className: 'svn-input', value, disabled: !!busy,
         placeholder: switching ? t('^/branches/release 或 ^/tags/v1.0') : 'docs/design.docx',
@@ -2241,6 +2415,68 @@ export default function activate(ctx) {
     )
   }
 
+  function AdvancedDialog({ api, current, checkoutOnly, onClose, onChanged }) {
+    const [kind, setKind] = useState(checkoutOnly ? 'checkout' : current ? 'diagnose' : 'operations')
+    const [values, setValues] = useState({ path: '.', source: current?.relativeUrl || '^/trunk', revision: 'HEAD', dryRun: true })
+    const [working, setWorking] = useState(false)
+    const [output, setOutput] = useState('')
+    const [error, setError] = useState('')
+    const [, rerender] = useState(0)
+    useEffect(() => {
+      const listener = () => rerender((value) => value + 1)
+      operationListeners.add(listener)
+      return () => operationListeners.delete(listener)
+    }, [])
+    const definitions = {
+      checkout: [t("检出"), [['url', t("仓库 URL")], ['directory', t("本机绝对目标目录")], ['revision', t("修订（HEAD 或数字）")]]],
+      diagnose: [t("连接诊断"), []],
+      merge: [t("合并"), [['source', t("来源仓库路径（^/branches/name）")], ['range', t("修订范围（如 10:12）")]]],
+      copy: [t("创建分支／标签"), [['source', t("来源仓库路径")], ['destination', t("目标仓库路径")], ['revision', t("来源修订")], ['message', t("提交说明")]]],
+      properties: [t("读取属性"), [['path', t("工作副本相对路径")]]],
+      'property-set': [t("设置属性／忽略规则"), [['path', t("工作副本相对路径")], ['name', t("属性名（忽略规则用 svn:ignore）")], ['value', t("完整属性值（将替换原值；每行一条忽略规则）")]]],
+      'property-delete': [t("删除属性"), [['path', t("工作副本相对路径")], ['name', t("属性名")]]],
+      operations: [t("操作记录"), []],
+    }
+    const [title, fields] = definitions[kind]
+    async function execute() {
+      setWorking(true)
+      setError('')
+      setOutput('')
+      try {
+        const result = await api('/' + kind, { wc: current?.path, ...values })
+        if (kind === 'properties') {
+          setOutput(result.map((item) => item.name + (item.encoding ? t("（编码：") + item.encoding + t("，请勿作为文本覆盖）") : '') + '\n' + item.value).join('\n\n') || t("无属性"))
+        } else setOutput(result.output || (kind === 'checkout' ? t("检出并登记成功，关闭后可选择新工作区。") : t("操作完成，请核对状态；有冲突时进入冲突工作台。")))
+      } catch (err) { setError(diagnose(err)) }
+      finally {
+        try { if (kind !== 'checkout') await onChanged?.() }
+        finally { setWorking(false) }
+      }
+    }
+    return h(Modal, { title: t("SVN 操作"), width: 700, onClose: working ? () => {} : onClose,
+      footer: kind === 'operations' ? null : h('button', { type: 'button', className: 'svn-btn primary', disabled: working,
+        onClick: execute }, working ? t("执行中（读取最多 60 秒，写入最多 300 秒）…") : t('确定') + ' · ' + title),
+    },
+      !checkoutOnly ? h('select', { className: 'svn-input', value: kind, disabled: working,
+        'aria-label': t("SVN 操作类型"), onChange: (event) => { setKind(event.target.value); setOutput(''); setError('') },
+      }, Object.entries(definitions).filter(([key]) => key !== 'checkout' && (current || key === 'operations')).map(([key, [label]]) => h('option', { key, value: key }, label))) : null,
+      fields.map(([key, label]) => h('label', { key, style: { display: 'block', marginTop: 10 } }, label,
+        h(key === 'value' || key === 'message' ? 'textarea' : 'input', { className: 'svn-input', value: values[key] || '', disabled: working,
+          'aria-label': label, style: { width: '100%' }, onChange: (event) => setValues({ ...values, [key]: event.target.value }) }))),
+      kind === 'merge' ? h('label', null, h('input', { type: 'checkbox', checked: values.dryRun, disabled: working,
+        onChange: (event) => setValues({ ...values, dryRun: event.target.checked }) }), t("仅预演（不修改工作副本）；正式合并前请先预演")) : null,
+      kind === 'property-set' || kind === 'property-delete' ? h('div', { className: 'svn-hint' }, t("请先读取属性。设置会替换该属性的完整值；修改后需要提交。继承属性不在此处编辑。")) : null,
+      kind === 'diagnose' ? h('div', { className: 'svn-hint' }, t("复用本机 SVN 凭据和 servers 代理配置，不读取密码；连接失败请在终端对同一工作副本执行 svn info。")) : null,
+      kind === 'checkout' ? h('div', { className: 'svn-hint' }, t("目标请使用新目录；SVN 失败可能留下部分工作副本，请核对后再重试。不会自动删除目标内容。")) : null,
+      kind === 'operations' ? h('div', null, h('div', { className: 'svn-hint' }, t("当前插件会话最近 100 次命令，不记录参数、提交说明或凭据。")),
+        operations.map((item, index) => h('pre', { key: index, className: 'svn-msg', style: { whiteSpace: 'pre-wrap' } },
+          new Date(item.started).toLocaleString() + ' svn ' + item.command + ' ' + item.elapsed + t("ms 退出码：") + (item.code ?? t("未返回")) + '\n' + item.detail)),
+        h('button', { className: 'svn-btn', onClick: () => copyText(operations.map((item) => JSON.stringify(item)).join('\n')) }, t("复制脱敏操作记录"))) : null,
+      output ? h('pre', { className: 'svn-msg', style: { whiteSpace: 'pre-wrap' } }, output) : null,
+      error ? h('pre', { className: 'svn-errorbox', style: { whiteSpace: 'pre-wrap' } }, error) : null,
+    )
+  }
+
   function WorkspacePanel() {
     const [, setLocale] = useState(ctx.host?.locale)
     useEffect(() => {
@@ -2248,6 +2484,12 @@ export default function activate(ctx) {
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
       return () => observer.disconnect()
     }, [])
+    const [checkout, setCheckout] = useState(false)
+    async function reloadWorkspaces() {
+      const rows = (await ctx.workspaces.list()).filter((row) => isAbsolute(row.path) && row.kind !== 'worktree')
+      setWorkspaces(rows)
+      setWorkspacePath((path) => rows.some((row) => row.path === path) ? path : rows.at(-1)?.path || '')
+    }
     const [workspaces, setWorkspaces] = useState([])
     const [workspacePath, setWorkspacePath] = useState('')
     const [message, setMessage] = useState(t('正在读取工作区…'))
@@ -2257,7 +2499,7 @@ export default function activate(ctx) {
       let active = true
       ctx.workspaces.list().then((rows) => {
         if (!active) return
-        const localRows = rows.filter((row) => row.path.startsWith('/') && row.kind !== 'worktree')
+        const localRows = rows.filter((row) => isAbsolute(row.path) && row.kind !== 'worktree')
         localRows.sort((left, right) => (right.lastOpenedAt ?? 0) - (left.lastOpenedAt ?? 0))
         setWorkspaces(localRows)
         setWorkspacePath(localRows[0]?.path || '')
@@ -2269,6 +2511,9 @@ export default function activate(ctx) {
     }, [])
 
     return h('div', { className: 'svn-root svn-center' },
+      message && workspaces.length ? h('div', { className: 'svn-errorbox', role: 'alert' }, message) : null,
+      h('button', { type: 'button', className: 'svn-btn', onClick: () => setCheckout(true) }, t("检出工作副本")),
+      checkout ? h(AdvancedDialog, { api, checkoutOnly: true, onClose: () => { setCheckout(false); reloadWorkspaces().catch((error) => setMessage(diagnose(error))) } }) : null,
       workspaces.length ? h('label', { className: 'svn-workspace-picker' },
         h('span', { className: 'svn-side-title' }, t('工作区')),
         h('select', {

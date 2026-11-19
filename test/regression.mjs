@@ -32,6 +32,7 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
   let hold
   let simulatedCommit
   let failNextLog = false
+  let failAfterRevert = false
   activate({
     react: React,
     theme: { injectCss() {} },
@@ -40,6 +41,11 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     ui: { registerCenterTab({ component }) { Panel = component }, registerSidebarNav() {} },
     workspaces: { list: async () => [{ id: 'wc', path: wc, name: 'Fixture' }] },
     bridge: { async invoke(_action, { bin, args, env }) {
+      if (args[0] === 'revert' && failAfterRevert) {
+        failAfterRevert = false
+        await run(bin, args, { env: { ...process.env, ...env } })
+        return { code: 1, stdout: '', stderr: '模拟部分完成后失败' }
+      }
       if (args[0] === 'commit') {
         simulatedCommit = args
         return { code: 0, stdout: 'Committed revision 99.', stderr: '' }
@@ -243,6 +249,33 @@ test('面板选择、预览、提交、冲突处理与切换', async () => {
     document.querySelector('button[title=刷新]').click()
     await waitFor(() => [...document.querySelectorAll('.svn-logrow')].some((node) => node.textContent.includes('remove branch file')))
     assert.equal(svn('info', '--show-item', 'relative-url', wc).trim(), '^/release')
+    await click('更改')
+    writeFileSync(wc + '/' + b, 'temporary failure fixture\n')
+    document.querySelector('button[title=刷新]').click()
+    await waitFor(() => row(b))
+    failAfterRevert = true
+    await menu(b, '还原修改')
+    await click('还原', await waitFor(modal))
+    await waitFor(() => !row(b) && document.body.textContent.includes('模拟部分完成后失败'))
+    await click('取消', await waitFor(modal))
+    await closed()
+    await click('更多 SVN 操作')
+    await waitFor(() => document.querySelector('select[aria-label="SVN 操作类型"]'))
+    await click('确定 · 连接诊断', modal())
+    await waitFor(() => modal()?.textContent.includes('连接成功'))
+    input(document.querySelector('select[aria-label="SVN 操作类型"]'), 'properties')
+    await click('确定 · 读取属性', modal())
+    await waitFor(() => modal()?.textContent.includes('无属性'))
+    input(document.querySelector('select[aria-label="SVN 操作类型"]'), 'operations')
+    await waitFor(() => modal()?.textContent.includes('模拟部分完成后失败'))
+    locale = 'en'
+    document.documentElement.lang = locale
+    await waitFor(() => document.querySelector('select[aria-label="SVN operation type"]'))
+    assert.ok(modal().textContent.includes('Operation history'))
+    assert.ok(button('More SVN operations'))
+    window.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape' }))
+    await closed()
+
   } finally {
     app.unmount()
     dom.window.close()
