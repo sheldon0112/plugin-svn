@@ -11,7 +11,7 @@ Manage local Subversion working copies inside CC GUI: inspect changes, browse hi
 - **Minimum host version**: CC GUI `1.2.4`, plugin SDK `^0.3`
 - **License**: [MIT](LICENSE)
 
-The current compatibility target is Windows 11 only; exact environments still require real Windows certification. Other platforms are future extensions outside this scope. See [0.1.9 delivery notes](docs/release-0.1.9.md).
+兼容目标为 macOS 与 Windows，实际验证范围见 [兼容改造与回归记录](docs/platform-compatibility.md)。
 
 ## Features
 
@@ -162,7 +162,7 @@ npm ci --prefix test
 npm test --prefix test
 ```
 
-Tests use a mocked CC GUI host and temporary local SVN repositories. The UI regression cleans up its repositories and simulates commits; extended.mjs preserves its fixture directory and tests actual commits. Real CC GUI host integration still requires separate verification.
+测试使用模拟 CC GUI 宿主与临时 SVN 仓库，结束后清理目录；UI 测试模拟提交，扩展测试执行真实提交。真实宿主集成仍需独立验收。
 
 After modifying the plugin, reinstall from the local directory and check workspace selection, language, theme, and the relevant SVN operations in CC GUI.
 
@@ -176,4 +176,14 @@ Pull requests are welcome. Keep the plugin entry self-contained and run the rele
 
 Distributed under the [MIT License](LICENSE), retaining upstream copyright and license notices.
 
+## 0.1.9 operations and limits
 
+Checkout registers the resulting local working copy with CC GUI. Use a new destination directory; SVN rejects conflicting existing files and partial checkouts are not automatically deleted. Externals are ignored.
+
+More SVN operations provides connection diagnostics, merge with dry-run enabled by default, repository-to-repository branch/tag creation, single-path property editing (including svn:ignore), and the last 100 redacted session operation records. Read properties before replacing their entire value. Do not overwrite base64/binary properties as text.
+
+Reads use a 60-second timeout and writes use 300 seconds. The host cannot cancel an executing run through the current SDK. After errors, local status is refreshed; verify repository history before retrying a timed-out commit. Output at the host 64 KiB limit is rejected as potentially incomplete. Operation records contain command names, elapsed time, exit codes and redacted errors, without arguments or commit messages; reload clears them.
+
+Merge rejects working-copy paths containing @. Switch supports working-copy root directory names containing @. Local diffs, commits and properties for filenames containing @ have real SVN regression coverage. macOS 与 Windows 已开展多轮回归；Windows 中文参数及 @ 前空格仍有已知失败，详见 [兼容记录](docs/platform-compatibility.md)。 Target existence is checked before repository copy, but concurrent remote changes between the check and copy still require result verification.
+
+The UI regression simulates commits; extended.mjs additionally exercises actual commits, properties, branch creation, merge and locks in a temporary repository.
