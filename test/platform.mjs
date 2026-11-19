@@ -21,6 +21,7 @@ test('Windows 盘符、UNC、大小写、分隔符及越界路径', () => {
     assert.throws(() => localPath('C:\\Work', rel), undefined, rel)
   }
   assert.equal(localPath('/Users/Wc', 'a?'), '/Users/Wc/a?')
+  assert.equal(localPath('/Users/Wc', 'a\nb'), '/Users/Wc/a\nb')
   assert.equal(relativePath('/Users/Wc', '/users/wc/a'), null)
   assert.equal(localPath('C:/wc', 'a/'.repeat(150) + 'file.txt').length > 260, true)
 })

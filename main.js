@@ -575,7 +575,7 @@ export default function activate(ctx) {
   function localPath(root, rel = '') {
     const windows = isWindowsPath(root)
     const value = windows ? rel.replace(/\\/g, '/') : rel
-    if (isAbsolute(value) || /^[a-z]:/i.test(value) || value.split('/').includes('..') || /[\0\r\n]/.test(value) ||
+    if (isAbsolute(value) || /^[a-z]:/i.test(value) || value.split('/').includes('..') || /\0/.test(value) ||
         (windows && value.split('/').some((part) => part !== '.' && (/[<>:"|?*\x00-\x1f]/.test(part) || /[ .]$/.test(part) || /^(?:con|prn|aux|nul|com[1-9¹²³]|lpt[1-9¹²³])(?:\.|$)/i.test(part))))) {
       throw new Error(t('请输入工作副本内的相对路径'))
     }
