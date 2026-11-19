@@ -312,6 +312,7 @@ export default function activate(ctx) {
   "ms 退出码：": "ms exit code: ",
   "未返回": "unavailable",
   "复制脱敏操作记录": "Copy redacted operation history",
+  "复制失败，请手动选择文本复制": "Copy failed. Select and copy the text manually.",
   "检出工作副本": "Checkout working copy"
 })
   ctx.i18n.addBundle('en', 'ccgui-svn', english)
@@ -1048,25 +1049,37 @@ export default function activate(ctx) {
     return [value.slice(0, index + 1), value.slice(index + 1)]
   }
 
-  function copyText(value) {
+  async function copyText(value) {
     const text = String(value || '')
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text))
+      try { return await navigator.clipboard.writeText(text) } catch (error) {}
     }
-    return Promise.resolve(fallbackCopy(text))
+    return fallbackCopy(text)
   }
 
   function fallbackCopy(text) {
+    const area = document.createElement('textarea')
     try {
-      const area = document.createElement('textarea')
       area.value = text
       area.style.position = 'fixed'
       area.style.opacity = '0'
       document.body.appendChild(area)
       area.select()
-      document.execCommand('copy')
-      document.body.removeChild(area)
-    } catch (err) {}
+      if (!document.execCommand('copy')) throw new Error(t('复制失败，请手动选择文本复制'))
+    } finally {
+      area.remove()
+    }
+  }
+
+  function CopyButton({ text, children, ...props }) {
+    const [failed, setFailed] = useState(false)
+    return h(React.Fragment, null,
+      h('button', { ...props, onClick: async () => {
+        setFailed(false)
+        try { await copyText(text) } catch (error) { setFailed(true) }
+      } }, children),
+      failed ? h('span', { className: 'svn-tag', role: 'alert' }, t('复制失败，请手动选择文本复制')) : null,
+    )
   }
 
   function parseDiff(text) {
@@ -2156,9 +2169,9 @@ export default function activate(ctx) {
         h('span', { className: 'svn-detail-author' }, entry.author || t('(无作者)')),
         h('span', { className: 'svn-detail-date' }, fmtDate(entry.date)),
         h('div', { style: { marginLeft: 'auto', display: 'flex', gap: 5 } },
-          h('button', {
+          h(CopyButton, {
             type: 'button', className: 'svn-btn small', title: t('复制版本号'),
-            onClick: () => copyText(String(entry.revision)),
+            text: String(entry.revision),
           }, t('复制版本')),
           h('button', { type: 'button', className: 'svn-btn small primary', onClick: () => props.onRevisionDiff(entry) }, t('查看此版本差异')),
         ),
@@ -2237,7 +2250,7 @@ export default function activate(ctx) {
         data.truncated ? h('span', { className: 'svn-tag' }, t('已截断')) : null,
         h('div', { style: { marginLeft: 'auto', display: 'flex', gap: 5 } },
           props.onBlame && data.relPath && !data.synthesized ? h('button', { type: 'button', className: 'svn-btn small', onClick: props.onBlame, title: t('查看该文件的逐行溯源') }, t('溯源')) : null,
-          h('button', { type: 'button', className: 'svn-btn small', onClick: () => copyText(data.diff || '') }, t('复制差异')),
+          h(CopyButton, { type: 'button', className: 'svn-btn small', text: data.diff || '' }, t('复制差异')),
           h('button', { type: 'button', className: 'svn-btn small' + (wrap ? ' primary' : ''), onClick: () => setWrap(!wrap) }, t('换行')),
         ),
       ),
@@ -2498,7 +2511,7 @@ export default function activate(ctx) {
       kind === 'operations' ? h('div', null, h('div', { className: 'svn-hint' }, t("当前插件会话最近 100 次命令，不记录参数、提交说明或凭据。")),
         operations.map((item, index) => h('pre', { key: index, className: 'svn-msg', style: { whiteSpace: 'pre-wrap' } },
           new Date(item.started).toLocaleString() + ' svn ' + item.command + ' ' + item.elapsed + t("ms 退出码：") + (item.code ?? t("未返回")) + '\n' + item.detail)),
-        h('button', { className: 'svn-btn', onClick: () => copyText(operations.map((item) => JSON.stringify(item)).join('\n')) }, t("复制脱敏操作记录"))) : null,
+        h(CopyButton, { type: 'button', className: 'svn-btn', text: operations.map((item) => JSON.stringify(item)).join('\n') }, t("复制脱敏操作记录"))) : null,
       output ? h('pre', { className: 'svn-msg', style: { whiteSpace: 'pre-wrap' } }, output) : null,
       error ? h('pre', { className: 'svn-errorbox', style: { whiteSpace: 'pre-wrap' } }, error) : null,
     )
