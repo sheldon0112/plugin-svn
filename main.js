@@ -960,7 +960,7 @@ export default function activate(ctx) {
           const props = parseXml(await svn('proplist', ['--xml', '-v'], [parentTarget]))
           const property = props.querySelector('property[name="svn:ignore"]')
           if (property?.hasAttribute('encoding')) throw new Error(t('无法读取现有 svn:ignore 属性'))
-          const previous = property?.textContent || ''
+          const previous = (property?.textContent || '').replace(/\r\n?/g, '\n')
           const pattern = name.replace(/[*?\[\\]/g, (character) => '\\' + character)
           if (!previous.split(/\r?\n/).includes(pattern)) {
             const separator = previous && !previous.endsWith('\n') ? '\n' : ''
