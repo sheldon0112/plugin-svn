@@ -708,7 +708,7 @@ export default function activate(ctx) {
         if (writes.has(pathKey(options.directory))) throw new Error(t('当前工作副本正在执行 SVN 操作'))
         writes.add(pathKey(options.directory))
         try {
-          await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), isWindowsPath(options.directory) ? target(options.directory) : options.directory])
+          await svn('checkout', ['-r', revision, '--ignore-externals'], [target(url.href, revision), options.directory])
           try { await ctx.workspaces.add(options.directory) } catch (error) {
             throw new Error(t("检出成功，但登记工作区失败；请手工添加此目录。") + diagnose(error))
           }

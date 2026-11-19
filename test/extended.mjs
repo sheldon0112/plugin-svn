@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, unlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { pathToFileURL } from 'node:url'
 import { test, after } from 'node:test'
@@ -17,7 +17,7 @@ writeFileSync(temp + '/test-main.mjs', source)
 const { default: activate } = await import(pathToFileURL(temp + '/test-main.mjs'))
 after(() => { dom.window.close(); rmSync(temp, { recursive: true, force: true }) })
 const run = (...args) => execFileSync('svn', args, { encoding: 'utf8' })
-const wcName = process.platform === 'win32' ? 'space @wc' : '中文 空格@wc'
+const wcName = process.platform === 'win32' ? 'space dir@wc' : '中文 空格@wc'
 const unselected = process.platform === 'win32' ? 'unselected.txt' : '未选.txt'
 const optionName = process.platform === 'win32' ? '-option.txt' : '-选项.txt'
 const propertyValue = process.platform === 'win32' ? 'text\n--value' : '中文\n--value'
@@ -45,7 +45,6 @@ test('真实仓库：检出、特殊路径、提交隔离、属性、忽略、�
   const api = ctx.testApi(wc)
   await api('/checkout', { url: repo + '/trunk', directory: wc, revision: 'HEAD' })
   assert.ok(calls.some((item) => item.registered === wc))
-  if (process.platform === 'win32') console.log('检出目录诊断', JSON.stringify({ temp, wc, entries: readdirSync(temp) }))
   await api('/state')
   const ignoredName = process.platform === 'win32' ? 'x[1].tmp' : 'x[1]*?.tmp'
   const names = ['a@b.txt', optionName, unselected, 'binary.dat']
@@ -148,4 +147,14 @@ test('真实 SVN 中文命令行参数（Windows 客户端代码页已知限制�
   await api('/add', { wc: directory, paths: ['中文文件.txt'] })
   await api('/commit', { wc: directory, paths: ['中文文件.txt'], message: '中文提交' })
   assert.equal(readFileSync(directory + '/中文文件.txt', 'utf8'), '中文内容\n')
+})
+
+test('真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）', {
+  todo: process.platform === 'win32' ? 'SlikSVN 1.14.5 将 space @wc 创建为 space@wc，待客户端修复' : false,
+}, async () => {
+  failure = undefined
+  const directory = temp + '/space @wc'
+  const api = ctx.testApi(directory)
+  await api('/checkout', { url: pathToFileURL(temp + '/repo').href + '/trunk', directory })
+  await api('/state')
 })
