@@ -1,0 +1,70 @@
+
+> test
+> node --test regression.mjs extended.mjs platform.mjs clipboard-fix.mjs
+
+TAP version 13
+# Subtest: D-01：三个复制入口显示失败，重试清除错误；中英提示
+ok 1 - D-01：三个复制入口显示失败，重试清除错误；中英提示
+  ---
+  duration_ms: 182.1137
+  type: 'test'
+  ...
+# svn: warning: W170000: URL 'file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-svn-extended-NnTq9U/repo/trunk/newdir' non-existent in revision 4
+# svn: E200009: Could not display info for all targets because some targets don't exist
+# Subtest: 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+ok 2 - 真实仓库：检出、特殊路径、提交隔离、属性、忽略、分支、合并与锁
+  ---
+  duration_ms: 11920.9356
+  type: 'test'
+  ...
+# Subtest: 大输出、认证代理证书与超时错误；日志有界脱敏
+ok 3 - 大输出、认证代理证书与超时错误；日志有界脱敏
+  ---
+  duration_ms: 93.509
+  type: 'test'
+  ...
+# Subtest: 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制）
+ok 4 - 真实 SVN 中文命令行参数（Windows 客户端代码页已知限制） # TODO SlikSVN 1.14.5 默认 Windows 代码页会丢失中文参数，待 UTF-8 客户端／环境补测
+  ---
+  duration_ms: 726.2184
+  type: 'test'
+  ...
+# Subtest: L-01 修复：Windows 属性值经代码页换算写入并通过回读校验
+ok 5 - L-01 修复：Windows 属性值经代码页换算写入并通过回读校验
+  ---
+  duration_ms: 2182.764
+  type: 'test'
+  ...
+# Subtest: L-02：真实 SVN 检出目录保留 @ 前空格
+ok 6 - L-02：真实 SVN 检出目录保留 @ 前空格
+  ---
+  duration_ms: 4793.8895
+  type: 'test'
+  ...
+# Subtest: Windows 盘符、UNC、大小写、分隔符及越界路径
+ok 7 - Windows 盘符、UNC、大小写、分隔符及越界路径
+  ---
+  duration_ms: 4.7887
+  type: 'test'
+  ...
+# Subtest: 安装包复制、启动注册及卸载清理（模拟宿主）
+ok 8 - 安装包复制、启动注册及卸载清理（模拟宿主）
+  ---
+  duration_ms: 66.095
+  type: 'test'
+  ...
+# Subtest: 面板选择、预览、提交、冲突处理与切换
+ok 9 - 面板选择、预览、提交、冲突处理与切换
+  ---
+  duration_ms: 10825.578
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 1
+# duration_ms 21922.8329

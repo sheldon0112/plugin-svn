@@ -1,0 +1,81 @@
+svn: E205001: Try 'svn help propset' for more information
+svn: E205001: Explicit target required ('C:/Users/Sheldon/AppData/Local/Temp/ccgui-boundary-qcswI7/wc/dir@' interpreted as prop value)
+[
+ {
+  "value": "\"一\"",
+  "utf8Bytes": 3,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"双字\"",
+  "utf8Bytes": 6,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"三中文\"",
+  "utf8Bytes": 9,
+  "result": "error",
+  "explicit": true,
+  "message": "属性值写入未通过回读校验（Windows SVN 客户端可能按系统代码页改写非 ASCII 值），已恢复原值；请核对当前"
+ },
+ {
+  "value": "\"四个汉字\"",
+  "utf8Bytes": 12,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"中a文\"",
+  "utf8Bytes": 7,
+  "result": "error",
+  "explicit": true,
+  "message": "属性值写入未通过回读校验（Windows SVN 客户端可能按系统代码页改写非 ASCII 值），已恢复原值；请核对当前"
+ },
+ {
+  "value": "\"中文\\n消息\"",
+  "utf8Bytes": 13,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"中文\\r\\n消息\"",
+  "utf8Bytes": 14,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"中文忽略\\n\"",
+  "utf8Bytes": 13,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"plain\"",
+  "utf8Bytes": 5,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"🎉\"",
+  "utf8Bytes": 4,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ },
+ {
+  "value": "\"中文🎉\"",
+  "utf8Bytes": 10,
+  "result": "ok",
+  "encoding": "plain",
+  "roundtrip": true
+ }
+]

@@ -1,0 +1,11 @@
+替身字符: "涓枃蹇界暐\n"
+encoding=plain | 回读一致: true
+3字探针 XML: 
+   encoding="base64"
+   name="custom:probe2">5Lit5paH5ZA/
+</property>
+<property
+   encoding="base64"
+   name="cus
+提交信息回读: "中文提交消息"
+期望: 中文提交消息  一致: true

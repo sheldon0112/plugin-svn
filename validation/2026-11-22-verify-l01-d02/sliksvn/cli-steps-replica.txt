@@ -1,0 +1,8 @@
+检出中文目录 OK
+写入中文文件 OK
+add 中文文件 OK
+commit 中文提交 OK
+propset 中文值 OK
+status --xml 中文路径 OK
+  回读消息: 中文提交
+log --xml 中文消息回读 OK

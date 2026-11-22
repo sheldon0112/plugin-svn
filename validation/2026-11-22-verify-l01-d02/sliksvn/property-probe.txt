@@ -1,0 +1,2 @@
+直接中文忽略: | encoding=base64 | hex=d6d0cec4baf6c2d4 | 期望一致: false
+替身: | encoding=plain | hex=e4b8ade69687e5bfbde795a5 | 期望一致: false
