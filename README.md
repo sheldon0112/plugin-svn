@@ -6,12 +6,12 @@
 
 - **个人仓库**：[sheldon0112/plugin-svn](https://github.com/sheldon0112/plugin-svn)
 - **作者**：AnnoDomini
-- **当前版本**：`0.1.9`
+- **当前版本**：`0.2.1`
 - **插件 ID**：`ccgui-svn`
 - **最低宿主版本**：CC GUI `1.2.4`，插件 SDK `^0.3`
 - **许可证**：[MIT](LICENSE)
 
-当前兼容目标仅为 Windows 11，具体环境尚待实测认证；其他平台为后续扩展，本轮不处理。详见 [0.1.9 交付说明](docs/release-0.1.9.md)。
+兼容范围：Windows 11 真机（CC GUI `1.2.4` + TortoiseSVN 1.14.2）已实测，macOS 由 CI 覆盖；其他平台为后续扩展。详见 [0.2.1 交付说明](docs/release-0.2.1.md)。
 
 ## 功能
 

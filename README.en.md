@@ -6,12 +6,12 @@ Manage local Subversion working copies inside CC GUI: inspect changes, browse hi
 
 - **Personal repository**: [sheldon0112/plugin-svn](https://github.com/sheldon0112/plugin-svn)
 - **Author**: AnnoDomini
-- **Current version**: `0.1.9`
+- **Current version**: `0.2.1`
 - **Plugin ID**: `ccgui-svn`
 - **Minimum host version**: CC GUI `1.2.4`, plugin SDK `^0.3`
 - **License**: [MIT](LICENSE)
 
-The current compatibility target is Windows 11 only; exact environments still require real Windows certification. Other platforms are future extensions outside this scope. See [0.1.9 delivery notes](docs/release-0.1.9.md).
+Compatibility: verified on a real Windows 11 machine (CC GUI `1.2.4` + TortoiseSVN 1.14.2) and covered by macOS CI; other platforms are future extensions. See the [0.2.1 delivery notes](docs/release-0.2.1.md).
 
 ## Features
 
