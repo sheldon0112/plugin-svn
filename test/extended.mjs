@@ -149,6 +149,30 @@ test('真实 SVN 中文命令行参数（Windows 客户端代码页已知限制�
   assert.equal(readFileSync(directory + '/中文文件.txt', 'utf8'), '中文内容\n')
 })
 
+// L-01 属性值修复回归：Windows 宿主代码页换算 + 回读校验（main.js propsetValue）。
+// 2026-11-23 取证：SlikSVN 1.14.5 在 zh-CN ACP(936) 宿主上替身换算同样有效（见 validation/2026-11-22-verify-l01-d02/sliksvn/），
+// 失败模式取决于宿主系统 ACP——en-US runner（ACP 1252）无法映射中文，直传与替身均失败，插件显式报错，用例据此跳过。
+// L-01 命令行 TODO 保留（CI runner ACP 1252 下路径参数仍丢失，本地 zh-CN 宿主不复现）。
+test('L-01 修复：Windows 属性值经代码页换算写入并通过回读校验', {
+  skip: process.platform !== 'win32' ? '属性值代码页换算仅影响 Windows' : false,
+}, async (t) => {
+  failure = undefined
+  const api = ctx.testApi(temp + '/' + wcName)
+  try {
+    await api('/property-set', { wc: temp + '/' + wcName, path: 'a@b.txt', name: 'custom:l01', value: '中文\n消息' })
+  } catch (error) {
+    t.skip('当前 Windows SVN 客户端无法安全写入非 ASCII 属性值：' + error.message)
+  }
+  assert.equal(run('propget', '--strict', 'custom:l01', temp + '/' + wcName + '/a@b.txt@'), '中文\n消息')
+  // 边界：UTF-8 字节串恰为合法 cp936 序列时替身换算无损（'一' = e4b880 → 涓€，0x80 单字节回编码）
+  await api('/property-set', { wc: temp + '/' + wcName, path: 'a@b.txt', name: 'custom:l01c', value: '一' })
+  assert.equal((await api('/properties', { wc: temp + '/' + wcName, path: 'a@b.txt' })).find(p => p.name === 'custom:l01c').value, '一')
+  // 边界：ASCII 混排被 cp936 解码吞作尾字节（'中a文' = e4b8ad61e69687），两变体均失败 → 显式报错
+  await assert.rejects(api('/property-set', { wc: temp + '/' + wcName, path: 'a@b.txt', name: 'custom:l01d', value: '中a文' }), /回读校验/)
+  // 边界：UTF-8 高字节奇数对齐（3 个连续汉字）无法无损换算，必须显式报错而非静默乱码
+  await assert.rejects(api('/property-set', { wc: temp + '/' + wcName, path: 'a@b.txt', name: 'custom:l01b', value: '三中文' }), /回读校验/)
+})
+
 test('L-02：真实 SVN 检出目录保留 @ 前空格', {
   todo: false,
 }, async () => {

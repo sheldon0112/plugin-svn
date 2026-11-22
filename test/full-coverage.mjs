@@ -177,7 +177,8 @@ for (const simulation of [false, true]) {
   })
   await c('安装/升级/卸载', '目录安装、同 ID 覆盖升级、清理', '复制 manifest/main；保留旧 ID 覆盖到 0.2.0；删除隔离安装目录', 'ID 不变、版本更新、清理完成；仅宿主模型', async () => {
     const dir = base + '/installed'; mkdirSync(dir); cpSync(new URL('../manifest.json', import.meta.url), dir + '/manifest.json'); cpSync(new URL('../main.js', import.meta.url), dir + '/main.js')
-    const m = JSON.parse(readFileSync(dir + '/manifest.json')); const id = m.id; m.version = '0.1.9'; writeFileSync(dir + '/manifest.json', JSON.stringify(m)); cpSync(new URL('../manifest.json', import.meta.url), dir + '/manifest.json'); const upgraded = JSON.parse(readFileSync(dir + '/manifest.json')); assert.equal(upgraded.id, id); assert.equal(upgraded.version, '0.2.0'); rmSync(dir, { recursive: true }); assert.equal(existsSync(dir), false)
+    const currentVersion = JSON.parse(readFileSync(new URL('../manifest.json', import.meta.url), 'utf8')).version
+    const m = JSON.parse(readFileSync(dir + '/manifest.json')); const id = m.id; m.version = '0.1.9'; writeFileSync(dir + '/manifest.json', JSON.stringify(m)); cpSync(new URL('../manifest.json', import.meta.url), dir + '/manifest.json'); const upgraded = JSON.parse(readFileSync(dir + '/manifest.json')); assert.equal(upgraded.id, id); assert.equal(upgraded.version, currentVersion); rmSync(dir, { recursive: true }); assert.equal(existsSync(dir), false)
   })
   writeFileSync(new URL(simulation ? 'windows-command-trace.json' : 'macos-command-trace.json', out), JSON.stringify(calls, null, 2))
 }

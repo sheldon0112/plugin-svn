@@ -626,6 +626,44 @@ export default function activate(ctx) {
     }
   }
 
+  // Windows 宿主经系统代码页（中文系统为 GBK）向 svn.exe 传参，客户端把属性值字节原样入库，
+  // 非 ASCII 值会静默变成代码页乱码。先直接写入并回读校验；失败时把目标 UTF-8 字节按 GBK 解码成
+  // 替身字符串再写入，宿主 W→A 转换会将其还原为正确字节；仍失败则恢复原值并显式报错，绝不留乱码。
+  async function propsetValue(name, value, targetPath, root, previous) {
+    const normalize = (text) => String(text ?? '').replace(/\r\n/g, '\n')
+    const codepageVariants = (text) => {
+      const list = [text]
+      if (isWindowsPath(root) && /[^\x00-\x7F]/.test(text)) {
+        try { list.push(new TextDecoder('gbk').decode(new TextEncoder().encode(text))) } catch { /* 无 GBK 解码器时仅直接写入 */ }
+      }
+      return list
+    }
+    const readProperty = async () => {
+      const doc = parseXml(await svn('proplist', ['--xml', '-v'], [targetPath]))
+      return Array.from(doc.querySelectorAll('property')).find((item) => item.getAttribute('name') === name)
+    }
+    const writeAndVerify = async (text) => {
+      for (const candidate of codepageVariants(text)) {
+        try {
+          await svn('propset', [], [name, candidate, targetPath])
+        } catch { /* 代码页最适映射可能破坏参数结构（如 E205001）；视为该变体失败，继续下一变体 */ }
+        const node = await readProperty()
+        if (node && !node.hasAttribute('encoding') && normalize(node.textContent) === normalize(text)) return true
+      }
+      return false
+    }
+    if (codepageVariants(value).length > 1 && previous === undefined) {
+      const node = await readProperty()
+      previous = node && !node.hasAttribute('encoding') ? normalize(node.textContent) : null
+    }
+    if (await writeAndVerify(value)) return
+    try {
+      if (previous != null) await writeAndVerify(previous)
+      else await svn('propdel', [], [name, targetPath])
+    } catch { /* 清理失败时以主错误为准 */ }
+    throw new Error(t('属性值写入未通过回读校验（Windows SVN 客户端可能按系统代码页改写非 ASCII 值），已恢复原值；请核对当前属性值。'))
+  }
+
   function countConflicts(output) {
     return Array.from(output.matchAll(/(?:Text|Property|Tree) conflicts: (\d+)/gi), (match) => Number(match[1]))
       .reduce((sum, count) => sum + count, 0)
@@ -923,8 +961,8 @@ export default function activate(ctx) {
       try {
         if (route === '/property-set' || route === '/property-delete') {
           if (!/^[A-Za-z_][A-Za-z0-9_.:-]*$/.test(options.name || '')) throw new Error(t("属性名称无效"))
-          await svn(route === '/property-set' ? 'propset' : 'propdel', [], route === '/property-set'
-            ? [options.name, options.value || '', target(location)] : [options.name, target(location)])
+          if (route === '/property-set') await propsetValue(options.name, options.value || '', target(location), root)
+          else await svn('propdel', [], [options.name, target(location)])
           return {}
         }
         if (route === '/merge') {
@@ -968,7 +1006,7 @@ export default function activate(ctx) {
           const pattern = name.replace(/[*?\[\\]/g, (character) => '\\' + character)
           if (!previous.split(/\r?\n/).includes(pattern)) {
             const separator = previous && !previous.endsWith('\n') ? '\n' : ''
-            await svn('propset', [], ['svn:ignore', previous + separator + pattern + '\n', parentTarget])
+            await propsetValue('svn:ignore', previous + separator + pattern + '\n', parentTarget, root, previous || null)
           }
           return {}
         }

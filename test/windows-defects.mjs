@@ -36,6 +36,52 @@ try {
   let names = []; try { names = readdirSync(parent) } catch {}
   results.cases.push({ label, directory, args, env, utf16: Array.from({ length: name.length }, (_, index) => name.charCodeAt(index).toString(16).padStart(4, '0')), outcome, names, exactDirectoryCreated: names.includes(name) })
  }
+ // 长路径/UNC/NTFS ACL 风险探针：仅记录行为取证，不设通过性断言（结论按宿主环境解读）。
+ results.environmentProbes = {}
+ try {
+  let value = 'disabled'; try { value = execFileSync('reg', ['query', 'HKLM\\SYSTEM\\CurrentControlSet\\Control\\FileSystem', '/v', 'LongPathsEnabled'], { encoding: 'utf8' }).includes('0x1') ? 'enabled' : 'disabled' } catch { value = 'unknown' }
+  results.environmentProbes.longPathsEnabled = value
+  const deep = join(root, 'deep'); let longTarget = deep; for (let n = 0; n < 40; n++) longTarget = join(longTarget, 'segment-0123456789')
+  const longOutcome = execute(svn, ['checkout', '--non-interactive', '--ignore-externals', '--', url + '@HEAD', longTarget])
+  results.environmentProbes.longPath = { length: longTarget.length, thresholdExceeded: longTarget.length > 260, code: longOutcome.code, stderr: longOutcome.stderr.text.slice(0, 200), checkoutWorked: (() => { try { return readdirSync(longTarget).length > 0 } catch { return false } })() }
+ } catch (error) { results.environmentProbes.longPath = { error: String(error) } }
+ try {
+  const uncTarget = '\\\\localhost\\C$\\Users\\' + process.env.USERNAME + '\\AppData\\Local\\Temp\\ccgui-defect-unc-wc'
+  rmSync(uncTarget, { recursive: true, force: true })
+  const uncOutcome = execute(svn, ['checkout', '--non-interactive', '--ignore-externals', '--', url + '@HEAD', uncTarget])
+  let uncWorks = false; try { uncWorks = readdirSync(uncTarget).length > 0 } catch {}
+  results.environmentProbes.uncAdminShare = { target: uncTarget, code: uncOutcome.code, stderr: uncOutcome.stderr.text.slice(0, 200), checkoutWorked: uncWorks }
+  rmSync(uncTarget, { recursive: true, force: true })
+ } catch (error) { results.environmentProbes.uncAdminShare = { error: String(error) } }
+ try {
+  const aclParent = join(root, 'acl'); mkdirSync(aclParent)
+  const aclCase = { label: 'acl-deny-write', steps: [] }
+  const aclWc = join(aclParent, 'wc')
+  execute(svn, ['checkout', '--non-interactive', '--ignore-externals', '--', url + '@HEAD', aclWc])
+  writeFileSync(join(aclWc, 'a.txt'), 'base\n')
+  execute(svn, ['add', '--parents', join(aclWc, 'a.txt')])
+  const commit = execute(svn, ['commit', '-qm', 'acl-base', join(aclWc, 'a.txt')])
+  aclCase.steps.push({ step: 'commit a.txt', code: commit.code, stderr: commit.stderr.text.slice(0, 160) })
+  writeFileSync(join(aclWc, 'a.txt'), 'local change\n')
+  try { execFileSync('icacls', [join(aclWc, 'a.txt'), '/deny', process.env.USERNAME + ':(OI)(CI)(W)'], { stdio: 'ignore' }); aclCase.steps.push({ step: 'icacls deny write a.txt', done: true }) } catch (e) { aclCase.steps.push({ step: 'icacls deny write a.txt', error: String(e).slice(0, 160) }) }
+  const statusAfter = execute(svn, ['status', '--xml', '--depth', 'empty', '--', join(aclWc, 'a.txt')])
+  aclCase.steps.push({ step: 'status --xml denied file', code: statusAfter.code, stderr: statusAfter.stderr.text.slice(0, 160) })
+  const revertDenied = execute(svn, ['revert', '--depth', 'empty', '--', join(aclWc, 'a.txt')])
+  aclCase.steps.push({ step: 'revert denied file', code: revertDenied.code, stderr: revertDenied.stderr.text.slice(0, 160) })
+  try {
+    execFileSync('icacls', [join(aclWc, 'a.txt'), '/remove:d', process.env.USERNAME], { stdio: 'ignore' })
+    execFileSync('icacls', [join(aclWc, '.svn'), '/deny', process.env.USERNAME + ':(OI)(CI)(W)'], { stdio: 'ignore' })
+    const statusMeta = execute(svn, ['status', '--xml', join(aclWc)])
+    aclCase.steps.push({ step: 'status --xml .svn deny write', code: statusMeta.code, stderr: statusMeta.stderr.text.slice(0, 160) })
+    writeFileSync(join(aclWc, 'a.txt'), 'second change\n')
+    const commitMeta = execute(svn, ['commit', '-qm', 'meta-deny', join(aclWc, 'a.txt')])
+    aclCase.steps.push({ step: 'commit with .svn deny write', code: commitMeta.code, stderr: commitMeta.stderr.text.slice(0, 160) })
+  } catch (e) { aclCase.steps.push({ step: '.svn deny write phase', error: String(e).slice(0, 160) }) } finally {
+    try { execFileSync('icacls', [join(aclWc, '.svn'), '/remove:d', process.env.USERNAME], { stdio: 'ignore' }) } catch {}
+  }
+  try { execFileSync('icacls', [join(aclWc, 'a.txt'), '/remove:d', process.env.USERNAME], { stdio: 'ignore' }) } catch {}
+  results.cases.push(aclCase)
+ } catch (error) { results.cases.push({ label: 'acl-deny-write', error: String(error) }) }
 } finally {
  writeFileSync('windows-defects.json', JSON.stringify(results, null, 2)); console.log(JSON.stringify(results, null, 2)); rmSync(root, { recursive: true, force: true })
 }
