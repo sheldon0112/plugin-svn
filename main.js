@@ -676,9 +676,11 @@ export default function activate(ctx) {
         const entry = doc.querySelector('entry')
         const path = field(entry, 'wc-info > wcroot-abspath')
         if (!path) throw new Error(t('当前工作区没有 SVN 工作副本'))
+        // wcroot-abspath uses the client's own path form; keep the registered path when both denote the same directory.
+        const root = pathKey(path) === pathKey(workspacePath) ? workspacePath : path
         info = {
-          path,
-          name: normalizedPath(path).split('/').pop() || path,
+          path: root,
+          name: normalizedPath(root).split('/').pop() || root,
           revision: Number(entry.getAttribute('revision')),
           url: field(entry, 'url'),
           root: field(entry, 'repository > root'),

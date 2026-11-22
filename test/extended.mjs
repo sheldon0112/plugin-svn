@@ -157,7 +157,8 @@ test('L-02：真实 SVN 检出目录保留 @ 前空格', {
     const directory = temp + '/' + name
     const api = ctx.testApi(directory)
     await api('/checkout', { url: pathToFileURL(temp + '/repo').href + '/trunk', directory })
-    await api('/state')
+    const state = await api('/state')
+    assert.equal(state.workingCopies[0].path, directory)
     writeFileSync(directory + '/probe.txt', 'preserve directory name\n')
     await api('/add', { wc: directory, paths: ['probe.txt'] })
     await api('/commit', { wc: directory, paths: ['probe.txt'], message: 'directory round trip' })
