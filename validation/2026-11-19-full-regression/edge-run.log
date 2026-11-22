@@ -1,0 +1,25 @@
+[
+  {
+    "id": "EDGE-M-12",
+    "module": "边界/异常",
+    "title": "剪贴板所有写入方式失败应可观测",
+    "precondition": "0.2.0 入口；独立 SDK 响应夹具",
+    "steps": "现代接口拒绝；execCommand 返回 false；调用复制",
+    "expected": "复制失败应返回失败或拒绝，不能成功完成",
+    "environment": "macOS/SDK 响应与错误注入",
+    "status": "失败",
+    "actual": "AssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:46:3\n    at async c (file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:24:9)\n    at async file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:44:2"
+  },
+  {
+    "id": "EDGE-W-24",
+    "module": "边界/异常",
+    "title": "剪贴板所有写入方式失败应可观测",
+    "precondition": "0.2.0 入口；独立 SDK 响应夹具",
+    "steps": "现代接口拒绝；execCommand 返回 false；调用复制",
+    "expected": "复制失败应返回失败或拒绝，不能成功完成",
+    "environment": "Windows 模拟/SDK 响应与错误注入",
+    "status": "失败",
+    "actual": "AssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:46:3\n    at async c (file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:24:9)\n    at async file:///Users/daichen/github/ccgui-svn/ccgui-svn/test/edge-coverage.mjs:44:2"
+  }
+]
+边界结果 24 失败 2

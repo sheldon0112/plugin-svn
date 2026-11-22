@@ -1,0 +1,10 @@
+{
+  "pr": "https://github.com/zhukunpenglinyutong/ccgui-plugins/pull/131",
+  "state": "open",
+  "merged_at": null,
+  "head_sha": "a63f489492e585ce583a4271b890337529d23fa5",
+  "validate_run": "https://github.com/zhukunpenglinyutong/ccgui-plugins/actions/runs/44548340988",
+  "review_run": "https://github.com/zhukunpenglinyutong/ccgui-plugins/actions/runs/44548419080",
+  "review_conclusion": "skipped",
+  "market_version": "0.1.8"
+}

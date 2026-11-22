@@ -1,0 +1,3241 @@
+[
+  {
+    "bin": "svn",
+    "args": [
+      "checkout",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "--ignore-externals",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD",
+      "C:/回归 空格/wc/"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "C:/回归 空格/wc/a.txt@",
+      "C:/回归 空格/wc/中文 空格@.txt@",
+      "C:/回归 空格/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "初始提交",
+      "--",
+      "C:/回归 空格/wc/a.txt@",
+      "C:/回归 空格/wc/中文 空格@.txt@",
+      "C:/回归 空格/wc/dir@",
+      "C:/回归 空格/wc/dir/child.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "C:/回归 空格/wc/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "selected only",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/中文 空格@.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--show-updates",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:qa",
+      "中文\nvalue",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "property",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propdel",
+      "--non-interactive",
+      "--",
+      "custom:qa",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\r\n",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\nx\\[1].tmp\n",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--no-ignore",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "lock",
+      "--non-interactive",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "unlock",
+      "--non-interactive",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "7:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "-r",
+      "27",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-c",
+      "27",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@27"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-r",
+      "26:27",
+      "--old",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo",
+      "--",
+      "trunk/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "blame",
+      "--non-interactive",
+      "-r",
+      "1:27",
+      "--",
+      "C:/回归 空格/wc/a.txt@27"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "copy",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "-m",
+      "branch",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches/qa%40tag@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches/qa%40tag@HEAD",
+      "C:\\回归 空格\\wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD",
+      "C:\\回归 空格\\wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "28:29",
+      "--accept",
+      "postpone",
+      "--dry-run",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches/qa%40tag@HEAD",
+      "C:\\回归 空格\\wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "28:29",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/branches/qa%40tag@HEAD",
+      "C:\\回归 空格\\wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/a.txt@",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@29",
+      "--new",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk/a.txt@30",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "theirs-full",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:conflict",
+      "local",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "NUL",
+      "--new",
+      "C:/回归 空格/wc/new.txt@",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "C:/回归 空格/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "binary",
+      "--",
+      "C:/回归 空格/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "C:/回归 空格/wc/binary.dat"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/回归 空格/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "C:/回归 空格/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "delete directory",
+      "--",
+      "C:/回归 空格/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "cleanup",
+      "--non-interactive",
+      "--",
+      "C:\\回归 空格\\wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\回归 空格\\wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///private/var/folders/jr/hyk903zj53n2ysnnlftztqkw0000gn/T/ccgui-full-d2kgY3/win/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  }
+]

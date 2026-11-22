@@ -1,0 +1,22 @@
+[
+  {
+    "id": "KEY-mac",
+    "module": "快捷键/既有 UI 全流程",
+    "precondition": "JSDOM + React + macOS 真实 SVN 临时仓库",
+    "steps": "复用原回归，提交按钮改为 metaKey+Enter 事件；其余选择/冲突/切换/语言流程相同",
+    "expected": "快捷键提交关闭弹窗，原流程全部断言通过",
+    "actual": "✔ 面板选择、预览、提交、冲突处理与切换 (11188.642959ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 11627.921041\n",
+    "environment": "mac，键盘事件模拟",
+    "status": "通过"
+  },
+  {
+    "id": "KEY-windows-sim",
+    "module": "快捷键/既有 UI 全流程",
+    "precondition": "JSDOM + React + macOS 真实 SVN 临时仓库",
+    "steps": "复用原回归，提交按钮改为 ctrlKey+Enter 事件；其余选择/冲突/切换/语言流程相同",
+    "expected": "快捷键提交关闭弹窗，原流程全部断言通过",
+    "actual": "✔ 面板选择、预览、提交、冲突处理与切换 (10602.598875ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10905.425708\n",
+    "environment": "windows-sim，键盘事件模拟",
+    "status": "通过"
+  }
+]

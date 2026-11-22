@@ -1,0 +1,180 @@
+{
+  "platform": "win32",
+  "node": "v22.23.4",
+  "exe": "C:\\Program Files\\SlikSvn\\bin\\svn.exe",
+  "sha256": "916151f9bb570efe36000cfab907c6737f83e7c82b915044b48b2d616dbe437a",
+  "version": {
+    "code": 0,
+    "stdout": {
+      "text": "1.14.5-SlikSvn\r\n",
+      "hex": "312e31342e352d536c696b53766e0d0a"
+    },
+    "stderr": {
+      "text": "",
+      "hex": ""
+    }
+  },
+  "cases": [
+    {
+      "label": "L-01-inherited",
+      "directory": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-1\\中文目录",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-1\\中文目录"
+      ],
+      "env": {},
+      "utf16": [
+        "4e2d",
+        "6587",
+        "76ee",
+        "5f55"
+      ],
+      "outcome": {
+        "code": 1,
+        "error": "Command failed: C:\\Program Files\\SlikSvn\\bin\\svn.exe checkout --non-interactive --ignore-externals -- file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-1\\中文目录\nsvn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-1\\????': The filename, directory name, or volume label syntax is incorrect.  \r\n",
+        "stdout": {
+          "text": "",
+          "hex": ""
+        },
+        "stderr": {
+          "text": "svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-1\\????': The filename, directory name, or volume label syntax is incorrect.  \r\n",
+          "hex": "73766e3a20453732303132333a2043616e2774206d616b65206469726563746f72792027433a5c55736572735c72756e6e657261646d696e5c417070446174615c4c6f63616c5c54656d705c63636775692d6465666563742d70726f6f662d6c6a733575435c636173652d315c3f3f3f3f273a205468652066696c656e616d652c206469726563746f7279206e616d652c206f7220766f6c756d65206c6162656c2073796e74617820697320696e636f72726563742e20200d0a"
+        }
+      },
+      "names": [],
+      "exactDirectoryCreated": false
+    },
+    {
+      "label": "L-01-plugin-env",
+      "directory": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-2\\中文目录",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-2\\中文目录"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "4e2d",
+        "6587",
+        "76ee",
+        "5f55"
+      ],
+      "outcome": {
+        "code": 1,
+        "error": "Command failed: C:\\Program Files\\SlikSvn\\bin\\svn.exe checkout --non-interactive --ignore-externals -- file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-2\\中文目录\nsvn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-2\\????': The filename, directory name, or volume label syntax is incorrect.  \r\n",
+        "stdout": {
+          "text": "",
+          "hex": ""
+        },
+        "stderr": {
+          "text": "svn: E720123: Can't make directory 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-2\\????': The filename, directory name, or volume label syntax is incorrect.  \r\n",
+          "hex": "73766e3a20453732303132333a2043616e2774206d616b65206469726563746f72792027433a5c55736572735c72756e6e657261646d696e5c417070446174615c4c6f63616c5c54656d705c63636775692d6465666563742d70726f6f662d6c6a733575435c636173652d325c3f3f3f3f273a205468652066696c656e616d652c206469726563746f7279206e616d652c206f7220766f6c756d65206c6162656c2073796e74617820697320696e636f72726563742e20200d0a"
+        }
+      },
+      "names": [],
+      "exactDirectoryCreated": false
+    },
+    {
+      "label": "L-02-original",
+      "directory": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-3\\space @wc",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-3\\space @wc"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "0073",
+        "0070",
+        "0061",
+        "0063",
+        "0065",
+        "0020",
+        "0040",
+        "0077",
+        "0063"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "space@wc"
+      ],
+      "exactDirectoryCreated": false
+    },
+    {
+      "label": "L-02-trailing-separator-candidate",
+      "directory": "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-4\\space @wc",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/RUNNER%7E1/AppData/Local/Temp/ccgui-defect-proof-ljs5uC/repo@HEAD",
+        "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\ccgui-defect-proof-ljs5uC\\case-4\\space @wc/"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "0073",
+        "0070",
+        "0061",
+        "0063",
+        "0065",
+        "0020",
+        "0040",
+        "0077",
+        "0063"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "space @wc"
+      ],
+      "exactDirectoryCreated": true
+    }
+  ],
+  "argumentProbe": {
+    "code": 0,
+    "stdout": {
+      "text": "[\"中文目录\",\"space @wc\"]",
+      "hex": "5b22e4b8ade69687e79baee5bd95222c22737061636520407763225d"
+    },
+    "stderr": {
+      "text": "",
+      "hex": ""
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "阻塞",
+  "constraint": "此前用户明确要求不要改 README",
+  "readme_sha256": {
+    "README.md": "37734ac94a72560bf1cf30366fbb68f716b9ac0bf0fdd41d6ca37de32615c567",
+    "README.en.md": "164c0c102d3124a85c9d7124772c9f3f37777cf88cc746946c5b79e480c51f00"
+  },
+  "manifest_version": "0.2.0",
+  "observations": [
+    "- **当前版本**：`0.1.9`",
+    "当前兼容目标仅为 Windows 11，具体环境尚待实测认证；其他平台为后续扩展，本轮不处理。详见 [0.1.9 交付说明](docs/release-0.1.9.md)。"
+  ]
+}

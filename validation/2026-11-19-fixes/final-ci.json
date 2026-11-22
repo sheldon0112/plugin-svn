@@ -1,0 +1,254 @@
+{
+  "conclusion": "success",
+  "headSha": "467fc085b74e53e29272a664b0038f2f10625f3f",
+  "jobs": [
+    {
+      "completedAt": "2026-11-19T14:48:53Z",
+      "conclusion": "success",
+      "databaseId": 135642033153,
+      "name": "regression (macos-latest)",
+      "startedAt": "2026-11-19T14:47:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-19T14:47:24Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-19T14:47:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:26Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-19T14:47:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:29Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-11-19T14:47:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:47Z",
+          "conclusion": "success",
+          "name": "Install SVN on macOS",
+          "number": 4,
+          "startedAt": "2026-11-19T14:47:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:47Z",
+          "conclusion": "skipped",
+          "name": "Install SVN on Windows",
+          "number": 5,
+          "startedAt": "2026-11-19T14:47:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:47Z",
+          "conclusion": "success",
+          "name": "Run node --version",
+          "number": 6,
+          "startedAt": "2026-11-19T14:47:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:48Z",
+          "conclusion": "success",
+          "name": "Run svn --version --quiet",
+          "number": 7,
+          "startedAt": "2026-11-19T14:47:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:48Z",
+          "conclusion": "success",
+          "name": "Run svnadmin --version --quiet",
+          "number": 8,
+          "startedAt": "2026-11-19T14:47:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:50Z",
+          "conclusion": "success",
+          "name": "Run npm ci --prefix test",
+          "number": 9,
+          "startedAt": "2026-11-19T14:47:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:18Z",
+          "conclusion": "success",
+          "name": "Regression round 1",
+          "number": 10,
+          "startedAt": "2026-11-19T14:47:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:48Z",
+          "conclusion": "success",
+          "name": "Regression round 2",
+          "number": 11,
+          "startedAt": "2026-11-19T14:48:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:48Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 21,
+          "startedAt": "2026-11-19T14:48:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:49Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 22,
+          "startedAt": "2026-11-19T14:48:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:51Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 23,
+          "startedAt": "2026-11-19T14:48:49Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sheldon0112/plugin-svn/actions/runs/44547535303/job/135642033153"
+    },
+    {
+      "completedAt": "2026-11-19T14:48:34Z",
+      "conclusion": "success",
+      "databaseId": 135642033910,
+      "name": "regression (windows-latest)",
+      "startedAt": "2026-11-19T14:47:18Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-19T14:47:20Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-19T14:47:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:28Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-19T14:47:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:35Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-11-19T14:47:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:35Z",
+          "conclusion": "skipped",
+          "name": "Install SVN on macOS",
+          "number": 4,
+          "startedAt": "2026-11-19T14:47:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:56Z",
+          "conclusion": "success",
+          "name": "Install SVN on Windows",
+          "number": 5,
+          "startedAt": "2026-11-19T14:47:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:57Z",
+          "conclusion": "success",
+          "name": "Run node --version",
+          "number": 6,
+          "startedAt": "2026-11-19T14:47:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:57Z",
+          "conclusion": "success",
+          "name": "Run svn --version --quiet",
+          "number": 7,
+          "startedAt": "2026-11-19T14:47:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:47:58Z",
+          "conclusion": "success",
+          "name": "Run svnadmin --version --quiet",
+          "number": 8,
+          "startedAt": "2026-11-19T14:47:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:09Z",
+          "conclusion": "success",
+          "name": "Run npm ci --prefix test",
+          "number": 9,
+          "startedAt": "2026-11-19T14:47:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:20Z",
+          "conclusion": "success",
+          "name": "Regression round 1",
+          "number": 10,
+          "startedAt": "2026-11-19T14:48:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:29Z",
+          "conclusion": "success",
+          "name": "Regression round 2",
+          "number": 11,
+          "startedAt": "2026-11-19T14:48:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:30Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 21,
+          "startedAt": "2026-11-19T14:48:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:32Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 22,
+          "startedAt": "2026-11-19T14:48:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-19T14:48:32Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 23,
+          "startedAt": "2026-11-19T14:48:32Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/sheldon0112/plugin-svn/actions/runs/44547535303/job/135642033910"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/sheldon0112/plugin-svn/actions/runs/44547535303"
+}

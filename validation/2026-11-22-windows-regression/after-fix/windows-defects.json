@@ -1,0 +1,182 @@
+{
+  "platform": "win32",
+  "node": "v22.20.0",
+  "exe": "C:\\Program Files\\TortoiseSVN\\bin\\svn.exe",
+  "sha256": "8ec2aa72d57c8091e0b2a42ea393f6378c55372c0db61e50329eee933b28a4b2",
+  "version": {
+    "code": 0,
+    "stdout": {
+      "text": "1.14.2\r\n",
+      "hex": "312e31342e320d0a"
+    },
+    "stderr": {
+      "text": "",
+      "hex": ""
+    }
+  },
+  "cases": [
+    {
+      "label": "L-01-inherited",
+      "directory": "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-1\\中文目录",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-defect-proof-1g3JdO/repo@HEAD",
+        "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-1\\中文目录"
+      ],
+      "env": {},
+      "utf16": [
+        "4e2d",
+        "6587",
+        "76ee",
+        "5f55"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "中文目录"
+      ],
+      "exactDirectoryCreated": true
+    },
+    {
+      "label": "L-01-plugin-env",
+      "directory": "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-2\\中文目录",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-defect-proof-1g3JdO/repo@HEAD",
+        "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-2\\中文目录"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "4e2d",
+        "6587",
+        "76ee",
+        "5f55"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "中文目录"
+      ],
+      "exactDirectoryCreated": true
+    },
+    {
+      "label": "L-02-original",
+      "directory": "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-3\\space @wc",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-defect-proof-1g3JdO/repo@HEAD",
+        "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-3\\space @wc"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "0073",
+        "0070",
+        "0061",
+        "0063",
+        "0065",
+        "0020",
+        "0040",
+        "0077",
+        "0063"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "space@wc"
+      ],
+      "exactDirectoryCreated": false
+    },
+    {
+      "label": "L-02-trailing-separator-candidate",
+      "directory": "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-4\\space @wc",
+      "args": [
+        "checkout",
+        "--non-interactive",
+        "--ignore-externals",
+        "--",
+        "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-defect-proof-1g3JdO/repo@HEAD",
+        "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-defect-proof-1g3JdO\\case-4\\space @wc/"
+      ],
+      "env": {
+        "LC_ALL": "en_US.UTF-8"
+      },
+      "utf16": [
+        "0073",
+        "0070",
+        "0061",
+        "0063",
+        "0065",
+        "0020",
+        "0040",
+        "0077",
+        "0063"
+      ],
+      "outcome": {
+        "code": 0,
+        "stdout": {
+          "text": "Checked out revision 0.\r\n",
+          "hex": "436865636b6564206f7574207265766973696f6e20302e0d0a"
+        },
+        "stderr": {
+          "text": "",
+          "hex": ""
+        }
+      },
+      "names": [
+        "space @wc"
+      ],
+      "exactDirectoryCreated": true
+    }
+  ],
+  "argumentProbe": {
+    "code": 0,
+    "stdout": {
+      "text": "[\"中文目录\",\"space @wc\"]",
+      "hex": "5b22e4b8ade69687e79baee5bd95222c22737061636520407763225d"
+    },
+    "stderr": {
+      "text": "",
+      "hex": ""
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "plugins": {
+    "ccgui-svn": {
+      "version": "0.2.0",
+      "enabled": true,
+      "source": "local",
+      "permissions": [
+        "ui:sidebar-entry",
+        "ui:center-tab",
+        "host:workspace",
+        "theme",
+        "exec:svn",
+        "i18n"
+      ],
+      "quarantined": false,
+      "lastError": null,
+      "installedAt": 1795075660
+    }
+  },
+  "kvTombstones": {},
+  "documentStorage": {},
+  "assetDirectories": {}
+}

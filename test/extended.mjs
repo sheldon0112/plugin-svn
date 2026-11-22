@@ -16,7 +16,7 @@ const temp = realpathSync(mkdtempSync(tmpdir() + '/ccgui-svn-extended-'))
 writeFileSync(temp + '/test-main.mjs', source)
 const { default: activate } = await import(pathToFileURL(temp + '/test-main.mjs'))
 after(() => { dom.window.close(); rmSync(temp, { recursive: true, force: true }) })
-const run = (...args) => execFileSync('svn', args, { encoding: 'utf8' })
+const run = (...args) => execFileSync('svn', args, { encoding: 'utf8', env: { ...process.env, LC_ALL: 'en_US.UTF-8' } })
 const wcName = process.platform === 'win32' ? 'space dir@wc' : '中文 空格@wc'
 const unselected = process.platform === 'win32' ? 'unselected.txt' : '未选.txt'
 const optionName = process.platform === 'win32' ? '-option.txt' : '-选项.txt'
@@ -31,7 +31,7 @@ const ctx = {
     calls.push(options)
     assert.equal(action, 'plugin_exec_run')
     if (failure) return failure(options)
-    try { return { code: 0, stdout: run(...options.args), stderr: '' } }
+    try { return { code: 0, stdout: execFileSync(options.bin, options.args, { encoding: 'utf8', env: { ...process.env, ...options.env } }), stderr: '' } }
     catch (error) { return { code: error.status, stdout: String(error.stdout || ''), stderr: String(error.stderr || '') } }
   } },
 }
@@ -149,12 +149,21 @@ test('真实 SVN 中文命令行参数（Windows 客户端代码页已知限制�
   assert.equal(readFileSync(directory + '/中文文件.txt', 'utf8'), '中文内容\n')
 })
 
-test('真实 SVN 检出目录保留 @ 前空格（Windows 客户端已知限制）', {
-  todo: process.platform === 'win32' ? 'SlikSVN 1.14.5 将 space @wc 创建为 space@wc，待客户端修复' : false,
+test('L-02：真实 SVN 检出目录保留 @ 前空格', {
+  todo: false,
 }, async () => {
   failure = undefined
-  const directory = temp + '/space @wc'
-  const api = ctx.testApi(directory)
-  await api('/checkout', { url: pathToFileURL(temp + '/repo').href + '/trunk', directory })
-  await api('/state')
+  for (const name of ['space @wc', 'space  @wc', 'a@b @wc', 'name@']) {
+    const directory = temp + '/' + name
+    const api = ctx.testApi(directory)
+    await api('/checkout', { url: pathToFileURL(temp + '/repo').href + '/trunk', directory })
+    const state = await api('/state')
+    assert.equal(state.workingCopies[0].path, directory)
+    writeFileSync(directory + '/probe.txt', 'preserve directory name\n')
+    await api('/add', { wc: directory, paths: ['probe.txt'] })
+    await api('/commit', { wc: directory, paths: ['probe.txt'], message: 'directory round trip' })
+    assert.equal(readFileSync(directory + '/probe.txt', 'utf8'), 'preserve directory name\n')
+    await api('/delete', { wc: directory, paths: ['probe.txt'] })
+    await api('/commit', { wc: directory, paths: ['probe.txt'], message: 'remove probe' })
+  }
 })
