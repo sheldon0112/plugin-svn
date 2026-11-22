@@ -1,0 +1,148 @@
+QA-001 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 失败 检出并登记工作区 AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/mac/wc'
+- 'C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-AY4ZY5\\mac/wc'
+
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:61:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:59:3
+QA-002 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 拒绝无效目标、凭据 URL 与修订 
+QA-003 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 中文空格与 @ 文件真实提交 
+QA-004 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 仅提交所选文件 
+QA-005 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 远端变更查询不写本地；更新后写入 
+QA-006 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 失败 属性读写、删除与提交 AssertionError [ERR_ASSERTION]: false == true
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:85:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:83:3
+QA-007 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 保留旧规则、追加及去重、显示忽略项 
+QA-008 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 查询、加锁、拒绝重复加锁、解锁 
+QA-009 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 20 条分页及作者、关键词、路径、日期过滤 
+QA-010 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 读取改动路径、整版和仓库文件差异、逐行溯源 
+QA-011 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 创建、重复检查、脏工作区拒绝、干净切换 
+QA-012 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 预演不修改，正式合并写入，脏工作区保护 
+QA-013 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实文本冲突及传入版本比较 
+QA-014 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实property冲突与 working 解决 
+QA-015 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实tree冲突与 working 解决 
+QA-016 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 未纳入文件合成差异、二进制提示和 CRLF 解析 
+QA-017 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 目录删除提交与 svn cleanup 
+QA-018 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实本地仓库连接 
+QA-019 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 依赖缺失 
+QA-020 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 认证失败 
+QA-021 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 代理失败 
+QA-022 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 证书失败 
+QA-023 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 超时 
+QA-024 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 权限只读 
+QA-025 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 64 KiB 拒绝、日志脱敏与 100 条上限 
+QA-026 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 相对路径越界、盘符、UNC、大小写与长路径字符串 
+QA-027 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 现代接口及回退分支 
+QA-028 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 真实中文 CRLF 文件及只读写入拒绝 
+QA-029 macOS 真实 SVN/文件系统；API 使用 SDK 测试适配器 通过 目录安装、同 ID 覆盖升级、清理 
+QA-030 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 检出并登记工作区 AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/win/wc'
+- 'C:\\回归 空格\\wc'
+     ^
+
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:61:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:59:3
+QA-031 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 拒绝无效目标、凭据 URL 与修订 
+QA-032 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 中文空格与 @ 文件真实提交 
+QA-033 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 仅提交所选文件 
+QA-034 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 远端变更查询不写本地；更新后写入 AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(result.entries.some(e => e.path === 'a.txt' && e.reposStatus?.item === 'modified'))
+
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:80:73
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:78:3
+QA-035 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 属性读写、删除与提交 AssertionError [ERR_ASSERTION]: false == true
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:85:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:83:3
+QA-036 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 保留旧规则、追加及去重、显示忽略项 AssertionError [ERR_ASSERTION]: false == true
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:94:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:89:3
+QA-037 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 查询、加锁、拒绝重复加锁、解锁 Error: svn: warning: W160042: Lock failed: newer version of '/trunk/a.txt' exists
+svn: E200009: One or more locks could not be obtained
+    at svn (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:619:13)
+    at async api (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:975:11)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:98:5
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:97:3
+QA-038 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 20 条分页及作者、关键词、路径、日期过滤 Error: Command failed: svn commit -qm qa-page-0 C:\Users\Sheldon\AppData\Local\Temp\ccgui-full-AY4ZY5\win/wc/a.txt
+svn: E155011: Commit failed (details follow):
+svn: E155011: File 'C:\Users\Sheldon\AppData\Local\Temp\ccgui-full-AY4ZY5\win\wc\a.txt' is out of date
+svn: E160028: File '/trunk/a.txt' is out of date
+
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:916:11)
+    at execFileSync (node:child_process:952:15)
+    at run (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:21:38)
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:102:86
+    at check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:30)
+    at c (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:58:53)
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:101:9
+QA-039 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 读取改动路径、整版和仓库文件差异、逐行溯源 AssertionError [ERR_ASSERTION]: The input did not match the regular expression /history/. Input:
+
+'Index: a.txt\r\n' +
+  '===================================================================\r\n' +
+  '--- a.txt\t(revision 3)\r\n' +
+  '+++ a.txt\t(revision 4)\r\n' +
+  '@@ -1 +1 @@\r\n' +
+  '-selected\r\n' +
+  '+remote\r\n'
+
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:113:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:110:3
+QA-040 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 创建、重复检查、脏工作区拒绝、干净切换 AssertionError [ERR_ASSERTION]: Missing expected rejection.
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:121:46
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:118:3
+QA-041 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 预演不修改，正式合并写入，脏工作区保护 Error: svn: E195020: Cannot merge into mixed-revision working copy [5:6]; try updating first
+    at svn (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:619:13)
+    at async api (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:936:26)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:127:86
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:124:3
+QA-042 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 真实文本冲突及传入版本比较 AssertionError [ERR_ASSERTION]: false == true
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:132:12
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:130:3
+QA-043 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 真实property冲突与 working 解决 AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(status.entries.some(e => kind === 'property' ? e.props === 'conflicted' : e.treeConflicted))
+
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:140:87
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:136:44
+QA-044 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 真实tree冲突与 working 解决 Error: svn: E195006: Use --force to override this restriction (local modifications may be lost)
+svn: E195006: 'C:\Users\Sheldon\AppData\Local\Temp\ccgui-full-AY4ZY5\win\wc\a.txt' has local modifications -- commit or revert them first
+    at svn (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:619:13)
+    at async api (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-AY4ZY5/entry.mjs:993:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:139:117
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:136:44
+QA-045 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 未纳入文件合成差异、二进制提示和 CRLF 解析 
+QA-046 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 失败 目录删除提交与 svn cleanup AssertionError [ERR_ASSERTION]: Missing expected exception.
+    at file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:149:168
+    at async check (file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:25:24)
+    at async file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-baseline-main/test/full-coverage.mjs:148:3
+QA-047 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 真实本地仓库连接 
+QA-048 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 依赖缺失 
+QA-049 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 认证失败 
+QA-050 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 代理失败 
+QA-051 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 证书失败 
+QA-052 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 超时 
+QA-053 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 权限只读 
+QA-054 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 64 KiB 拒绝、日志脱敏与 100 条上限 
+QA-055 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 相对路径越界、盘符、UNC、大小写与长路径字符串 
+QA-056 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 现代接口及回退分支 
+QA-057 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 模拟 UTF-16 路径、CRLF 与只读拒绝边界 
+QA-058 Windows 模拟：路径/CRLF/错误注入；SVN 后端为 macOS 通过 目录安装、同 ID 覆盖升级、清理 
+汇总 {"失败":15,"通过":43}

@@ -1,0 +1,3195 @@
+[
+  {
+    "bin": "svn",
+    "args": [
+      "checkout",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "--ignore-externals",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/中文 空格@.txt@",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "初始提交",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/中文 空格@.txt@",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/dir@",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/dir/child.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "selected only",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/中文 空格@.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--show-updates",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:qa",
+      "中文\nvalue",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\r\n",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "svn:ignore",
+      "old\nx\\[1].tmp\n",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/x[1].tmp@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "proplist",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--no-ignore",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "lock",
+      "--non-interactive",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "unlock",
+      "--non-interactive",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "6:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-l",
+      "20",
+      "-r",
+      "HEAD:1",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "log",
+      "--non-interactive",
+      "--xml",
+      "-v",
+      "-r",
+      "26",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-c",
+      "26",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@26"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "-r",
+      "25:26",
+      "--old",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo",
+      "--",
+      "trunk/a.txt"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "blame",
+      "--non-interactive",
+      "-r",
+      "1:26",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@26"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "copy",
+      "--non-interactive",
+      "-r",
+      "HEAD",
+      "-m",
+      "branch",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches/qa%40tag@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "list",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches/qa%40tag@HEAD",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "switch",
+      "--non-interactive",
+      "--ignore-externals",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "27:28",
+      "--accept",
+      "postpone",
+      "--dry-run",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches/qa%40tag@HEAD",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "merge",
+      "--non-interactive",
+      "-r",
+      "27:28",
+      "--accept",
+      "postpone",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/branches/qa%40tag@HEAD",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@28",
+      "--new",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk/a.txt@29",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "theirs-full",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "propset",
+      "--non-interactive",
+      "--",
+      "custom:conflict",
+      "local",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "update",
+      "--non-interactive",
+      "--accept",
+      "postpone",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "resolve",
+      "--non-interactive",
+      "--accept",
+      "working",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/a.txt@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--old",
+      "NUL",
+      "--new",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/new.txt@",
+      "--"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "add",
+      "--non-interactive",
+      "--parents",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "binary",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "diff",
+      "--non-interactive",
+      "--internal-diff",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/binary.dat"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "revert",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/binary.dat@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "delete",
+      "--non-interactive",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "commit",
+      "--non-interactive",
+      "--depth",
+      "empty",
+      "-m",
+      "delete directory",
+      "--",
+      "C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/wc/dir@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "cleanup",
+      "--non-interactive",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 300000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "status",
+      "--non-interactive",
+      "--xml",
+      "--ignore-externals",
+      "--",
+      "C:\\Users\\Sheldon\\AppData\\Local\\Temp\\ccgui-full-CZHabM\\mac/wc@"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  },
+  {
+    "bin": "svn",
+    "args": [
+      "info",
+      "--non-interactive",
+      "--xml",
+      "-r",
+      "HEAD",
+      "--",
+      "file:///C:/Users/Sheldon/AppData/Local/Temp/ccgui-full-CZHabM/mac/repo/trunk@HEAD"
+    ],
+    "env": {
+      "LC_ALL": "en_US.UTF-8"
+    },
+    "timeoutMs": 60000
+  }
+]
